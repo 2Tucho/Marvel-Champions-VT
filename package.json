@@ -1,0 +1,19 @@
+{
+  "name": "marvel-champions-vt",
+  "version": "1.0.0",
+  "description": "Marvel Champions project to keep a track of the Villain you want to play with",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/2Tucho/Marvel-Champions-VT.git"
+  },
+  "author": "Alberto-Gonzalez-Romero",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/2Tucho/Marvel-Champions-VT/issues"
+  },
+  "homepage": "https://github.com/2Tucho/Marvel-Champions-VT#readme"
+}
