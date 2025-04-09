@@ -4,7 +4,7 @@ function TheGreenGoblin() {
 
   return <article className="villainList">
 
-    <h4>CORE SET</h4>
+    <h4>THE GREEN GOBLIN</h4>
     <ul className="greenGoblinList">
       <h5>Risky Business</h5>
       <h5>Mutagen Formula</h5>
