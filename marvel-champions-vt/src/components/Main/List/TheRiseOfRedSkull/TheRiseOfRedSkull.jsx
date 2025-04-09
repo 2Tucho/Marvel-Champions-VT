@@ -5,7 +5,7 @@ function TheRiseOfRedSkull() {
   return <article article id="theRiseOfRedSkull">
 
     <h4 className="villainEncounterName">THE RISE OF RED SKULL</h4>
-    <ul className="villainList trors">
+    <ul className="villainList campaignSet">
       <h5>Crossbones</h5>
       <h5>Absorbing Man</h5>
       <h5>Taskmaster</h5>
