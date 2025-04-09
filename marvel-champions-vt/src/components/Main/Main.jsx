@@ -1,9 +1,13 @@
-import React, { Component } from "react";
+import React from "react";
+import List from "./List/List.jsx";
 
-class Main extends Component {
-  render() {
-    return <div>Main</div>;
-  }
+function Main() {
+
+  return <div>
+    Main
+    <List/>
+    </div>;
+
 }
 
 export default Main;
