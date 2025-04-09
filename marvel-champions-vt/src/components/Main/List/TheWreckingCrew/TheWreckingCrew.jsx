@@ -2,9 +2,9 @@ import React from "react";
 
 function TheWreckingCrew() {
 
-  return <article className="villainList">
+  return <article article id="theWreckingCrew">
 
-    <h4>THE WRECKING CREW</h4>
+    <h4 className="villainEncounterName">THE WRECKING CREW</h4>
     
     </article>;
 
