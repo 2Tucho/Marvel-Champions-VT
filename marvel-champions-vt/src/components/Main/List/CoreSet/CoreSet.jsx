@@ -2,12 +2,14 @@ import React from "react";
 
 function CoreSet() {
 
-  return <article id="coreset">
+  return <article id="coreSetVillains">
 
     <h4>CORE SET</h4>
-    <h5>Rhyno</h5>
-    <h5>Klaw</h5>
-    <h5>Ultron</h5>
+    <ul className="villainList">
+      <h5>Rhyno</h5>
+      <h5>Klaw</h5>
+      <h5>Ultron</h5>
+    </ul>
     
     </article>;
 
