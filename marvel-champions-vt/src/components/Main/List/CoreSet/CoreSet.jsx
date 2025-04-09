@@ -1,9 +1,14 @@
-import React, { Component } from "react";
+import React from "react";
 
-class CoreSet extends Component {
-  render() {
-    return <div>CoreSet</div>;
-  }
+function CoreSet() {
+
+  return <article id="coreset">
+    <h4>CORE SET</h4>
+    <h5>Rhyno</h5>
+    <h5>Klaw</h5>
+    <h5>Ultron</h5>
+    </article>;
+
 }
 
 export default CoreSet;
