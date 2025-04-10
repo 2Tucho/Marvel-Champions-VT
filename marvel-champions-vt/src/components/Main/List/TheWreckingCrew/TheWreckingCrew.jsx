@@ -1,9 +1,13 @@
-import React, { Component } from "react";
+import React from "react";
 
-class TheWreckingCrew extends Component {
-  render() {
-    return <div>TheWreckingCrew</div>;
-  }
+function TheWreckingCrew() {
+
+  return <article id="theWreckingCrew">
+
+    <h4 className="villainEncounterName">THE WRECKING CREW</h4>
+    
+    </article>;
+
 }
 
 export default TheWreckingCrew;

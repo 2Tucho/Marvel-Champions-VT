@@ -2,10 +2,10 @@ import React from "react";
 
 function TheGreenGoblin() {
 
-  return <article className="villainList">
+  return <article article id="theGreenGoblin">
 
-    <h4>CORE SET</h4>
-    <ul className="greenGoblinList">
+    <h4 className="villainEncounterName">THE GREEN GOBLIN</h4>
+    <ul className="villainList">
       <h5>Risky Business</h5>
       <h5>Mutagen Formula</h5>
     </ul>
