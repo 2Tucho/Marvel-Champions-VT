@@ -1,9 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Exo:ital,wght@0,100..900;1,100..900&display=swap");
+
 .villainEncounterName { 
     font-size: 1.25rem;
     margin-bottom: 1rem;
 }
 
 .villainList {
+    font-family: "Exo";
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;

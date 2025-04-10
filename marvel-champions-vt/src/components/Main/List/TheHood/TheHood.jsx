@@ -4,7 +4,7 @@ function TheHood() {
 
   return <article id="theHood">
 
-    <h4 className="villainEncounterName">THE HOOD</h4>
+    <h4 className="villainEncounterName">The Hood</h4>
     
     </article>;
 

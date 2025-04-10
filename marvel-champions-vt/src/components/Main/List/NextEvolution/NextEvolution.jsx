@@ -4,7 +4,7 @@ function NextEvolution() {
 
   return <article id="nextEvolution">
 
-    <h4 className="villainEncounterName">NEXT EVOLUTION</h4>
+    <h4 className="villainEncounterName">Next Evolution</h4>
     <ul className="villainList campaignSet2">
       <h5>Morlock Siege</h5>
       <h5>On the Run</h5>

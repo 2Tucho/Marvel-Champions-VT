@@ -4,7 +4,7 @@ function TheWreckingCrew() {
 
   return <article id="theWreckingCrew">
 
-    <h4 className="villainEncounterName">THE WRECKING CREW</h4>
+    <h4 className="villainEncounterName">The Wrecking Crew</h4>
     
     </article>;
 

@@ -4,7 +4,7 @@ function SinisterMotives() {
 
   return <article id="sinisterMotives">
 
-    <h4 className="villainEncounterName">SINISTER MOTIVES</h4>
+    <h4 className="villainEncounterName">Sinister Motives</h4>
     <ul className="villainList campaignSet">
       <h5>Sandman</h5>
       <h5>Venom</h5>

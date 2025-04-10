@@ -4,7 +4,7 @@ function TheOnceAndFutureKang() {
 
   return <article id="theOnceAndFutureKang">
 
-    <h4 className="villainEncounterName">THE ONCE AND FUTURE KANG</h4>
+    <h4 className="villainEncounterName">The Once And Future Kang</h4>
     
     </article>;
 

@@ -4,7 +4,7 @@ function CoreSet() {
 
   return <article id="coreSet">
 
-    <h4 className="villainEncounterName">CORE SET</h4>
+    <h4 className="villainEncounterName">Core Set</h4>
     <ul className="villainList">
       <h5>Rhyno</h5>
       <h5>Klaw</h5>
