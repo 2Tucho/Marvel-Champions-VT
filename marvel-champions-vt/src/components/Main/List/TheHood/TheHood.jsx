@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 
 function TheHood() {
 
-  return <article article id="theHood">
+  return <article id="theHood">
 
     <h4 className="villainEncounterName">THE HOOD</h4>
     
