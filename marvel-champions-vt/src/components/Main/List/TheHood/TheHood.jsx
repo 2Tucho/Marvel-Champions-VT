@@ -1,9 +1,13 @@
 import React, { Component } from "react";
 
-class TheHood extends Component {
-  render() {
-    return <div>TheHood</div>;
-  }
+function TheHood() {
+
+  return <article article id="theHood">
+
+    <h4 className="villainEncounterName">THE HOOD</h4>
+    
+    </article>;
+
 }
 
 export default TheHood;
