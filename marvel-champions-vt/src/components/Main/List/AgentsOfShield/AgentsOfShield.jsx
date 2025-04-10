@@ -4,7 +4,7 @@ function AgentsOfShield() {
 
   return <article id="agentsOfShield">
 
-    <h4 className="villainEncounterName">AGENTS OF S.H.I.E.L.D.</h4>
+    <h4 className="villainEncounterName">Agents of S.H.I.E.L.D.</h4>
     <ul className="villainList campaignSet2">
       <h5>Black Widow</h5>
       <h5>Batroc</h5>

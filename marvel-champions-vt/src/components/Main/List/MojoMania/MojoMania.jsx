@@ -4,7 +4,7 @@ function MojoMania() {
 
   return <article id="mojoMania">
 
-    <h4 className="villainEncounterName">MOJO MANIA</h4>
+    <h4 className="villainEncounterName">Mojo Mania</h4>
     <ul className="villainList">
       <h5>Magog</h5>
       <h5>Spiral</h5>
