@@ -4,7 +4,7 @@ function GalaxysMostWanted() {
 
   return <article id="galaxysMostWanted">
 
-    <h4 className="villainEncounterName">CORE SET</h4>
+    <h4 className="villainEncounterName">GALAXY'S MOST WANTED</h4>
     <ul className="villainList campaignSet">
       <h5>Brotherhood of Badoon</h5>
       <h5>Collector 1</h5>
