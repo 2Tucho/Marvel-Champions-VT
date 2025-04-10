@@ -1,9 +1,19 @@
-import React, { Component } from "react";
+import React from "react";
 
-class PhaseButtons extends Component {
-  render() {
-    return <div>PhaseButtons</div>;
-  }
+function PhaseButtons(){
+
+  return <div>
+    
+    <div id="phaseButtonContainer">
+
+      <button>Phase I</button>
+      <button>Phase II</button>
+      <button>Phase III</button>
+
+    </div>
+
+  </div>;
+
 }
 
 export default PhaseButtons;

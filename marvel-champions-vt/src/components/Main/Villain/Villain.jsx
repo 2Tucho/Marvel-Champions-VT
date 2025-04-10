@@ -1,10 +1,16 @@
 import React from "react";
-import General from "./General/General.jsx";
+import PhaseButtons from "./PhaseButtons";
+import LifeCounter from "./LifeCounter";
+import CardImage from "./CardImage";
+import StatusCards from "./StatusCards";
 
 function Villain () {
 
   return <div>
-    <General/>
+    <PhaseButtons />
+    <LifeCounter />
+    <CardImage />
+    <StatusCards />
   </div>;
 
 }
