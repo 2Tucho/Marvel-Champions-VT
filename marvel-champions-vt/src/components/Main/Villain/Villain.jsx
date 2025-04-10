@@ -1,9 +1,18 @@
-import React, { Component } from "react";
+import React from "react";
+import PhaseButtons from "./PhaseButtons";
+import LifeCounter from "./LifeCounter";
+import CardImage from "./CardImage";
+import StatusCards from "./StatusCards";
 
-class Villain extends Component {
-  render() {
-    return <div>Villain</div>;
-  }
+function Villain () {
+
+  return <div>
+    <PhaseButtons />
+    <LifeCounter />
+    <CardImage />
+    <StatusCards />
+  </div>;
+
 }
 
 export default Villain;
