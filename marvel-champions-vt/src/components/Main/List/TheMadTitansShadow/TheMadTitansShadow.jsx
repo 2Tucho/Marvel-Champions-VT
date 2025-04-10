@@ -5,7 +5,7 @@ function TheMadTitansShadow() {
   return <article id="theMadTitansShadow">
 
     <h4 className="villainEncounterName">THE MAD TITAN'S SHADOW</h4>
-    <ul className="villainList tmts">
+    <ul className="villainList campaignSet">
       <h5>Ebony Maw</h5>
       <h5>Tower Defense</h5>
       <h5>Thanos</h5>
