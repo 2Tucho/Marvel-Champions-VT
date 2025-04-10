@@ -1,9 +1,12 @@
-import React, { Component } from "react";
+import React from "react";
+import General from "./General/General.jsx";
 
-class Villain extends Component {
-  render() {
-    return <div>Villain</div>;
-  }
+function Villain () {
+
+  return <div>
+    <General/>
+  </div>;
+
 }
 
 export default Villain;
