@@ -5,7 +5,7 @@ function CardImage({phase}) {
   return <div>
     <img
       id="villainImage"
-      src={`../../../../public/VillainImages/mutagenFormula/phase${phase}.jpg`}
+      src={`../../../../public/VillainImages/redSkull/${phase}.jpg`}
     ></img>
   </div>;
 

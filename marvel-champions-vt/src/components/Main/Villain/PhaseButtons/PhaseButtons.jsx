@@ -7,9 +7,9 @@ function PhaseButtons({setPhase}) {
     <div id="phaseButtonContainer">
 
       {/*  setPhase is wrapped in a function so that they are only executed when the buttons are clicked, not during the render phase*/}
-      <button id="phaseI" onClick={() => setPhase("I")}>Phase I</button> 
-      <button id="phaseII" onClick={() => setPhase("II")}>Phase II</button>
-      <button id="phaseII" onClick={() => setPhase("III")}>Phase III</button>
+      <button id="phaseI" onClick={() => setPhase("phaseI")}>Phase I</button> 
+      <button id="phaseII" onClick={() => setPhase("phaseII")}>Phase II</button>
+      <button id="phaseII" onClick={() => setPhase("phaseIII")}>Phase III</button>
 
     </div>
 
