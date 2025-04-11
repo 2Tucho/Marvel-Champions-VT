@@ -1,0 +1,11 @@
+#lifeCounter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  p, input {
+    margin: 1rem;
+  } 
+
+}
