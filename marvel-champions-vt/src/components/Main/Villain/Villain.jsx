@@ -6,7 +6,7 @@ import CardImage from "./CardImage";
 import StatusCards from "./StatusCards";
 
 function Villain () {
-  const [phase, setPhase] = useState("I"); // State to keep track of the phase of the villain.
+  const [phase, setPhase] = useState("phaseI"); // State to keep track of the phase of the villain.
 
   return <div>
     <PhaseButtons setPhase={setPhase}/> {/* Phase buttons to change the phase of the villain */}
