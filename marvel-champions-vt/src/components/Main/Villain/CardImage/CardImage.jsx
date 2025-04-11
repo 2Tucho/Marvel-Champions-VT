@@ -2,7 +2,12 @@ import React, { Component } from "react";
 
 class CardImage extends Component {
   render() {
-    return <div>CardImage</div>;
+    return <div>
+      <img
+        id="villainImage"
+        src={"../../../../public/VillainImages/magnetoPhaseII.webp"}
+      ></img>
+    </div>;
   }
 }
 
