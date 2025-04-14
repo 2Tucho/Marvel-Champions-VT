@@ -5,5 +5,18 @@
     
     button {
         width: 80vw;
+        height: 2rem;
+    }
+
+    #toughStatus {
+        background-color: #fab53d;
+    }
+
+    #confusedStatus {
+        background-color: #c675e1;
+    }
+
+    #stunnedStatus {
+        background-color: #8dee63;
     }
 }
