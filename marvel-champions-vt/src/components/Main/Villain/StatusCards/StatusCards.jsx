@@ -31,12 +31,23 @@ function StatusCards ({setToughStatus, setConfusedStatus, setStunnedStatus}) {
   setConfusedStatus(confused);
   setStunnedStatus(stunned);
 
-  return <article id="statusCards">
-    <button id="toughStatus" onClick={() => changeStatusCard("tough")}>Tough</button> 
-    <button id="confusedStatus" onClick={() => changeStatusCard("confused")}>Confused</button>
-    <button id="stunnedStatus" onClick={() => changeStatusCard("stunned")}>Stunned</button>
-  </article>;
-
+  return <div>
+    <article>
+      <button>Stelwart</button>
+      <button>Steady</button>
+    </article>
+    <article id="statusCards">
+      <button id="toughStatus" onClick={() => changeStatusCard("tough")} style={{
+            backgroundColor: tough ? "#FFB23B" : "#FFE0B2", // Darker orange if active, lighter orange if inactive
+          }}>Tough</button>
+      <button id="confusedStatus" onClick={() => changeStatusCard("confused")} style={{
+            backgroundColor: confused ? "#EE7AFF" : "#F8C2F6", // Darker orange if active, lighter orange if inactive
+          }}>Confused</button>
+      <button id="stunnedStatus" onClick={() => changeStatusCard("stunned")} style={{
+            backgroundColor: stunned ? "#9CFF7A" : "#C6EEB8", // Darker red if active, lighter red if inactive
+          }}>Stunned</button>
+    </article>;
+  </div>
 }
 
 export default StatusCards;

@@ -1,5 +1,11 @@
-#villainImage {
+#imagesContainer {
     display: block;
+}
+
+#villainImage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 30rem;
     margin: 1rem;
 }

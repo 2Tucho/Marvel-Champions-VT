@@ -2,7 +2,7 @@ import React from "react";
 
 function CardImage({phase, toughStatus, confusedStatus, stunnedStatus}) {
 
-  return <div>
+  return <div id="imagesContainer">
     <img id="villainImage" src={`../../../../public/VillainImages/magneto/${phase}.jpg`}></img>
 
     {/* If  toughStatus / confusedStatus / stunnedStatus are true their respective element will show, if they are false then stay hide */}
