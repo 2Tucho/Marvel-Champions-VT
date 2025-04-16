@@ -6,17 +6,28 @@
     button {
         width: 80vw;
         height: 2rem;
+
+        #toughStatus {
+            border-color: #A2721E;
+        }
+    
+        #confusedStatus {
+            border-color: #8C1EA2;
+        }
+    
+        #stunnedStatus {
+            border-color: #67A21E;
+        }
     }
 
-    #toughStatus {
-        border-color: #A2721E;
+    .steadyButtonsContainer {
+        display: flex;
+        justify-content: space-between;
+        width: 80vw;
     }
 
-    #confusedStatus {
-        border-color: #8C1EA2;
+    #extraConfusedStatus, #extraStunnedStatus {
+        width: 50%; /* 50% so that with the other button it fills the 100% */
     }
 
-    #stunnedStatus {
-        border-color: #67A21E;
-    }
 }

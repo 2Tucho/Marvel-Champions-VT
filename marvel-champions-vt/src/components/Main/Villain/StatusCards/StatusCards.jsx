@@ -17,6 +17,12 @@ function StatusCards ({setToughStatus, setConfusedStatus, setStunnedStatus}) {
   const [stelwartClicked, setStelwartClicked] = useState(false); 
   const [steadyClicked, setSteadyClicked] = useState(false);
 
+  /* State to change color of the extra buttons depending if clicked or not */
+  const [extraConfused, setExtraConfused] = useState(false);
+  const [extraStunned, setExtraStunned] = useState(false);
+
+
+  /* Function to change the status of the cards so it displays the Token img or not */
   const changeStatusCard = (status) =>{
     switch (status) {
       case "tough":
@@ -41,15 +47,26 @@ function StatusCards ({setToughStatus, setConfusedStatus, setStunnedStatus}) {
   setConfusedStatus(confused);
   setStunnedStatus(stunned);
 
+
+  /* Function to add the logic necessary to the Stelwart button */
   const hideConfusedAndStunned = () => {
-    setHideStatus(!hideStatus); /* Set hideStatus to true to hide the buttons */
+    /* Set hideStatus to true to hide the buttons */
+    setHideStatus(!hideStatus); 
+    
     /* Set confused and stunned to false to remove the status */
     setConfused(false);
     setStunned(false);
-    setShowExtraButtons(false); /* Hide extra buttons when hiding confused and stunned */
+
+    /* Hide extra buttons when hiding confused and stunned */
+    setShowExtraButtons(false); 
     setStelwartClicked(!stelwartClicked); /* Toggle the visibility of Stelwart button */
+
+    /* So the extra buttons don't appear clicked again after Stelwart y+is clicked */
+    setExtraConfused(false);
+    setExtraStunned(false);
   };
 
+  /* Function to add the logic necessary to the Steady button */
   const divideConfusedAndStunnedButtons = () => {
     setShowExtraButtons(!showExtraButtons); /* Toggle the visibility of extra buttons */
     setHideStatus(false); /* Ensure buttons are visible */
@@ -67,7 +84,13 @@ function StatusCards ({setToughStatus, setConfusedStatus, setStunnedStatus}) {
         Tough
       </button>
 
-      <div>
+      <div className="steadyButtonsContainer">
+        {showExtraButtons && (
+          <button id="extraConfusedStatus" onClick={() => setExtraConfused(!extraConfused)} style={{backgroundColor: extraConfused ? "#EE7AFF" : "#F8C2F6",}}>
+            Extra Confused
+          </button>
+        )}
+        
         {!hideStatus && (
           <button id="confusedStatus" onClick={() => changeStatusCard("confused")} style=
             {{backgroundColor: confused ? "#EE7AFF" : "#F8C2F6", 
@@ -76,26 +99,21 @@ function StatusCards ({setToughStatus, setConfusedStatus, setStunnedStatus}) {
             Confused
           </button>
         )}
-        {showExtraButtons && (
-          <button id="extraConfusedStatus" onClick={() => changeStatusCard("confused")} style={{backgroundColor: confused ? "#DDA0DD" : "#E6B3E6",}}>
-            Extra Confused
-          </button>
-        )}
       </div>
       
-      <div>
+      <div className="steadyButtonsContainer">
+        {showExtraButtons && (
+          <button id="extraStunnedStatus" onClick={() => setExtraStunned(!extraStunned)} style={{backgroundColor: extraStunned ? "#9CFF7A" : "#C6EEB8",}}>
+            Extra Stunned
+          </button>
+        )}
+
         {!hideStatus && (
           <button id="stunnedStatus" onClick={() => changeStatusCard("stunned")} style=
             {{backgroundColor: stunned ? "#9CFF7A" : "#C6EEB8",
               width: showExtraButtons ? "50%" : "80vw", /* Adjust width based on showExtraButtons */
             }}>
               Stunned
-          </button>
-        )}
-
-        {showExtraButtons && (
-          <button id="extraStunnedStatus" onClick={() => changeStatusCard("stunned")} style={{backgroundColor: stunned ? "#7FFF00" : "#B3FFB3",}}>
-            Extra Stunned
           </button>
         )}
       </div>
