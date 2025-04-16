@@ -1,11 +1,11 @@
 #imagesContainer {
-    display: block;
-}
-
-#villainImage {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#villainImage {
+    display: block;
     height: 30rem;
     margin: 1rem;
 }
@@ -14,7 +14,7 @@
     height: 7rem;
     position: absolute;
     left: 78%; /* Position from left */
-    transform: translate(-50%, -50%); /* Centers perfectly */
+    transform: translate(-50%, -50%); /* Centers */
     border-radius: 10px; /* To round the white corners of the jpg images */
 }
 
