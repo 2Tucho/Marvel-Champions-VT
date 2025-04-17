@@ -17,21 +17,20 @@ import AgentsOfShield from "./AgentsOfShield";
 function List()  {
   
   return <div>
-    <h3>List</h3>
-    <CoreSet/>
-    <TheGreenGoblin/>
-    <TheWreckingCrew/>
-    <TheRiseOfRedSkull/>
-    <TheOnceAndFutureKang/>
-    <GalaxysMostWanted/>
-    <TheMadTitansShadow/>
-    <TheHood/>
-    <SinisterMotives/>
-    <MutantGenesis/>
-    <MojoMania/>
-    <NextEvolution/>
-    <TheAgeOfApocalypse/>
-    <AgentsOfShield/>
+      <CoreSet/>
+      <TheGreenGoblin/>
+      <TheWreckingCrew/>
+      <TheRiseOfRedSkull/>
+      <TheOnceAndFutureKang/>
+      <GalaxysMostWanted/>
+      <TheMadTitansShadow/>
+      <TheHood/>
+      <SinisterMotives/>
+      <MutantGenesis/>
+      <MojoMania/>
+      <NextEvolution/>
+      <TheAgeOfApocalypse/>
+      <AgentsOfShield/>
     </div>;
 
 }
