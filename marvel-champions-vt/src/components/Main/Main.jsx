@@ -5,9 +5,8 @@ import Villain from "./Villain/Villain.jsx";
 function Main() {
 
   return <div>
-    Main
-    {/*<List/>*/}
-    <Villain/>
+    <List/>
+    {/* <Villain/> */}
     </div>;
 
 }
