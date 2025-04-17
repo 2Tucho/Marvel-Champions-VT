@@ -2,7 +2,7 @@ import React from "react";
 
 function TheRiseOfRedSkull() {
 
-  return <article article id="theRiseOfRedSkull">
+  return <article id="theRiseOfRedSkull">
 
     <h4 className="villainEncounterName">The Rise Of Red Skull</h4>
     <ul className="villainList campaignSet">

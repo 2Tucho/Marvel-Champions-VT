@@ -1,9 +1,12 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 
 function CardImage({phase, toughStatus, confusedStatus, stunnedStatus}) {
 
+  const villainId = useParams(); /* Get the villainId from the URL parameters */
+
   return <div id="imagesContainer">
-    <img id="villainImage" src={`../../../../public/VillainImages/magneto/${phase}.jpg`}></img>
+    <img id="villainImage" src={`../../../../public/VillainImages/${villainId.villainId}/${phase}.jpg`}></img>
 
     {/* If  toughStatus / confusedStatus / stunnedStatus are true their respective element will show, if they are false then stay hide */}
     {toughStatus && (<img id="toughToken" className="statusToken" src={"../../../../public/StatusTokens/tough.jpg"} alt="Tough Token" />)}
