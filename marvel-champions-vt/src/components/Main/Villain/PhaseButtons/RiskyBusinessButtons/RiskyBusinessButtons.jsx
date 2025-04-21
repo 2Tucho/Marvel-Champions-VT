@@ -7,7 +7,6 @@ function RiskyBusinessButtons() {
 
   return <div id="riskyBusinessButtons">
 
-    {/*  setPhase is wrapped in a function so that they are only executed when the buttons are clicked, not during the render phase*/}
     <article>
       <button className="phaseIA" onClick={() => setPhase("default")}>Norman Osborn I</button> 
       <button className="phaseIB" onClick={() => setPhase("phaseIB")}>Green Goblin I</button>
