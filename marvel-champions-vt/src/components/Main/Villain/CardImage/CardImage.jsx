@@ -1,7 +1,10 @@
 import React from "react";
+import { useContext } from "react";
+import { PhaseButtonsContext } from "../../../../context/PhaseButtonsContext";
 import { useParams } from "react-router-dom";
 
-function CardImage({phase, toughStatus, confusedStatus, stunnedStatus}) {
+function CardImage({toughStatus, confusedStatus, stunnedStatus}) {
+  const { phase } = useContext(PhaseButtonsContext); /* Get the phase from the context */
 
   const villainId = useParams(); /* Get the villainId from the URL parameters */
 

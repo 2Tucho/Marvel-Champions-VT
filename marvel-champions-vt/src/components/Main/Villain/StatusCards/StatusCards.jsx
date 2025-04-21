@@ -1,5 +1,5 @@
 import React from "react";
-import {useState} from "react";
+import { useState, useEffect } from "react";
 
 function StatusCards ({setToughStatus, setConfusedStatus, setStunnedStatus}) {
   /* States to keep track of the active Status Cards on the Villain */
@@ -22,30 +22,33 @@ function StatusCards ({setToughStatus, setConfusedStatus, setStunnedStatus}) {
   const [extraStunned, setExtraStunned] = useState(false);
 
 
+  /* They are set here so the states are initialized as false and change at the moment you click the buttons. Sync the parent states with the local states */
+  useEffect(() => {
+    setToughStatus(tough);
+    setConfusedStatus(confused);
+    setStunnedStatus(stunned);
+  }, [tough, confused, stunned, setToughStatus, setConfusedStatus, setStunnedStatus]);
+
+
   /* Function to change the status of the cards so it displays the Token img or not */
   const changeStatusCard = (status) =>{
     switch (status) {
       case "tough":
         setTough(!tough); /* Changes state to the contrary of the previous one */
-        
         break;
+
       case "confused":
         setConfused(!confused);
-        
         break;
+
       case "stunned":
         setStunned(!stunned);
-        
         break;
+        
       default:
         break;
     }
-  }
-
-  /* They are set here so the states are initialized as false and change at the moment you click the buttons */
-  setToughStatus(tough);
-  setConfusedStatus(confused);
-  setStunnedStatus(stunned);
+  };
 
 
   /* Function to add the logic necessary to the Stelwart button */
