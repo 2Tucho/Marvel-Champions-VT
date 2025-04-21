@@ -18,10 +18,10 @@ function Villain () {
   return <div>
     <PhaseButtonsContext.Provider value={{phase, setPhase}}>
       <PhaseButtons/>
+      <LifeCounter />
       <CardImage phase={phase} toughStatus={toughStatus} confusedStatus={confusedStatus} stunnedStatus={stunnedStatus}/> {/* Image of the villain, depending on the phase */}
     </PhaseButtonsContext.Provider>
 
-    <LifeCounter />
     <StatusCards setToughStatus={setToughStatus} setConfusedStatus={setConfusedStatus} setStunnedStatus={setStunnedStatus}/>
   </div>;
 
