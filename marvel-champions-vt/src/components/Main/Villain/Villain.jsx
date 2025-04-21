@@ -8,7 +8,7 @@ import StatusCards from "./StatusCards";
 
 function Villain () {
   /* State to keep track of the phase of the villain */
-  const [phase, setPhase] = useState("phaseI");
+  const [phase, setPhase] = useState("default");
   
   /* States to keep track of the active Status Cards on the Villain */
   const [toughStatus, setToughStatus] = useState();
