@@ -41,7 +41,7 @@ function PhaseButtons() {
     mansionAttack: <MansionAttackButtons />,
     modok: <ModokButtons />,
     morlockSiege: <MorlockSiegeButtons />,
-    onTheRun: <OnTheRunButtons />,
+    ontheRun: <OnTheRunButtons />,
     riskyBusiness: <RiskyBusinessButtons />,
     sinisterSix: <SinisterSixButtons />,
     spiral: <SpiralButtons />,
@@ -50,7 +50,9 @@ function PhaseButtons() {
     wreckingCrew: <WreckingCrewButtons />,
   };
 
-  return <div>{buttonComponents[villainId] || <GeneralButtons />}</div>; {/* Render the buttons based on the villainId. If no specific buttons are found, render the GeneralButtons component. */}
+  console.log(buttonComponents[villainId.villainId]); /* Log the button component to the console */
+
+  return <div>{buttonComponents[villainId.villainId] || <GeneralButtons />}</div>; {/* Render the buttons based on the villainId. If no specific buttons are found, render the GeneralButtons component. */}
 
 }
 
