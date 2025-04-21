@@ -6,14 +6,14 @@ function CardImage({phase, toughStatus, confusedStatus, stunnedStatus}) {
   const villainId = useParams(); /* Get the villainId from the URL parameters */
 
   return <div id="imagesContainer">
-    <img id="villainImage" src={`../../../../public/VillainImages/${villainId.villainId}/${phase}.jpg`}></img>
+    <img id="villainImage" src={`/VillainImages/${villainId.villainId}/${phase}.jpg`} alt={`${villainId.villainId} image`}></img>
 
     {/* If  toughStatus / confusedStatus / stunnedStatus are true their respective element will show, if they are false then stay hide */}
-    {toughStatus && (<img id="toughToken" className="statusToken" src={"../../../../public/StatusTokens/tough.jpg"} alt="Tough Token" />)}
+    {toughStatus && (<img id="toughToken" className="statusToken" src={"/StatusTokens/tough.jpg"} alt="Tough Token" />)}
 
-    {confusedStatus && (<img id="confusedToken" className="statusToken" src={"../../../../public/StatusTokens/confused.jpg"} alt="Confused Token" />)}
+    {confusedStatus && (<img id="confusedToken" className="statusToken" src={"/StatusTokens/confused.jpg"} alt="Confused Token" />)}
 
-    {stunnedStatus && (<img id="stunnedToken" className="statusToken" src={"../../../../public/StatusTokens/stunned.jpg"} alt="Stunned Token" />)}
+    {stunnedStatus && (<img id="stunnedToken" className="statusToken" src={"/StatusTokens/stunned.jpg"} alt="Stunned Token" />)}
   </div>;
 
 }

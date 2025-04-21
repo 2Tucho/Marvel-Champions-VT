@@ -7,6 +7,7 @@ import StatusCards from "./StatusCards";
 
 function Villain () {
   const [phase, setPhase] = useState("phaseI"); /* State to keep track of the phase of the villain */
+  
   /* States to keep track of the active Status Cards on the Villain */
   const [toughStatus, setToughStatus] = useState();
   const [confusedStatus, setConfusedStatus] = useState();
