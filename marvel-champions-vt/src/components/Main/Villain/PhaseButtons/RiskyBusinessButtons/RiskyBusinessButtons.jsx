@@ -7,7 +7,7 @@ function RiskyBusinessButtons() {
 
   return <div>
     
-    <div id="phaseButtonContainer">
+    <div>
 
       {/*  setPhase is wrapped in a function so that they are only executed when the buttons are clicked, not during the render phase*/}
       <article>

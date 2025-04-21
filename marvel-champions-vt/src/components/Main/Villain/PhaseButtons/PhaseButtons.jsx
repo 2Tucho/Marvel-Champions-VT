@@ -47,7 +47,7 @@ function PhaseButtons() {
     spiral: <SpiralButtons />,
     thunderbolts: <ThunderboltsButtons />,
     towerDefense: <TowerDefenseButtons />,
-    wreckingCrew: <WreckingCrewButtons />,
+    theWreckingCrew: <WreckingCrewButtons />,
   };
 
   console.log(buttonComponents[villainId.villainId]); /* Log the button component to the console */
