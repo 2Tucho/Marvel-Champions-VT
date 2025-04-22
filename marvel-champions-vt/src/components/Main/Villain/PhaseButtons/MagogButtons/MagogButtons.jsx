@@ -1,9 +1,17 @@
-import React, { Component } from "react";
+import React from "react";
+import {useContext} from "react";
+import { PhaseButtonsContext } from "../../../../../context/PhaseButtonsContext";
 
-class MagogButtons extends Component {
-  render() {
-    return <div>MagogButtons</div>;
-  }
+function MagogButtons() { 
+  const {setPhase} = useContext(PhaseButtonsContext);
+
+  return <div id="magogButtons">
+
+      <button onClick={() => setPhase("default")}>Normal</button> 
+      <button onClick={() => setPhase("B")}>Expert</button>
+
+    </div>
+
 }
 
 export default MagogButtons;
