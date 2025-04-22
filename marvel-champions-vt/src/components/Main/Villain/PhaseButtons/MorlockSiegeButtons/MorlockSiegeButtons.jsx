@@ -18,7 +18,6 @@ function MorlockSiegeButtons() {
   const {setPhase} = useContext(PhaseButtonsContext);
 
 
-
   const chooseRandomVillain = () => {
     if (remainingMarauders.length === 0) {
       return; /* Exit if no villains are left */
@@ -32,7 +31,7 @@ function MorlockSiegeButtons() {
     setRemainingMarauders(
       remainingMarauders.filter(villain => villain !== randomVillain)
     ); /* Remove the selected villain from the array */
-    console.log("Random Villain: " + randomVillain);
+    setPhase(`${randomVillain}A`); /* Set the phase to the selected villain so the img isn't empty. With randomVillain it does the setPhase at the moment, with the marauder state it wouldn's show */
   }
 
   return <div id="morlockSiegeButtons">
