@@ -24,7 +24,6 @@ import WreckingCrewButtons from "./WreckingCrewButtons/WreckingCrewButtons";
 
 function PhaseButtons() { 
   const villainId = useParams(); /* Get the villainId from the URL parameters */
-  console.log(villainId.villainId); /* Log the villainId to the console */
 
   /* Map the villainId to the corresponding button component */
   const buttonComponents = {
@@ -49,8 +48,6 @@ function PhaseButtons() {
     towerDefense: <TowerDefenseButtons />,
     theWreckingCrew: <WreckingCrewButtons />,
   };
-
-  console.log(buttonComponents[villainId.villainId]); /* Log the button component to the console */
 
   return <div>{buttonComponents[villainId.villainId] || <GeneralButtons />}</div>; {/* Render the buttons based on the villainId. If no specific buttons are found, render the GeneralButtons component. */}
 
