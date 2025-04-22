@@ -5,9 +5,8 @@ import { PhaseButtonsContext } from "../../../../../context/PhaseButtonsContext"
 function WreckingCrewButtons() { 
   const {setPhase} = useContext(PhaseButtonsContext);
 
-  return <div>
-    
-    <div id="wreckingCrewButtons">
+  return <div id="wreckingCrewButtons">
+
       <article>
         <button id="wreckerA" onClick={() => setPhase("default")}>Wrecker A</button> 
         <button id="wreckerB" onClick={() => setPhase("wreckerB")}>Wrecker B</button>
@@ -29,8 +28,6 @@ function WreckingCrewButtons() {
       </article>
 
     </div>
-
-  </div>;
 
 }
 
