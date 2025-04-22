@@ -43,9 +43,6 @@ function MorlockSiegeButtons() {
           <button onClick={() => setPhase(`${marauder}B`)}>Expert</button>
         </div>
       )}
-      
-      {/* <button onClick={() => setPhase("default")}>Normal</button> 
-      <button onClick={() => setPhase("B")}>Expert</button> */}
 
     </div>
 
