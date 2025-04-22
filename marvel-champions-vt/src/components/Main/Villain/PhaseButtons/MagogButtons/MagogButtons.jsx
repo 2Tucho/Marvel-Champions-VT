@@ -5,16 +5,12 @@ import { PhaseButtonsContext } from "../../../../../context/PhaseButtonsContext"
 function MagogButtons() { 
   const {setPhase} = useContext(PhaseButtonsContext);
 
-  return <div>
-    
-    <div id="magogButtons">
+  return <div id="magogButtons">
 
       <button onClick={() => setPhase("default")}>Normal</button> 
       <button onClick={() => setPhase("B")}>Expert</button>
 
     </div>
-
-  </div>;
 
 }
 
