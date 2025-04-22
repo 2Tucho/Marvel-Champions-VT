@@ -11,7 +11,6 @@ function Collector2Buttons() {
   const changeMode = (newMode) => {newMode === "normal" ? setMode("normal") : setMode("expert")}
 
 
-
   return <div id="collector2Buttons">
 
     <article id="collectro2ModeButtons">
