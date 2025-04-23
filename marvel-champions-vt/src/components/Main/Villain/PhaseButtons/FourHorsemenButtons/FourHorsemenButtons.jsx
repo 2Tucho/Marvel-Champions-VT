@@ -3,7 +3,7 @@ import { useState, useContext } from "react";
 import { PhaseButtonsContext } from "../../../../../context/PhaseButtonsContext";
 
 function FourHorsemenButtons() { 
-  const [showNormalButtons, setShowNormalButtons] = useState(false); /* State to hide/display the Normal mode buttons */
+  const [showNormalButtons, setShowNormalButtons] = useState(true); /* State to hide/display the Normal mode buttons */
   const [showExpertButtons, setShowExpertButtons] = useState(false); /* State to hide/display the Expert mode buttons */
   const [fourHorsemen, setFourHorsemen] = useState([
     "death",
@@ -32,7 +32,7 @@ function FourHorsemenButtons() {
     }
   }
 
-  return <div id="morlockSiegeButtons">
+  return <div id="fourHorsemenButtons">
 
       <button id="horsemenNormalButton" onClick={() => {
         randomHorsemenOrder("normal"); 
@@ -45,14 +45,10 @@ function FourHorsemenButtons() {
 
       <article>
         {showNormalButtons && fourHorsemen.map((horseman) => (
-          <div key={horseman}>
-            <button onClick={() => setPhase(`${horseman}A`)}>{horseman[0].toUpperCase() + horseman.slice(1)}</button>
-          </div>
+          <button onClick={() => setPhase(`${horseman}A`)}>{horseman[0].toUpperCase() + horseman.slice(1)}</button>
         ))}
         {showExpertButtons && fourHorsemen.map((horseman) => (
-          <div key={horseman}>
-            <button onClick={() => setPhase(`${horseman}B`)}>{horseman[0].toUpperCase() + horseman.slice(1)}</button>
-          </div>
+          <button onClick={() => setPhase(`${horseman}B`)}>{horseman[0].toUpperCase() + horseman.slice(1)}</button>
         ))}
       </article>
 
