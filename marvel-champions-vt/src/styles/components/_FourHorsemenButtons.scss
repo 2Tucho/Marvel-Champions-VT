@@ -1,0 +1,12 @@
+#morlockSiegeButtons {
+    #horsemenNormalButton, #horsemenExpertButton {
+        margin: 1rem;
+    }
+    
+    article {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+    }
+}
