@@ -48,7 +48,7 @@ function FourHorsemenButtons() {
           <button onClick={() => setPhase(`${horseman}A`)}>{horseman[0].toUpperCase() + horseman.slice(1)}</button>
         ))}
         {showExpertButtons && fourHorsemen.map((horseman) => (
-          <button onClick={() => setPhase(`${horseman}B`)}>{horseman[0].toUpperCase() + horseman.slice(1)}</button>
+            <button onClick={() => setPhase(`${horseman}B`)}>{horseman[0].toUpperCase() + horseman.slice(1)}</button>
         ))}
       </article>
 

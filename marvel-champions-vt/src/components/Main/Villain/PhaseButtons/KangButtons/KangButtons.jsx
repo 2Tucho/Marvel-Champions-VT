@@ -18,8 +18,14 @@ function KangButtons() {
   return <div id="kangButtons">
 
     <article id="kangModeButtons">
-      <button onClick={() => changeMode("normal")}>Normal</button>
-      <button onClick={() => changeMode("expert")}>Expert</button>
+      <button onClick={() => {
+        changeMode("normal");
+        setPhaseIIExpimg(false); /* Reset the Phase II image when changing modes */
+      }}>Normal</button>
+      <button onClick={() => {
+        changeMode("expert");
+        setPhaseIIimg(false); /* Reset the Phase II image when changing modes */
+      }}>Expert</button>
     </article>
 
     {mode === "normal" && (
