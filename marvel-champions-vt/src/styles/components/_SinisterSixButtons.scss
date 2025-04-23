@@ -1,0 +1,21 @@
+#sinisterSixButtons {
+    article {
+        div {
+            display: flex;
+            justify-content: left;
+            align-items: center;
+
+            h3, p {
+                padding-left: 0.5rem;
+                margin-bottom: 0.5rem;
+            }
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            margin-top: 0;
+        }
+    }
+}

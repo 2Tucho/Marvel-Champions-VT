@@ -37,49 +37,53 @@ function SinisterSixButtons() {
     newVillainButton(sinisterSixVillain) /* Call to the function that creates a button for each Villain clicked */
   }
 
+  /* This function changes the state of the Villain to true, so it respective button appears */
   const newVillainButton = (villain) => {
     if (villain === "doctorOctopus") {
-      setDoctorOctopus(!doctorOctopus); 
+      setDoctorOctopus(true); 
     } else if (villain === "electro") {
-      setElectro(!electro); 
+      setElectro(true); 
     } else if (villain === "hobgoblin") {
-      setHobgoblin(!hobgoblin); 
+      setHobgoblin(true); 
     } else if (villain === "kravenTheHunter") {
-      setKravenTheHunter(!kravenTheHunter); 
+      setKravenTheHunter(true); 
     } else if (villain === "scorpion") {
-      setScorpion(!scorpion); 
+      setScorpion(true); 
     } else if (villain === "vulture") {
-      setVulture(!vulture); 
+      setVulture(true); 
     } else null
   }
 
-  return <div id="sinisterSixButtons">
+  return (<div id="sinisterSixButtons">
+      <article>
+        
+        <div>
+          <h3>Sinister Six</h3>
+          <p>?</p>
+        </div>
+        
+        <ul>
+          <li onClick={() => setDoctorOctopus(!doctorOctopus)}>1 - Doctor Octopus</li>
+          <li onClick={() => setElectro(!electro)}>2 - Electro</li>
+          <li onClick={() => setHobgoblin(!hobgoblin)}>3 - Hobgoblin</li>
+          <li onClick={() => setKravenTheHunter(!kravenTheHunter)}>4 - Kraven The Hunter</li>
+          <li onClick={() => setScorpion(!scorpion)}>5 - Scorpion</li>
+          <li onClick={() => setVulture(!vulture)}>6 - Vulture</li>
+        </ul>
+      </article>
 
-    <article>
-      <h3>Sinister Six</h3>
-      <ul>
-        <li>1 - Doctor Octopus</li>
-        <li>2 - Electro</li>
-        <li>3 - Hobgoblin</li>
-        <li>4 - Kraven The Hunter</li>
-        <li>5 - Scorpion</li>
-        <li>6 - Vulture</li>
-      </ul>
-    </article>
+      <button onClick={getRandomVillain}>Random Villain</button>
 
-    <button onClick={getRandomVillain}>Random Villain</button>
-
-    <article>
-      {doctorOctopus && <button onClick={() => setPhase("doctorOctopus")}>Doctor Octopus</button>}
-      {electro && <button onClick={() => setPhase("electro")}>Electro</button>}
-      {hobgoblin && <button onClick={() => setPhase("hobgoblin")}>Hobgoblin</button>}
-      {kravenTheHunter && <button onClick={() => setPhase("kravenTheHunter")}>Kraven The Hunter</button>}
-      {scorpion && <button onClick={() => setPhase("scorpion")}>Scorpion</button>}
-      {vulture && <button onClick={() => setPhase("vulture")}>Vulture</button>}
-    </article>
+      <article>
+        {doctorOctopus && <button onClick={() => setPhase("doctorOctopus")}>Doctor Octopus</button>}
+        {electro && <button onClick={() => setPhase("electro")}>Electro</button>}
+        {hobgoblin && <button onClick={() => setPhase("hobgoblin")}>Hobgoblin</button>}
+        {kravenTheHunter && <button onClick={() => setPhase("kravenTheHunter")}>Kraven The Hunter</button>}
+        {scorpion && <button onClick={() => setPhase("scorpion")}>Scorpion</button>}
+        {vulture && <button onClick={() => setPhase("vulture")}>Vulture</button>}
+      </article>
 
     </div>
-
-}
+  )};
 
 export default SinisterSixButtons;
