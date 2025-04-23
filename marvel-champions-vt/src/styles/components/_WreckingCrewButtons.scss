@@ -1,12 +1,14 @@
-#morlockSiegeButtons {
+#wreckingCrewButtons {
     #wreckingCrewNormalButton, #wreckingCrewExpertButton {
         margin: 1rem;
     }
     
     article {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 1rem;
+        div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+        }
     }
 }
