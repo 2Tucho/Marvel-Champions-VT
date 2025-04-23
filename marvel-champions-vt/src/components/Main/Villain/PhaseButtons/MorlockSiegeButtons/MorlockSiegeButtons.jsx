@@ -24,14 +24,14 @@ function MorlockSiegeButtons() {
     }
 
     const randomIndex = Math.floor(Math.random() * remainingMarauders.length); /* Get a random index from the marauders array */
-    const randomVillain = remainingMarauders[randomIndex];
+    const randomMarauder = remainingMarauders[randomIndex];
 
     setShowVillainButtons(true); /* Set the villain state to true to show the buttons */
-    setMarauder(randomVillain); /* Set the selected villain to the state */
+    setMarauder(randomMarauder); /* Set the selected villain to the state */
     setRemainingMarauders(
-      remainingMarauders.filter(villain => villain !== randomVillain)
+      remainingMarauders.filter(villain => villain !== randomMarauder)
     ); /* Remove the selected villain from the array */
-    setPhase(`${randomVillain}A`); /* Set the phase to the selected villain so the img isn't empty. With randomVillain it does the setPhase at the moment, with the marauder state it wouldn's show */
+    setPhase(`${randomMarauder}A`); /* Set the phase to the selected villain so the img isn't empty. With randomVillain it does the setPhase at the moment, with the marauder state it wouldn's show */
   }
 
   return <div id="morlockSiegeButtons">
