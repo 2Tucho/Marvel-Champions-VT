@@ -1,5 +1,5 @@
 import React from "react";
-import { useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { PhaseButtonsContext } from "../../../../context/PhaseButtonsContext";
 import { useParams } from "react-router-dom";
 
@@ -8,8 +8,20 @@ function CardImage({toughStatus, confusedStatus, stunnedStatus}) {
 
   const villainId = useParams(); /* Get the villainId from the URL parameters */
 
+  const [showVillainImage, setShowVillainImage] = useState(true); /* State to control the visibility of the villain image */
+
+  useEffect(() => {
+    // Check if the image exists when the phase changes
+    const img = new Image();
+    img.src = `/VillainImages/${villainId.villainId}/${phase}.jpg`;
+    img.onload = () => setShowVillainImage(true); // Show the image if it loads successfully
+    img.onerror = () => setShowVillainImage(false); // Hide the image if it fails to load
+  }, [phase])
+
   return <div id="imagesContainer">
-    <img id="villainImage" src={`/VillainImages/${villainId.villainId}/${phase}.jpg`} alt={`${villainId.villainId} image`}></img>
+    {showVillainImage && (
+      <img id="villainImage" src={`/VillainImages/${villainId.villainId}/${phase}.jpg`} alt={`${villainId.villainId} image`} onError={() => setShowVillainImage(false)} /* The img hides if it fails to load *//>
+    )}
 
     {/* If  toughStatus / confusedStatus / stunnedStatus are true their respective element will show, if they are false then stay hide */}
     {toughStatus && (<img id="toughToken" className="statusToken" src={"/StatusTokens/tough.jpg"} alt="Tough Token" />)}
