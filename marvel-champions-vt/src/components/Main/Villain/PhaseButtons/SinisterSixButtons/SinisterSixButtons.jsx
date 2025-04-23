@@ -55,8 +55,8 @@ function SinisterSixButtons() {
   }
 
   return (<div id="sinisterSixButtons">
-      <article>
-        
+      <article id="sinisterSixLegend">
+
         <div>
           <h3>Sinister Six</h3>
           <p>?</p>
@@ -70,17 +70,22 @@ function SinisterSixButtons() {
           <li onClick={() => setScorpion(!scorpion)}>5 - Scorpion</li>
           <li onClick={() => setVulture(!vulture)}>6 - Vulture</li>
         </ul>
+
       </article>
 
-      <button onClick={getRandomVillain}>Random Villain</button>
+      <article id="sinisterSixButtonsContainer">
 
-      <article>
-        {doctorOctopus && <button onClick={() => setPhase("doctorOctopus")}>Doctor Octopus</button>}
-        {electro && <button onClick={() => setPhase("electro")}>Electro</button>}
-        {hobgoblin && <button onClick={() => setPhase("hobgoblin")}>Hobgoblin</button>}
-        {kravenTheHunter && <button onClick={() => setPhase("kravenTheHunter")}>Kraven The Hunter</button>}
-        {scorpion && <button onClick={() => setPhase("scorpion")}>Scorpion</button>}
-        {vulture && <button onClick={() => setPhase("vulture")}>Vulture</button>}
+        <button onClick={getRandomVillain}>Random Villain</button>
+
+        <div>
+          {doctorOctopus && <button onClick={() => setPhase("doctorOctopus")}>Doctor Octopus</button>}
+          {electro && <button onClick={() => setPhase("electro")}>Electro</button>}
+          {hobgoblin && <button onClick={() => setPhase("hobgoblin")}>Hobgoblin</button>}
+          {kravenTheHunter && <button onClick={() => setPhase("kravenTheHunter")}>Kraven The Hunter</button>}
+          {scorpion && <button onClick={() => setPhase("scorpion")}>Scorpion</button>}
+          {vulture && <button onClick={() => setPhase("vulture")}>Vulture</button>}
+          </div>
+
       </article>
 
     </div>
