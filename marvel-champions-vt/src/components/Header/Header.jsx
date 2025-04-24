@@ -20,6 +20,18 @@ function Header() {
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen); /* Toggle the menu state */
+    /* Close all Villain set menus */
+    setCoreSet(false);
+    setGreenGoblin(false);
+    setRedSkull(false);
+    setGalaxyWanted(false);
+    setMadTitan(false);
+    setSinisterMotives(false);
+    setMutantGenesis(false);
+    setMojoMania(false);
+    setNextEvo(false);
+    setAgeApocalypse(false);
+    setAgentsShield(false);
   };
 
   const toggleSet = (name) => {
@@ -63,9 +75,9 @@ function Header() {
               <button className="setButton" onClick={() => toggleSet("coreSet")}>Core Set</button>
               {coreSet && (
                 <div>
-                  <Link className="villainLink" to={`/villain/rhyno`} onClick={() => {toggleMenu(); setCoreSet(false)}}><p>Rhyno</p></Link>
-                  <Link className="villainLink" to={`/villain/klaw`} onClick={() => {toggleMenu(); setCoreSet(false)}}><p>Klaw</p></Link>
-                  <Link className="villainLink" to={`/villain/ultron`} onClick={() => {toggleMenu(); setCoreSet(false)}}><p>Ultron</p></Link>
+                  <Link className="villainLink" to={`/villain/rhyno`} onClick={toggleMenu}><p>Rhyno</p></Link>
+                  <Link className="villainLink" to={`/villain/klaw`} onClick={toggleMenu}><p>Klaw</p></Link>
+                  <Link className="villainLink" to={`/villain/ultron`} onClick={toggleMenu}><p>Ultron</p></Link>
                 </div>
               )}
             </li>
@@ -88,11 +100,11 @@ function Header() {
               <button className="setButton" onClick={() => toggleSet("redSkull")}>The Rise of Red Skull</button>
               {redSkull && (
                 <div>
-                  <Link className="villainLink" to={`/villain/crossbones`} onClick={() => {toggleMenu(); setRedSkull(false)}}><p>Crossbones</p></Link>
-                  <Link className="villainLink" to={`/villain/absorbingMan`} onClick={() => {toggleMenu(); setRedSkull(false)}}><p>Absorbing Man</p></Link>
-                  <Link className="villainLink" to={`/villain/taskmaster`} onClick={() => {toggleMenu(); setRedSkull(false)}}><p>Taskmaster</p></Link>
-                  <Link className="villainLink" to={`/villain/zola`} onClick={() => {toggleMenu(); setRedSkull(false)}}><p>Zola</p></Link>
-                  <Link className="villainLink" to={`/villain/redSkull`} onClick={() => {toggleMenu(); setRedSkull(false)}}><p>Red Skull</p></Link>
+                  <Link className="villainLink" to={`/villain/crossbones`} onClick={toggleMenu}><p>Crossbones</p></Link>
+                  <Link className="villainLink" to={`/villain/absorbingMan`} onClick={toggleMenu}><p>Absorbing Man</p></Link>
+                  <Link className="villainLink" to={`/villain/taskmaster`} onClick={toggleMenu}><p>Taskmaster</p></Link>
+                  <Link className="villainLink" to={`/villain/zola`} onClick={toggleMenu}><p>Zola</p></Link>
+                  <Link className="villainLink" to={`/villain/redSkull`} onClick={toggleMenu}><p>Red Skull</p></Link>
                 </div>
               )}
             </li>
@@ -105,11 +117,11 @@ function Header() {
               <button className="setButton" onClick={() => toggleSet("galaxyWanted")}>Galaxy's Most Wanted</button>
               {galaxyWanted && (
                 <div>
-                  <a href="">Brotherhood of Badoon</a>
-                  <a href="">Collector 1</a>
-                  <a href="">Collector 2</a>
-                  <a href="">Nebula</a>
-                  <a href="">Ronan</a>
+                  <Link className="villainLink" to={`/villain/drang`} onClick={toggleMenu}><p>Brotherhood of Badoon</p></Link>
+                  <Link className="villainLink" to={`/villain/collector1`} onClick={toggleMenu}><p>Collector 1</p></Link>
+                  <Link className="villainLink" to={`/villain/collector2`} onClick={toggleMenu}><p>Collector 2</p></Link>
+                  <Link className="villainLink" to={`/villain/nebula`} onClick={toggleMenu}><p>Nebula</p></Link>
+                  <Link className="villainLink" to={`/villain/ronan`} onClick={toggleMenu}><p>Ronan</p></Link>
                 </div>
               )}
             </li>
@@ -118,28 +130,28 @@ function Header() {
               <button className="setButton" onClick={() => toggleSet("madTitan")}>The Mad Titan's Shadow</button>
               {madTitan && (
                 <div>
-                  <a href="">Ebony Maw</a>
-                  <a href="">Tower Defense</a>
-                  <a href="">Thanos</a>
-                  <a href="">Hela</a>
-                  <a href="">Loki</a>
+                  <Link className="villainLink" to={`/villain/ebonyMaw`} onClick={toggleMenu}><p>Ebony Maw</p></Link>
+                  <Link className="villainLink" to={`/villain/towerDefense`} onClick={toggleMenu}><p>Tower Defense</p></Link>
+                  <Link className="villainLink" to={`/villain/thanos`} onClick={toggleMenu}><p>Thanos</p></Link>
+                  <Link className="villainLink" to={`/villain/hela`} onClick={toggleMenu}><p>Hela</p></Link>
+                  <Link className="villainLink" to={`/villain/loki`} onClick={toggleMenu}><p>Loki</p></Link>
                 </div>
               )}
             </li>
 
             <li className="setName">
-              <a href="#contact" className="setButton">The Hood</a>
+              <Link className="setButton" to={`/villain/theHood`} onClick={toggleMenu}>The Hood</Link>
             </li>
 
             <li>
               <button className="setButton" onClick={() => toggleSet("sinisterMotives")}>Sinister Motives</button>
               {sinisterMotives && (
                 <div>
-                  <a href="">Sandman</a>
-                  <a href="">Venom</a>
-                  <a href="">Mysterio</a>
-                  <a href="">Sinister Six</a>
-                  <a href="">Venom Goblin</a>
+                  <Link className="villainLink" to={`/villain/sandman`} onClick={toggleMenu}><p>Sandman</p></Link>
+                  <Link className="villainLink" to={`/villain/venom`} onClick={toggleMenu}><p>Venom</p></Link>
+                  <Link className="villainLink" to={`/villain/mysterio`} onClick={toggleMenu}><p>Mysterio</p></Link>
+                  <Link className="villainLink" to={`/villain/sinisterSix`} onClick={toggleMenu}><p>Sinister Six</p></Link>
+                  <Link className="villainLink" to={`/villain/venomGoblin`} onClick={toggleMenu}><p>Venom Goblin</p></Link>
                 </div>
               )}
             </li>
@@ -148,11 +160,11 @@ function Header() {
               <button className="setButton" onClick={() => toggleSet("mutantGenesis")}>Mutant Genesis</button>
               {mutantGenesis && (
                 <div>
-                  <a href="">Sabretooth</a>
-                  <a href="">Project Wideawake</a>
-                  <a href="">Master Mold</a>
-                  <a href="">Mansion Attack</a>
-                  <a href="">Magneto</a>
+                  <Link className="villainLink" to={`/villain/sabretooth`} onClick={toggleMenu}><p>Sabretooth</p></Link>
+                  <Link className="villainLink" to={`/villain/sentinel`} onClick={toggleMenu}><p>Project Wideawake</p></Link>
+                  <Link className="villainLink" to={`/villain/masterMold`} onClick={toggleMenu}><p>Master Mold</p></Link>
+                  <Link className="villainLink" to={`/villain/mansionAttack`} onClick={toggleMenu}><p>Mansion Attack</p></Link>
+                  <Link className="villainLink" to={`/villain/magneto`} onClick={toggleMenu}><p>Magneto</p></Link>
                 </div>
               )}
             </li>
@@ -161,9 +173,9 @@ function Header() {
               <button className="setButton" onClick={() => toggleSet("mojoMania")}>Mojo Mania</button>
               {mojoMania && (
                 <div>
-                  <a href="">Magog</a>
-                  <a href="">Spiral</a>
-                  <a href="">Mojo</a>
+                  <Link className="villainLink" to={`/villain/magog`} onClick={toggleMenu}><p>Magog</p></Link>
+                  <Link className="villainLink" to={`/villain/spiral`} onClick={toggleMenu}><p>Spiral</p></Link>
+                  <Link className="villainLink" to={`/villain/mojo`} onClick={toggleMenu}><p>Mojo</p></Link>
                 </div>
               )}
             </li>
@@ -172,11 +184,11 @@ function Header() {
               <button className="setButton" onClick={() => toggleSet("nextEvo")}>Next Evolution</button>
               {nextEvo && (
                 <div>
-                  <a href="">Morlock Siege</a>
-                  <a href="">On the Run</a>
-                  <a href="">Juggernaut</a>
-                  <a href="">Mister Sinister</a>
-                  <a href="">Stryfe</a>
+                  <Link className="villainLink" to={`/villain/morlockSiege`} onClick={toggleMenu}><p>Morlock Siege</p></Link>
+                  <Link className="villainLink" to={`/villain/ontheRun`} onClick={toggleMenu}><p>On the Run</p></Link>
+                  <Link className="villainLink" to={`/villain/juggernaut`} onClick={toggleMenu}><p>Juggernaut</p></Link>
+                  <Link className="villainLink" to={`/villain/misterSinister`} onClick={toggleMenu}><p>Mister Sinister</p></Link>
+                  <Link className="villainLink" to={`/villain/stryfe`} onClick={toggleMenu}><p>Stryfe</p></Link>
                 </div>
               )}
             </li>
@@ -185,11 +197,11 @@ function Header() {
               <button className="setButton" onClick={() => toggleSet("ageApocalypse")}>The Age of Apocalypse</button>
               {ageApocalypse && (
                 <div>
-                  <a href="">Unus</a>
-                  <a href="">Four Horseman</a>
-                  <a href="">Apocalypse</a>
-                  <a href="">Dark Beast</a>
-                  <a href="">Apocalypse (En Sabah Nur)</a>
+                  <Link className="villainLink" to={`/villain/unus`} onClick={toggleMenu}><p>Unus</p></Link>
+                  <Link className="villainLink" to={`/villain/fourHorsemen`} onClick={toggleMenu}><p>Four Horsemen</p></Link>
+                  <Link className="villainLink" to={`/villain/apocalypse`} onClick={toggleMenu}><p>Apocalypse</p></Link>
+                  <Link className="villainLink" to={`/villain/darkBeast`} onClick={toggleMenu}><p>Dark Beast</p></Link>
+                  <Link className="villainLink" to={`/villain/enSabahNur`} onClick={toggleMenu}><p>Apocalypse (En Sabah Nur)</p></Link>
                 </div>
               )}
             </li>
@@ -198,11 +210,11 @@ function Header() {
               <button className="setButton" onClick={() => toggleSet("agentsShield")}>Agents of S.H.I.E.L.D.</button>
               {agentsShield && (
                 <div>
-                  <a href="">Black Widow</a>
-                  <a href="">Batroc</a>
-                  <a href="">M.O.D.O.K.</a>
-                  <a href="">Thunderbolts</a>
-                  <a href="">Baron Zemo</a>
+                  <Link className="villainLink" to={`/villain/blackWidow`} onClick={toggleMenu}><p>Black Widow</p></Link>
+                  <Link className="villainLink" to={`/villain/batroc`} onClick={toggleMenu}><p>Batroc</p></Link>
+                  <Link className="villainLink" to={`/villain/modok`} onClick={toggleMenu}><p>M.O.D.O.K.</p></Link>
+                  <Link className="villainLink" to={`/villain/thunderbolts`} onClick={toggleMenu}><p>Thunderbolts</p></Link>
+                  <Link className="villainLink" to={`/villain/baronZemo`} onClick={toggleMenu}><p>Baron Zemo</p></Link>
                 </div>
               )}
             </li>
