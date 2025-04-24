@@ -1,5 +1,6 @@
 #sinisterSixButtons {
     display: flex;
+    justify-content: center;
     margin-top: 1rem;
 
     #sinisterSixLegend {
@@ -43,6 +44,34 @@
             button {
                 margin: 0.25rem;
             }
+        }
+    }
+
+    #sinisterSixModal {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(219, 219, 219);
+        width: 90%;
+
+        div {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+            margin-bottom: 0.75rem;
+
+            h3 {
+                margin: 0;
+            }
+
+            button {
+                position: relative;
+                left: 21%;
+            }
+        }
+
+        p {
+            margin: 1.5rem 1.5rem 1rem 1.5rem;
         }
     }
 }

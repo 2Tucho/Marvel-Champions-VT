@@ -19,6 +19,9 @@ function SinisterSixButtons() {
   const [scorpion, setScorpion] = useState(false); /* State to show/hide Scorpion's button */
   const [vulture, setVulture] = useState(false); /* State to show/hide Vulture's button */
 
+  /* State to control modal visibility */
+  const [showModal, setShowModal] = useState(false);
+
 
   const {setPhase} = useContext(PhaseButtonsContext);
 
@@ -59,7 +62,7 @@ function SinisterSixButtons() {
 
         <div>
           <h3>Sinister Six</h3>
-          <p>?</p>
+          <p onClick={() => setShowModal(true)}>?</p>
         </div>
         
         <ul>
@@ -87,6 +90,17 @@ function SinisterSixButtons() {
           </div>
 
       </article>
+
+      {/* Modal */}
+      {showModal && (
+        <div id="sinisterSixModal">
+          <div>
+            <h3>Sinister Six Info</h3>
+            <button onClick={() => setShowModal(false)}>X</button>
+          </div>
+          <p>Here you have the order of activation of the Villains. Also, if you click on any Villain it will appear as an active with its respective button to handle it. To erase a Villain you only have to click it in the list.</p>
+        </div>
+      )}
 
     </div>
   )};
