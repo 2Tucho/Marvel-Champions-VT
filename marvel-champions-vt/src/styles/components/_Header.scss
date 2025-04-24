@@ -38,6 +38,8 @@ header {
             text-decoration: none;
             font-size: 1.25rem;
             font-weight: bold;
+            margin-top: 0.25rem;
+            margin-bottom: 0.25rem;
         }
 
         ul {
@@ -48,22 +50,17 @@ header {
             li {
                 display: flex;
                 flex-direction: column;
-                margin: 1rem 0;
+                margin: 1.5rem 0;
 
                 div {
                     display: flex;
                     flex-direction: column;
+                    margin-top: 0.25rem;
 
-                    a {
-                        padding: 0.25rem 0;
+                    p {
+                        margin: 0.25rem 0;
                     }
                 }
-
-                a {
-                    color: #fff;
-                    text-decoration: none;
-                }
-
             }
         }
     }
