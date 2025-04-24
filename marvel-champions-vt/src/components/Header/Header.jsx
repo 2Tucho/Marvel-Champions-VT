@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false); /* State to toggle the menu */
@@ -62,9 +63,9 @@ function Header() {
               <button className="setButton" onClick={() => toggleSet("coreSet")}>Core Set</button>
               {coreSet && (
                 <div>
-                  <a href="">Rhyno</a>
-                  <a href="">Klaw</a>
-                  <a href="">Ultron</a>
+                  <Link className="villainLink" to={`/villain/rhyno`} onClick={() => {toggleMenu(); setCoreSet(false)}}><p>Rhyno</p></Link>
+                  <Link className="villainLink" to={`/villain/klaw`} onClick={() => {toggleMenu(); setCoreSet(false)}}><p>Klaw</p></Link>
+                  <Link className="villainLink" to={`/villain/ultron`} onClick={() => {toggleMenu(); setCoreSet(false)}}><p>Ultron</p></Link>
                 </div>
               )}
             </li>
@@ -73,31 +74,31 @@ function Header() {
               <button className="setButton" onClick={() => toggleSet("greenGoblin")}>The Green Goblin</button>
               {greenGoblin && (
                 <div>
-                  <a href="#about">Risky Business</a>
-                  <a href="">Mutagen Formula</a>
+                  <Link className="villainLink" to={`/villain/riskyBusiness`} onClick={toggleMenu}><p>Risky Business</p></Link>
+                  <Link className="villainLink" to={`/villain/mutagenFormula`} onClick={toggleMenu}><p>Mutagen Formula</p></Link>
                 </div>
               )}
             </li>
             
             <li className="setName">
-              <a href="#contact" className="setButton">The Wrecking Crew</a>
+              <Link className="setButton" to={`/villain/theWreckingCrew`} onClick={toggleMenu}>The Wrecking Crew</Link>
             </li>
 
             <li>
               <button className="setButton" onClick={() => toggleSet("redSkull")}>The Rise of Red Skull</button>
               {redSkull && (
                 <div>
-                  <a href="">Crossbones</a>
-                  <a href="">Absorbing Man</a>
-                  <a href="">Taskmaster</a>
-                  <a href="">Zola</a>
-                  <a href="">Red Skull</a>
+                  <Link className="villainLink" to={`/villain/crossbones`} onClick={() => {toggleMenu(); setRedSkull(false)}}><p>Crossbones</p></Link>
+                  <Link className="villainLink" to={`/villain/absorbingMan`} onClick={() => {toggleMenu(); setRedSkull(false)}}><p>Absorbing Man</p></Link>
+                  <Link className="villainLink" to={`/villain/taskmaster`} onClick={() => {toggleMenu(); setRedSkull(false)}}><p>Taskmaster</p></Link>
+                  <Link className="villainLink" to={`/villain/zola`} onClick={() => {toggleMenu(); setRedSkull(false)}}><p>Zola</p></Link>
+                  <Link className="villainLink" to={`/villain/redSkull`} onClick={() => {toggleMenu(); setRedSkull(false)}}><p>Red Skull</p></Link>
                 </div>
               )}
             </li>
 
             <li className="setName">
-              <a href="" className="setButton">The Once and Future Kang</a>
+              <Link className="setButton" to={`/villain/kang`} onClick={toggleMenu}>The Once And Future Kang</Link>
             </li>
 
             <li>
