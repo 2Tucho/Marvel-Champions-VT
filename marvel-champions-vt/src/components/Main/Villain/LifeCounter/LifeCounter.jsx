@@ -1,37 +1,28 @@
 import React from "react";
-import { useState } from "react";
+import { useParams } from "react-router-dom";
+import FourHorsemenLifeCounter from "./FourHorsemenLifeCounter";
+import GeneralLifeCounter from "./GeneralLifeCounter";
+import KangLifeCounter from "./KangLifeCounter";
+import RiskyBusinessLifeCounter from "./RiskyBusinessLifeCounter";
+import SinisterSixLifeCounter from "./SinisterSixLifeCounter";
+import TowerDefenseLifeCounter from  "./TowerDefenseLifeCounter";
+import WreckingCrewLifeCounter from "./WreckingCrewLifeCounter";
 
 function LifeCounter() {
-  const [count, setCount] = useState(0)
+  const villainId = useParams(); /* Get the villainId from the URL parameters */
 
-  const handleInputChange = (e) => {
-    const value = e.target.value;
-    /* A function to handle the input in case the user wants to change the number manually, so it doesn't return to "0" when the input is empty. */
-    if (value === "") {
-      setCount(value); /* Set the state to an empty string */
-    } else {
-      setCount(Number(value)); /* Convert the value to a number, because the input is a string */
-    }
+  /* Map the villainId to the corresponding LifeCounter component */
+  const buttonComponents = {
+    fourHorsemen: <FourHorsemenLifeCounter />,
+    kang: <KangLifeCounter />,
+    riskyBusiness: <RiskyBusinessLifeCounter />,
+    sinisterSix: <SinisterSixLifeCounter />,
+    towerDefense: <TowerDefenseLifeCounter />,
+    theWreckingCrew: <WreckingCrewLifeCounter />,
   };
 
-  return (
-    <div id="lifeCounter">
+  return <div>{buttonComponents[villainId.villainId] || <GeneralLifeCounter />}</div>; {/* Render the counter component based on the villainId. If no specific are found, render the GeneralLifeCounter component. */}
 
-      <p>HP:</p>
-
-      <input type="number" value={count} onChange={handleInputChange} />
-
-      <div id="buttonContainer">
-        <button onClick={() => setCount((count) => count + 1)}> {/* Button to add 1 to the Live counter */}
-          +
-        </button>
-        <button onClick={() => setCount((count) => count - 1)}> {/* Button to substract 1 to the Live counter */}
-          -
-        </button>
-      </div>
-      
-  </div>
-  );
 }
 
 export default LifeCounter;
