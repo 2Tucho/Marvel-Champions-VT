@@ -22,7 +22,7 @@ function LokiButtons() {
 
   const {setPhase} = useContext(PhaseButtonsContext);
 
-
+  /* Function to show a random version of Loki */
   const chooseRandomVillain = () => {
     if (remainingLokis.length === 0) {
       return; /* Exit if there aren't forms left */
