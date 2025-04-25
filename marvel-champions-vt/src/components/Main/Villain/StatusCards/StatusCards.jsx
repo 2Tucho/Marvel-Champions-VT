@@ -121,7 +121,7 @@ function StatusCards ({setToughStatus, setConfusedStatus, setStunnedStatus}) {
         )}
       </div>
         
-    </article>;
+    </article>
   </div>
 }
 
