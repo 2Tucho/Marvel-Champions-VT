@@ -29,7 +29,7 @@ function TowerDefenseLifeCounter() {
     
   };
 
-  return (<div id="towerDeffenseLifeCounter">
+  return (<div className="lifeCounter">
 
       {phase.includes("proxima") ? <div>
 
@@ -37,7 +37,7 @@ function TowerDefenseLifeCounter() {
 
         <input type="number" value={countProxima} onChange={(e) => handleInputChange(e, "proxima")} />
 
-        <div id="buttonContainer">
+        <div>
           <button onClick={() => steCountProxima((count) => count + 1)}> {/* Button to add 1 to the Live counter */}
             +
           </button>
@@ -52,7 +52,7 @@ function TowerDefenseLifeCounter() {
 
         <input type="number" value={countCorvus} onChange={(e) => handleInputChange(e, "corvus")} />
 
-        <div id="buttonContainer">
+        <div>
           <button onClick={() => setCountCorvus((count) => count + 1)}> {/* Button to add 1 to the Live counter */}
             +
           </button>
