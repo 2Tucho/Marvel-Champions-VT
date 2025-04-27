@@ -15,13 +15,13 @@ function GeneralLifeCounter() {
   };
 
   return (
-    <div id="lifeCounter">
+    <div id="generalLifeCounter">
 
       <p>HP:</p>
 
       <input type="number" value={count} onChange={handleInputChange} />
 
-      <div id="buttonContainer">
+      <div id="plusAndMinusButtons">
         <button onClick={() => setCount((count) => count + 1)}> {/* Button to add 1 to the Live counter */}
           +
         </button>
