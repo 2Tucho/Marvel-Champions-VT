@@ -1,5 +1,5 @@
 import React from "react";
-import {useContext} from "react";
+import { useContext } from "react";
 import { PhaseButtonsContext } from "../../../../../context/PhaseButtonsContext";
 
 function TowerDefenseButtons() { 
