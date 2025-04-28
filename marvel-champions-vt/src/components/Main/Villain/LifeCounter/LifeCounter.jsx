@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import FourHorsemenLifeCounter from "./FourHorsemenLifeCounter";
 import GeneralLifeCounter from "./GeneralLifeCounter";
 import KangLifeCounter from "./KangLifeCounter";
+import MansionAttackVillainCounter from "./MansionAttackVillainCounter/MansionAttackVillainCounter";
 import RiskyBusinessLifeCounter from "./RiskyBusinessLifeCounter";
 import SinisterSixLifeCounter from "./SinisterSixLifeCounter";
 import TowerDefenseLifeCounter from  "./TowerDefenseLifeCounter";
@@ -15,6 +16,7 @@ function LifeCounter() {
   const buttonComponents = {
     fourHorsemen: <FourHorsemenLifeCounter />,
     kang: <KangLifeCounter />,
+    mansionAttack: <MansionAttackVillainCounter />,
     riskyBusiness: <RiskyBusinessLifeCounter />,
     sinisterSix: <SinisterSixLifeCounter />,
     towerDefense: <TowerDefenseLifeCounter />,
