@@ -5,9 +5,9 @@ import { PhaseButtonsContext } from "../../../../../context/PhaseButtonsContext"
 function WreckingCrewLifeCounter() {
   /* States to keep their respectives HP */
   const [countBulldozer, setCountBulldozer] = useState(0);
-  const [countPileDriver, steCountPileDriver] = useState(0);
+  const [countPileDriver, setCountPileDriver] = useState(0);
   const [countThunderball, setCountThunderball] = useState(0);
-  const [countWrecker, steCountWrecker] = useState(0);
+  const [countWrecker, setCountWrecker] = useState(0);
 
   const {phase} = useContext(PhaseButtonsContext);
 
@@ -23,9 +23,9 @@ function WreckingCrewLifeCounter() {
       }
     } else if (type === "piledriver") {
       if (value === "") {
-        steCountPileDriver(value); /* Set the state to an empty string */
+        setCountPileDriver(value); /* Set the state to an empty string */
       } else {
-        steCountPileDriver(Number(value)); /* Convert the value to a number, because the input is a string */
+        setCountPileDriver(Number(value)); /* Convert the value to a number, because the input is a string */
       }
     } else if (type === "thunderball") {
       if (value === "") {
@@ -35,9 +35,9 @@ function WreckingCrewLifeCounter() {
       }
     } else {
       if (value === "") {
-        steCountWrecker(value); /* Set the state to an empty string */
+        setCountWrecker(value); /* Set the state to an empty string */
       } else {
-        steCountWrecker(Number(value)); /* Convert the value to a number, because the input is a string */
+        setCountWrecker(Number(value)); /* Convert the value to a number, because the input is a string */
       }
     }
     
@@ -66,10 +66,10 @@ function WreckingCrewLifeCounter() {
       <input type="number" value={countPileDriver} onChange={(e) => handleInputChange(e, "piledriver")} />
 
       <div>
-        <button onClick={() => steCountPileDriver((count) => count + 1)}> {/* Button to add 1 to the Live counter */}
+        <button onClick={() => setCountPileDriver((count) => count + 1)}> {/* Button to add 1 to the Live counter */}
           +
         </button>
-        <button onClick={() => steCountPileDriver((count) => count - 1)}> {/* Button to substract 1 to the Live counter */}
+        <button onClick={() => setCountPileDriver((count) => count - 1)}> {/* Button to substract 1 to the Live counter */}
           -
         </button>
       </div>
@@ -94,10 +94,10 @@ function WreckingCrewLifeCounter() {
       <input type="number" value={countWrecker} onChange={(e) => handleInputChange(e, "wrecker")} />
 
       <div>
-        <button onClick={() => steCountWrecker((count) => count + 1)}> {/* Button to add 1 to the Live counter */}
+        <button onClick={() => setCountWrecker((count) => count + 1)}> {/* Button to add 1 to the Live counter */}
           +
         </button>
-        <button onClick={() => steCountWrecker((count) => count - 1)}> {/* Button to substract 1 to the Live counter */}
+        <button onClick={() => setCountWrecker((count) => count - 1)}> {/* Button to substract 1 to the Live counter */}
           -
         </button>
       </div>
