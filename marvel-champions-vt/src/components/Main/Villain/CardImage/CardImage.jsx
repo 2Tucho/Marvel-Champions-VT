@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useContext, useEffect } from "react";
 import { PhaseButtonsContext } from "../../../../context/PhaseButtonsContext";
 import { useParams } from "react-router-dom";
+import JuggernautMomentumCounters from "./JuggernautMomentumCounters/JuggernautMomentumCounters"
 
 function CardImage({toughStatus, confusedStatus, stunnedStatus}) {
   const { phase } = useContext(PhaseButtonsContext); /* Get the phase from the context */
@@ -11,11 +12,11 @@ function CardImage({toughStatus, confusedStatus, stunnedStatus}) {
   const [showVillainImage, setShowVillainImage] = useState(true); /* State to control the visibility of the villain image */
 
   useEffect(() => {
-    // Check if the image exists when the phase changes
+    /* Check if the image exists when the phase changes */
     const img = new Image();
     img.src = `/VillainImages/${villainId.villainId}/${phase}.jpg`;
-    img.onload = () => setShowVillainImage(true); // Show the image if it loads successfully
-    img.onerror = () => setShowVillainImage(false); // Hide the image if it fails to load
+    img.onload = () => setShowVillainImage(true); /* Show the image if it loads successfully */
+    img.onerror = () => setShowVillainImage(false); /* Hide the image if it fails to load */
   }, [phase])
 
   return <div id="imagesContainer">
@@ -29,6 +30,8 @@ function CardImage({toughStatus, confusedStatus, stunnedStatus}) {
     {confusedStatus && (<img id="confusedToken" className="statusToken" src={"/StatusTokens/confused.jpg"} alt="Confused Token" />)}
 
     {stunnedStatus && (<img id="stunnedToken" className="statusToken" src={"/StatusTokens/stunned.jpg"} alt="Stunned Token" />)}
+
+    {villainId.villainId == "juggernaut" ? <JuggernautMomentumCounters /> : null} {/* To show the counters only in the Juggernaut's page */}
   </div>;
 
 }
