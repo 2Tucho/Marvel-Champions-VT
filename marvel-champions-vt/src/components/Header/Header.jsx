@@ -66,7 +66,11 @@ function Header() {
         <button onClick={() => toggleMenu()}>
           ☰ {/* Burger icon */}
         </button>
-        <h1>Marvel Champions</h1>
+        <Link to={`/`} onClick={() => {
+          if (menuOpen) {
+            toggleMenu(); /* Call toggleMenu only if menuOpen is true so it closes when I click here */
+          }
+        }}><h1>Marvel Champions</h1></Link>
       </div>
       {menuOpen && (
         <nav>
