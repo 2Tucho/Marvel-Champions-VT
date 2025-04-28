@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { PhaseButtonsContext } from "../../../../../context/PhaseButtonsContext";
 
 function SinisterSixButtons() { 
@@ -25,6 +25,16 @@ function SinisterSixButtons() {
 
   const {setPhase} = useContext(PhaseButtonsContext);
 
+  /* Function to handle click to a Villain in the Legend. If false it should add the Villain to sinisterSix again so it can get from the random button */
+  const toggleVillain = (villain, isSelected) => {
+    if (isSelected) {
+      // Remove the villain from the sinisterSix array
+      setSinisterSix(sinisterSix.filter((v) => v !== villain));
+    } else {
+      // Add the villain to the sinisterSix array
+      setSinisterSix([...sinisterSix, villain]);
+    }
+  };
 
   const getRandomVillain = () => {
     if (sinisterSix.length === 0) {
@@ -66,13 +76,61 @@ function SinisterSixButtons() {
         </div>
         
         <ul>
-          <li onClick={() => setDoctorOctopus(!doctorOctopus)}>1 - Doctor Octopus</li>
-          <li onClick={() => setElectro(!electro)}>2 - Electro</li>
-          <li onClick={() => setHobgoblin(!hobgoblin)}>3 - Hobgoblin</li>
-          <li onClick={() => setKravenTheHunter(!kravenTheHunter)}>4 - Kraven The Hunter</li>
-          <li onClick={() => setScorpion(!scorpion)}>5 - Scorpion</li>
-          <li onClick={() => setVulture(!vulture)}>6 - Vulture</li>
-        </ul>
+  <li
+    onClick={() => {
+      const newState = !doctorOctopus; /* Calculate the new state */
+      setDoctorOctopus(newState); /* Update the state */
+      toggleVillain("doctorOctopus", newState); /* Pass the new state to toggleVillain */
+    }}
+  >
+    1 - Doctor Octopus
+  </li>
+  <li
+    onClick={() => {
+      const newState = !electro;
+      setElectro(newState);
+      toggleVillain("electro", newState);
+    }}
+  >
+    2 - Electro
+  </li>
+  <li
+    onClick={() => {
+      const newState = !hobgoblin;
+      setHobgoblin(newState);
+      toggleVillain("hobgoblin", newState);
+    }}
+  >
+    3 - Hobgoblin
+  </li>
+  <li
+    onClick={() => {
+      const newState = !kravenTheHunter;
+      setKravenTheHunter(newState);
+      toggleVillain("kravenTheHunter", newState);
+    }}
+  >
+    4 - Kraven The Hunter
+  </li>
+  <li
+    onClick={() => {
+      const newState = !scorpion;
+      setScorpion(newState);
+      toggleVillain("scorpion", newState);
+    }}
+  >
+    5 - Scorpion
+  </li>
+  <li
+    onClick={() => {
+      const newState = !vulture;
+      setVulture(newState);
+      toggleVillain("vulture", newState);
+    }}
+  >
+    6 - Vulture
+  </li>
+</ul>
 
       </article>
 

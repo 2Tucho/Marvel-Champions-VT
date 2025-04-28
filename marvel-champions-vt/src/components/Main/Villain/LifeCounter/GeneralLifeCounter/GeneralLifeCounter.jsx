@@ -15,7 +15,7 @@ function GeneralLifeCounter() {
   };
 
   return (
-    <div id="generalLifeCounter">
+    <div className="lifeCounter">
 
       <p>HP:</p>
 
