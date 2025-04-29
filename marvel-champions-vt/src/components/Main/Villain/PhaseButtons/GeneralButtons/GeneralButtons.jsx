@@ -1,9 +1,9 @@
 import React from "react";
-import {useContext} from "react";
+import { useContext } from "react";
 import { PhaseButtonsContext } from "../../../../../context/PhaseButtonsContext";
 
 function GeneralButtons() { 
-  const {setPhase} = useContext(PhaseButtonsContext);
+  const { setPhase } = useContext(PhaseButtonsContext);
 
   return <div>
     

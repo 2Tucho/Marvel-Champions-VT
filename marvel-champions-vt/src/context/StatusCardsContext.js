@@ -1,4 +1,4 @@
 import { createContext } from 'react';
 
 /* Crear el contexto */
-export const PhaseButtonsContext = createContext();
+export const StatusCardsContext = createContext();

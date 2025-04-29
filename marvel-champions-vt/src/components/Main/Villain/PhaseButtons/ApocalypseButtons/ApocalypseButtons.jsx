@@ -3,7 +3,7 @@ import {useContext} from "react";
 import { PhaseButtonsContext } from "../../../../../context/PhaseButtonsContext";
 
 function ApocalypseButtons() { 
-  const {setPhase} = useContext(PhaseButtonsContext);
+  const { setPhase } = useContext(PhaseButtonsContext);
 
   return <div id="apocalypseButtons">
 
