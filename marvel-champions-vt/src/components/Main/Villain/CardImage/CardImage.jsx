@@ -1,11 +1,13 @@
 import React from "react";
 import { useState, useContext, useEffect } from "react";
 import { PhaseButtonsContext } from "../../../../context/PhaseButtonsContext";
+import { MomentumCountersJuggernaut } from "../../../../context/MomentumCountersJuggernaut";
 import { useParams } from "react-router-dom";
 import JuggernautMomentumCounters from "./JuggernautMomentumCounters/JuggernautMomentumCounters"
 
-function CardImage({toughStatus, confusedStatus, stunnedStatus}) {
+function CardImage() {
   const { phase } = useContext(PhaseButtonsContext); /* Get the phase from the context */
+  const {toughStatus, confusedStatus, stunnedStatus } = useContext(MomentumCountersJuggernaut); /* Get the status Cars states from the context */
 
   const villainId = useParams(); /* Get the villainId from the URL parameters */
 
@@ -31,7 +33,7 @@ function CardImage({toughStatus, confusedStatus, stunnedStatus}) {
 
     {stunnedStatus && (<img id="stunnedToken" className="statusToken" src={"/StatusTokens/stunned.jpg"} alt="Stunned Token" />)}
 
-    {villainId.villainId == "juggernaut" ? <JuggernautMomentumCounters /> : null} {/* To show the counters only in the Juggernaut's page */}
+    {villainId.villainId === "juggernaut" ? <JuggernautMomentumCounters /> : null} {/* To show the counters only in the Juggernaut's page */}
   </div>;
 
 }
