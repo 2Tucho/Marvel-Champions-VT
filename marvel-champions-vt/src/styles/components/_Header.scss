@@ -30,6 +30,7 @@ header {
 
     nav {
         position: absolute;
+        z-index: 2; /* It is higher than the z-index in JuggernautMomentumCounters so it is displayed a layer earlier than the other  */
         top: 50px;
         left: 10px; /* Align the menu to the left */
         background-color: #444;
