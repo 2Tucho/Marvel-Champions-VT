@@ -4,7 +4,8 @@ import { useParams } from "react-router-dom";
 
 import { PhaseButtonsContext } from "../../../../context/PhaseButtonsContext";
 import { StatusCardsContext } from "../../../../context/StatusCardsContext";
-import JuggernautMomentumCounters from "./JuggernautMomentumCounters/JuggernautMomentumCounters"
+import JuggernautMomentumCounters from "./JuggernautMomentumCounters/JuggernautMomentumCounters";
+import SpiralTeleportCounters from "./SpiralTeleportCounters/SpiralTeleportCounters";
 
 function CardImage() {
   const { phase } = useContext(PhaseButtonsContext); /* Get the phase from the context */
@@ -34,7 +35,7 @@ function CardImage() {
 
     {stunnedStatus && (<img id="stunnedToken" className="statusToken" src={"/StatusTokens/stunned.jpg"} alt="Stunned Token" />)}
 
-    {villainId.villainId === "juggernaut" ? <JuggernautMomentumCounters /> : null} {/* To show the counters only in the Juggernaut's page */}
+    {villainId.villainId === "juggernaut" ? <JuggernautMomentumCounters /> : villainId.villainId === "spiral" ? <SpiralTeleportCounters /> : null} {/* To show the counters only in the Juggernaut's page */}
   </div>;
 
 }
