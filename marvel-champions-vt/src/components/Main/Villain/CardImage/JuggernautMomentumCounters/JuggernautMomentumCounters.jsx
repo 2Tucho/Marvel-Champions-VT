@@ -1,11 +1,11 @@
 import React from "react";
-import { useState, useContext } from "react";
-import { MomentumCountersJuggernaut } from "../../../../../context/MomentumCountersJuggernaut";
+import { useContext } from "react";
+import { MomentumCountersJuggernautContext } from "../../../../../context/MomentumCountersJuggernautContext";
 
 function JuggernautMomentumCounters() {
-  const {momentumCounters, setMomentumCounters} = useContext(MomentumCountersJuggernaut);
+  const { momentumCounters, setMomentumCounters } = useContext(MomentumCountersJuggernautContext);
 
-  return (<button id="momentumCounter" onClick={() => setMomentumCounters((count) => count + 1)}>{momentumCounters ? momentumCounters : 0}</button>);
+  return (<button id="momentumCounter" onClick={() => setMomentumCounters((count) => count + 1)}>{momentumCounters}</button>);
 }
 
 export default JuggernautMomentumCounters;
