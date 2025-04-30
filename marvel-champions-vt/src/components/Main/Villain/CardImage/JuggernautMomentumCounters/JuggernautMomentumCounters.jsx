@@ -5,7 +5,7 @@ import { MomentumCountersJuggernautContext } from "../../../../../context/Moment
 function JuggernautMomentumCounters() {
   const { momentumCounters, setMomentumCounters } = useContext(MomentumCountersJuggernautContext);
 
-  return (<button id="momentumCounter" onClick={() => setMomentumCounters((count) => count + 1)}>{momentumCounters}</button>);
+  return (<button id="momentumCounter" onClick={() => setMomentumCounters((count) => count + 1)} style={{fontSize: momentumCounters > 9 ? "3rem" : "4rem"}}>{momentumCounters}</button>);
 }
 
 export default JuggernautMomentumCounters;
