@@ -35,6 +35,7 @@ function Villain () {
             {/* Image of the villain, depending on the phase */}
             <CardImage
               phase={phase}
+              setPhase={setPhase}
               toughStatus={toughStatus}
               confusedStatus={confusedStatus}
               stunnedStatus={stunnedStatus}

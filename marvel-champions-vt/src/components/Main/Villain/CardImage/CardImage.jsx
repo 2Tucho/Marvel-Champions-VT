@@ -8,12 +8,17 @@ import JuggernautMomentumCounters from "./JuggernautMomentumCounters/JuggernautM
 import SpiralTeleportCounters from "./SpiralTeleportCounters/SpiralTeleportCounters";
 
 function CardImage() {
-  const { phase } = useContext(PhaseButtonsContext); /* Get the phase from the context */
+  const { phase, setPhase } = useContext(PhaseButtonsContext); /* Get the phase from the context */
   const { toughStatus, confusedStatus, stunnedStatus } = useContext(StatusCardsContext); /* Get the status Cars states from the context */
 
   const villainId = useParams(); /* Get the villainId from the URL parameters */
 
   const [showVillainImage, setShowVillainImage] = useState(true); /* State to control the visibility of the villain image */
+
+  /* Reset the phase state when the villainId changes */
+  useEffect(() => {
+    setPhase("default"); /* Reset phase to default */
+  }, [villainId.villainId, setPhase]);
 
   useEffect(() => {
     /* Check if the image exists when the phase changes */
@@ -21,7 +26,7 @@ function CardImage() {
     img.src = `/VillainImages/${villainId.villainId}/${phase}.jpg`;
     img.onload = () => setShowVillainImage(true); /* Show the image if it loads successfully */
     img.onerror = () => setShowVillainImage(false); /* Hide the image if it fails to load */
-  }, [phase])
+  }, [phase, villainId.villainId]);
 
   return <div id="imagesContainer">
     {showVillainImage && (
