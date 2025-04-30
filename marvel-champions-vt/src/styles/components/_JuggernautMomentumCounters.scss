@@ -1,7 +1,12 @@
 .countersButton {
-    position: absolute;
+    position: fixed;
+    z-index: 1;
     height: 5rem;
     width: 5rem;
     right: 10%;
+    top: 47%;
+}
+
+#momentumCounter {
     top: 45%;
 }
