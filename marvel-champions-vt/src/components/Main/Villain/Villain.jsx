@@ -21,8 +21,8 @@ function Villain () {
   const [momentumCounters, setMomentumCounters] = useState();
 
   return <div>
-    <StatusCardsContext.Provider value={{toughStatus, setToughStatus, confusedStatus, setConfusedStatus, stunnedStatus, setStunnedStatus}}>
-      <MomentumCountersJuggernaut.Provider value={{momentumCounters, setMomentumCounters}}>
+    <MomentumCountersJuggernaut.Provider value={{momentumCounters, setMomentumCounters}}>
+      <StatusCardsContext.Provider value={{toughStatus, setToughStatus, confusedStatus, setConfusedStatus, stunnedStatus, setStunnedStatus}}>
         <PhaseButtonsContext.Provider value={{phase, setPhase}}>
           <PhaseButtons />
           <LifeCounter />
@@ -44,8 +44,8 @@ function Villain () {
           setStunnedStatus={setStunnedStatus}
           setMomentumCounters={setMomentumCounters}
         />
-      </MomentumCountersJuggernaut.Provider>
-    </StatusCardsContext.Provider>
+      </StatusCardsContext.Provider>
+    </MomentumCountersJuggernaut.Provider>
   </div>;
 
 }

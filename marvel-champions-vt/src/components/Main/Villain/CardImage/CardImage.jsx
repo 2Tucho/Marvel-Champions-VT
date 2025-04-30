@@ -1,13 +1,14 @@
 import React from "react";
 import { useState, useContext, useEffect } from "react";
 import { PhaseButtonsContext } from "../../../../context/PhaseButtonsContext";
+import { StatusCardsContext } from "../../../../context/StatusCardsContext";
 import { MomentumCountersJuggernaut } from "../../../../context/MomentumCountersJuggernaut";
 import { useParams } from "react-router-dom";
 import JuggernautMomentumCounters from "./JuggernautMomentumCounters/JuggernautMomentumCounters"
 
 function CardImage() {
   const { phase } = useContext(PhaseButtonsContext); /* Get the phase from the context */
-  const {toughStatus, confusedStatus, stunnedStatus } = useContext(MomentumCountersJuggernaut); /* Get the status Cars states from the context */
+  const {toughStatus, confusedStatus, stunnedStatus } = useContext(StatusCardsContext); /* Get the status Cars states from the context */
 
   const villainId = useParams(); /* Get the villainId from the URL parameters */
 
