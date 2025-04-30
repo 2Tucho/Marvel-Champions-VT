@@ -35,7 +35,9 @@ function CardImage() {
 
     {stunnedStatus && (<img id="stunnedToken" className="statusToken" src={"/StatusTokens/stunned.jpg"} alt="Stunned Token" />)}
 
-    {villainId.villainId === "juggernaut" ? <JuggernautMomentumCounters /> : villainId.villainId === "spiral" ? <SpiralTeleportCounters /> : null} {/* To show the counters only in the Juggernaut's page */}
+    {villainId.villainId === "juggernaut" ? <JuggernautMomentumCounters /> : null} {/* To show the counters only in the Juggernaut's page */}
+
+    {villainId.villainId === "spiral" && phase.includes("B") ? <SpiralTeleportCounters /> : null} {/* To show the counters only in the Spiral's page and obly if she is in the Cornered Phase */}
   </div>;
 
 }
