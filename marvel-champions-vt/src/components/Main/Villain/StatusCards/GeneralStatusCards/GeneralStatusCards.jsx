@@ -1,9 +1,9 @@
 import React from "react";
 import { useState, useContext, useEffect } from "react";
-import { MomentumCountersJuggernaut } from "../../../../../context/MomentumCountersJuggernaut";
+import { StatusCardsContext } from "../../../../../context/StatusCardsContext";
 
 function GeneralStatusCards () {
-  const { setToughStatus, setConfusedStatus, setStunnedStatus } = useContext(MomentumCountersJuggernaut);
+  const { setToughStatus, setConfusedStatus, setStunnedStatus } = useContext(StatusCardsContext);
 
   /* States to keep track of the active Status Cards on the Villain */
   const [tough, setTough] = useState(false); 

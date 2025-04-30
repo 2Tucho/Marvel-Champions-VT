@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { PhaseButtonsContext } from "../../../context/PhaseButtonsContext";
-import { MomentumCountersJuggernaut } from "../../../context/MomentumCountersJuggernaut";
+import { MomentumCountersJuggernautContext } from "../../../context/MomentumCountersJuggernautContext";
 import { StatusCardsContext } from "../../../context/StatusCardsContext";
 import PhaseButtons from "./PhaseButtons";
 import LifeCounter from "./LifeCounter";
@@ -18,11 +18,11 @@ function Villain () {
   const [stunnedStatus, setStunnedStatus] = useState();
   
   /* State to keep track of the number of momentum counters of Juggernaut */
-  const [momentumCounters, setMomentumCounters] = useState();
+  const [momentumCounters, setMomentumCounters] = useState(0);
 
   return <div>
-    <StatusCardsContext.Provider value={{toughStatus, setToughStatus, confusedStatus, setConfusedStatus, stunnedStatus, setStunnedStatus}}>
-      <MomentumCountersJuggernaut.Provider value={{momentumCounters, setMomentumCounters}}>
+    <MomentumCountersJuggernautContext.Provider value={{momentumCounters, setMomentumCounters}}>
+      <StatusCardsContext.Provider value={{toughStatus, setToughStatus, confusedStatus, setConfusedStatus, stunnedStatus, setStunnedStatus}}>
         <PhaseButtonsContext.Provider value={{phase, setPhase}}>
           <PhaseButtons />
           <LifeCounter />
@@ -44,8 +44,8 @@ function Villain () {
           setStunnedStatus={setStunnedStatus}
           setMomentumCounters={setMomentumCounters}
         />
-      </MomentumCountersJuggernaut.Provider>
-    </StatusCardsContext.Provider>
+      </StatusCardsContext.Provider>
+    </MomentumCountersJuggernautContext.Provider>
   </div>;
 
 }
