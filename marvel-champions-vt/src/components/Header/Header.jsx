@@ -1,9 +1,10 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false); /* State to toggle the menu */
+  const modalRef = useRef(null); /* Reference to the modal container */
   
   /* States to open and close the nav Villain sets */
   const [coreSet, setCoreSet] = useState(false);
@@ -60,9 +61,23 @@ function Header() {
     }
   }
 
+    /* Close the modal if clicking outside */
+    useEffect(() => {
+      const handleClickOutside = (event) => {
+        if (modalRef.current && !modalRef.current.contains(event.target)) { /* If the modal/menu is displayed and the click is not in the modal it toggles the modal */
+          setMenuOpen(false); /* Close the modal */
+        }
+      };
+  
+      document.addEventListener("mousedown", handleClickOutside);
+      return () => {
+        document.removeEventListener("mousedown", handleClickOutside);
+      };
+    }, []);
+
   return (
     <header id="header">
-      <div>
+      <div id="menuModal">
         <button onClick={() => toggleMenu()}>
           ☰ {/* Burger icon */}
         </button>
@@ -73,7 +88,7 @@ function Header() {
         }}><h1>Marvel Champions</h1></Link>
       </div>
       {menuOpen && (
-        <nav>
+        <nav ref={modalRef}>
           <ul>
             <li className="setName">
               <button className="setButton" onClick={() => toggleSet("coreSet")}>Core Set</button>
