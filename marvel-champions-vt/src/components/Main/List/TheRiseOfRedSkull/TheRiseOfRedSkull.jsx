@@ -3,9 +3,10 @@ import { Link } from "react-router-dom";
 
 function TheRiseOfRedSkull() {
 
-  return <article id="theRiseOfRedSkull">
+  return <section id="theRiseOfRedSkull">
 
     <h4 className="villainEncounterName">The Rise Of Red Skull</h4>
+    
     <ul className="villainList campaignSet">
       <Link className="villainLink" to={`/villain/crossbones`}><h5>Crossbones</h5></Link>
       <Link className="villainLink" to={`/villain/absorbingMan`}><h5>Absorbing Man</h5></Link>
@@ -14,7 +15,7 @@ function TheRiseOfRedSkull() {
       <Link className="villainLink" to={`/villain/redSkull`}><h5>Red Skull</h5></Link>
     </ul>
     
-    </article>;
+    </section>;
 
 }
 

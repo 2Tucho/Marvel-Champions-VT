@@ -7,15 +7,15 @@ import "./styles/pages/_App.scss";
 
 function App() {
 
-  return (
-    <>
-      <BrowserRouter>
-        <Header />
-        <Main />
-        <Footer />
-      </BrowserRouter>
-    </>
-  )
+  return (<>
+
+    <BrowserRouter>
+      <Header />
+      <Main />
+      <Footer />
+    </BrowserRouter>
+
+  </>)
 }
 
 export default App

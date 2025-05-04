@@ -5,18 +5,16 @@ import { PhaseButtonsContext } from "../../../../../context/PhaseButtonsContext"
 function GeneralButtons() { 
   const { setPhase } = useContext(PhaseButtonsContext);
 
-  return <div>
-    
-    <div id="phaseButtonContainer">
+  return <article id="phaseButtonContainer">
 
       {/*  setPhase is wrapped in a function so that they are only executed when the buttons are clicked, not during the render phase*/}
       <button id="phaseI" onClick={() => setPhase("default")}>Phase I</button> 
       <button id="phaseII" onClick={() => setPhase("phaseII")}>Phase II</button>
       <button id="phaseII" onClick={() => setPhase("phaseIII")}>Phase III</button>
 
-    </div>
+    </article>
 
-  </div>;
+
 
 }
 

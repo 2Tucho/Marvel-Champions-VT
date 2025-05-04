@@ -5,13 +5,15 @@ import Villain from "./Villain/Villain.jsx";
 
 function Main() {
 
-  return <div>
+  return <main>
+
       <Routes>
         <Route path="/" element={<List />} />
         <Route path="/*" element={<Navigate to={"/"} />} />
         <Route path="/villain/:villainId" element={<Villain />} />
       </Routes>
-    </div>;
+      
+    </main>;
 
 }
 

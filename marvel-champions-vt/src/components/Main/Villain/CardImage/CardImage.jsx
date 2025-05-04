@@ -27,7 +27,8 @@ function CardImage() {
     img.onerror = () => setShowVillainImage(false); /* Hide the image if it fails to load */
   }, [phase, villainId.villainId]);
 
-  return <div id="imagesContainer">
+  return <section id="imagesContainer">
+
     {showVillainImage && (
       <img id="villainImage" src={`/VillainImages/${villainId.villainId}/${phase}.jpg`} alt={`${villainId.villainId} image`} onError={() => setShowVillainImage(false)} /* The img hides if it fails to load *//>
     )}
@@ -37,7 +38,8 @@ function CardImage() {
     {villainId.villainId === "juggernaut" ? <JuggernautMomentumCounters /> : null} {/* To show the counters only in the Juggernaut's page */}
 
     {villainId.villainId === "spiral" && phase.includes("B") ? <SpiralTeleportCounters /> : null} {/* To show the counters only in the Spiral's page and obly if she is in the Cornered Phase */}
-  </div>;
+  
+  </section>;
 
 }
 

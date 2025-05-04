@@ -3,9 +3,10 @@ import { Link } from "react-router-dom";
 
 function MutantGenesis() {
 
-  return <article id="mutantGenesis">
+  return <section id="mutantGenesis">
 
     <h4 className="villainEncounterName">Mutant Genesis</h4>
+    
     <ul className="villainList campaignSet2">
       <Link className="villainLink" to={`/villain/sabretooth`}><h5>Sabretooth</h5></Link>
       <Link className="villainLink" to={`/villain/sentinel`}><h5>Project Wideawake</h5></Link>
@@ -14,7 +15,7 @@ function MutantGenesis() {
       <Link className="villainLink" to={`/villain/magneto`}><h5>Magneto</h5></Link>
     </ul>
     
-    </article>;
+    </section>;
 
 }
 

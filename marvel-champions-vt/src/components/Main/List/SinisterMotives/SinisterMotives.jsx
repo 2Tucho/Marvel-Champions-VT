@@ -3,9 +3,10 @@ import { Link } from "react-router-dom";
 
 function SinisterMotives() {
 
-  return <article id="sinisterMotives">
+  return <section id="sinisterMotives">
 
     <h4 className="villainEncounterName">Sinister Motives</h4>
+    
     <ul className="villainList campaignSet">
       <Link className="villainLink" to={`/villain/sandman`}><h5>Sandman</h5></Link>
       <Link className="villainLink" to={`/villain/venom`}><h5>Venom</h5></Link>
@@ -14,7 +15,7 @@ function SinisterMotives() {
       <Link className="villainLink" to={`/villain/venomGoblin`}><h5>Venom Goblin</h5></Link>
     </ul>
     
-    </article>;
+    </section>;
 
 }
 

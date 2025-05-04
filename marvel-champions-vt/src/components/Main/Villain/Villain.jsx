@@ -24,7 +24,8 @@ function Villain () {
   /* State to keep track of the number of teleport counters on Cornered Spiral */
   const [teleportCounters, setTeleportCounters] = useState(0);
 
-  return <div>
+  return <>
+
     <TeleportCountersSpiralContext.Provider value={{teleportCounters, setTeleportCounters}}>
       <MomentumCountersJuggernautContext.Provider value={{momentumCounters, setMomentumCounters}}>
         <StatusCardsContext.Provider value={{toughStatus, setToughStatus, confusedStatus, setConfusedStatus, stunnedStatus, setStunnedStatus}}>
@@ -56,7 +57,8 @@ function Villain () {
         </StatusCardsContext.Provider>
       </MomentumCountersJuggernautContext.Provider>
     </TeleportCountersSpiralContext.Provider>
-  </div>;
+
+  </>;
 
 }
 

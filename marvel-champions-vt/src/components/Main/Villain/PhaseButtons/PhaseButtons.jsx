@@ -49,7 +49,7 @@ function PhaseButtons() {
     theWreckingCrew: <WreckingCrewButtons />,
   };
 
-  return <div>{buttonComponents[villainId.villainId] || <GeneralButtons />}</div>; {/* Render the buttons based on the villainId. If no specific buttons are found, render the GeneralButtons component. */}
+  return <section id="phaseButtonsContainer">{buttonComponents[villainId.villainId] || <GeneralButtons />}</section>; {/* Render the buttons based on the villainId. If no specific buttons are found, render the GeneralButtons component. */}
 
 }
 
