@@ -1,0 +1,20 @@
+.statusToken {
+    height: 7rem;
+    position: absolute;
+    left: 78%; /* Position from left */
+    transform: translate(-50%, -50%); /* Centers */
+    border-radius: 10px; /* To round the white corners of the jpg images */
+}
+
+/* GENERAL VILLAINS*/
+#toughToken {
+    top: 37%; /* Position from top */
+}
+
+#confusedToken {
+    top: 43.5%;
+}
+
+#stunnedToken {
+    top: 50%;
+}
