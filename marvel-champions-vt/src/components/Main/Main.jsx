@@ -15,6 +15,6 @@ function Main() {
       
     </main>;
 
-}
+};
 
 export default Main;

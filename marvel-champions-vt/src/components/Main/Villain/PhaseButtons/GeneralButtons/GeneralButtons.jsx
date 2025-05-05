@@ -12,10 +12,8 @@ function GeneralButtons() {
       <button id="phaseII" onClick={() => setPhase("phaseII")}>Phase II</button>
       <button id="phaseII" onClick={() => setPhase("phaseIII")}>Phase III</button>
 
-    </article>
+    </article>;
 
-
-
-}
+};
 
 export default GeneralButtons;

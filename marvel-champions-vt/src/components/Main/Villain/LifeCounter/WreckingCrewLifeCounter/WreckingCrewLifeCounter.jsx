@@ -43,66 +43,68 @@ function WreckingCrewLifeCounter() {
     
   };
 
-  return (<>
-    {phase.includes("bulldozer") ? <div className="lifeCounter">
+  return <>
 
-      <p>HP:</p>
+      {phase.includes("bulldozer") ? <article className="lifeCounter">
 
-      <input type="number" value={countBulldozer} onChange={(e) => handleInputChange(e, "bulldozer")} />
+        <p>HP:</p>
 
-      <div>
-        <button onClick={() => setCountBulldozer((count) => count + 1)}> {/* Button to add 1 to the Live counter */}
-          +
-        </button>
-        <button onClick={() => setCountBulldozer((count) => count - 1)}> {/* Button to substract 1 to the Live counter */}
-          -
-        </button>
-      </div>
+        <input type="number" value={countBulldozer} onChange={(e) => handleInputChange(e, "bulldozer")} />
 
-    </div> : phase.includes("piledriver") ? <div className="lifeCounter">
+        <div>
+          <button onClick={() => setCountBulldozer((count) => count + 1)}> {/* Button to add 1 to the Live counter */}
+            +
+          </button>
+          <button onClick={() => setCountBulldozer((count) => count - 1)}> {/* Button to substract 1 to the Live counter */}
+            -
+          </button>
+        </div>
 
-      <p>HP:</p>
+      </article> : phase.includes("piledriver") ? <article className="lifeCounter">
 
-      <input type="number" value={countPileDriver} onChange={(e) => handleInputChange(e, "piledriver")} />
+        <p>HP:</p>
 
-      <div>
-        <button onClick={() => setCountPileDriver((count) => count + 1)}> {/* Button to add 1 to the Live counter */}
-          +
-        </button>
-        <button onClick={() => setCountPileDriver((count) => count - 1)}> {/* Button to substract 1 to the Live counter */}
-          -
-        </button>
-      </div>
+        <input type="number" value={countPileDriver} onChange={(e) => handleInputChange(e, "piledriver")} />
 
-    </div> : phase.includes("thunderball") ? <div className="lifeCounter">
-      <p>HP:</p>
+        <div>
+          <button onClick={() => setCountPileDriver((count) => count + 1)}> {/* Button to add 1 to the Live counter */}
+            +
+          </button>
+          <button onClick={() => setCountPileDriver((count) => count - 1)}> {/* Button to substract 1 to the Live counter */}
+            -
+          </button>
+        </div>
 
-      <input type="number" value={countThunderball} onChange={(e) => handleInputChange(e, "thunderball")} />
+      </article> : phase.includes("thunderball") ? <article className="lifeCounter">
+        <p>HP:</p>
 
-      <div>
-        <button onClick={() => setCountThunderball((count) => count + 1)}> {/* Button to add 1 to the Live counter */}
-          +
-        </button>
-        <button onClick={() => setCountThunderball((count) => count - 1)}> {/* Button to substract 1 to the Live counter */}
-          -
-        </button>
-      </div>
+        <input type="number" value={countThunderball} onChange={(e) => handleInputChange(e, "thunderball")} />
 
-    </div> : <div className="lifeCounter">
-      <p>HP:</p>
+        <div>
+          <button onClick={() => setCountThunderball((count) => count + 1)}> {/* Button to add 1 to the Live counter */}
+            +
+          </button>
+          <button onClick={() => setCountThunderball((count) => count - 1)}> {/* Button to substract 1 to the Live counter */}
+            -
+          </button>
+        </div>
 
-      <input type="number" value={countWrecker} onChange={(e) => handleInputChange(e, "wrecker")} />
+      </article> : <article className="lifeCounter">
+        <p>HP:</p>
 
-      <div>
-        <button onClick={() => setCountWrecker((count) => count + 1)}> {/* Button to add 1 to the Live counter */}
-          +
-        </button>
-        <button onClick={() => setCountWrecker((count) => count - 1)}> {/* Button to substract 1 to the Live counter */}
-          -
-        </button>
-      </div>
-    </div>}
-  </>);
-}
+        <input type="number" value={countWrecker} onChange={(e) => handleInputChange(e, "wrecker")} />
+
+        <div>
+          <button onClick={() => setCountWrecker((count) => count + 1)}> {/* Button to add 1 to the Live counter */}
+            +
+          </button>
+          <button onClick={() => setCountWrecker((count) => count - 1)}> {/* Button to substract 1 to the Live counter */}
+            -
+          </button>
+        </div>
+      </article>}
+    </>;
+
+};
 
 export default WreckingCrewLifeCounter;

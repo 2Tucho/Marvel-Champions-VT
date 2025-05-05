@@ -1,5 +1,5 @@
 import React from "react";
-import {useContext} from "react";
+import { useContext } from "react";
 import { PhaseButtonsContext } from "../../../../../context/PhaseButtonsContext";
 
 function MagogButtons() { 
@@ -10,8 +10,8 @@ function MagogButtons() {
       <button onClick={() => setPhase("default")}>Normal</button> 
       <button onClick={() => setPhase("B")}>Expert</button>
 
-    </div>
+    </div>;
 
-}
+};
 
 export default MagogButtons;

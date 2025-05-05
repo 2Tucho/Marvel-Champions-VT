@@ -26,44 +26,43 @@ function TowerDefenseLifeCounter() {
         setCountCorvus(Number(value)); /* Convert the value to a number, because the input is a string */
       }
     }
-    
   };
 
-  return (<div className="lifeCounter">
+  return <article className="lifeCounter">
 
-      {phase.includes("proxima") ? <div>
+        {phase.includes("proxima") ? <>
 
-        <p>HP:</p>
+          <p>HP:</p>
 
-        <input type="number" value={countProxima} onChange={(e) => handleInputChange(e, "proxima")} />
+          <input type="number" value={countProxima} onChange={(e) => handleInputChange(e, "proxima")} />
 
-        <div>
-          <button onClick={() => steCountProxima((count) => count + 1)}> {/* Button to add 1 to the Live counter */}
-            +
-          </button>
-          <button onClick={() => steCountProxima((count) => count - 1)}> {/* Button to substract 1 to the Live counter */}
-            -
-          </button>
-        </div>
+          <div>
+            <button onClick={() => steCountProxima((count) => count + 1)}> {/* Button to add 1 to the Live counter */}
+              +
+            </button>
+            <button onClick={() => steCountProxima((count) => count - 1)}> {/* Button to substract 1 to the Live counter */}
+              -
+            </button>
+          </div>
 
-      </div> : <div>
+        </> : <>
 
-        <p>HP:</p>
+          <p>HP:</p>
 
-        <input type="number" value={countCorvus} onChange={(e) => handleInputChange(e, "corvus")} />
+          <input type="number" value={countCorvus} onChange={(e) => handleInputChange(e, "corvus")} />
 
-        <div>
-          <button onClick={() => setCountCorvus((count) => count + 1)}> {/* Button to add 1 to the Live counter */}
-            +
-          </button>
-          <button onClick={() => setCountCorvus((count) => count - 1)}> {/* Button to substract 1 to the Live counter */}
-            -
-          </button>
-        </div>
-      </div>}
-      
-  </div>
-  );
-}
+          <div>
+            <button onClick={() => setCountCorvus((count) => count + 1)}> {/* Button to add 1 to the Live counter */}
+              +
+            </button>
+            <button onClick={() => setCountCorvus((count) => count - 1)}> {/* Button to substract 1 to the Live counter */}
+              -
+            </button>
+          </div>
+        </>}
+        
+    </article>;
+
+};
 
 export default TowerDefenseLifeCounter;

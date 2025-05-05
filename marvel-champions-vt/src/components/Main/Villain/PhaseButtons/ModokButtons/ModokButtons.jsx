@@ -1,5 +1,5 @@
 import React from "react";
-import {useContext} from "react";
+import { useContext } from "react";
 import { PhaseButtonsContext } from "../../../../../context/PhaseButtonsContext";
 
 function ModokButtons() { 
@@ -10,8 +10,8 @@ function ModokButtons() {
       <button onClick={() => setPhase("default")}>Normal</button> 
       <button onClick={() => setPhase("B")}>Expert</button>
 
-    </div>
+    </div>;
 
-}
+};
 
 export default ModokButtons;

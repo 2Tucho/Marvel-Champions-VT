@@ -54,97 +54,97 @@ function KangLifeCounter() {
         setCountPhaseI(Number(value)); /* Convert the value to a number, because the input is a string */
       }
     }
-    
   };
 
-  return (<>
-    {phase.includes("phaseIII") ? <div className="lifeCounter">
+  return <>
+      {phase.includes("phaseIII") ? <article className="lifeCounter">
 
-      <p>HP:</p>
+        <p>HP:</p>
 
-      <input type="number" value={countPhaseIII} onChange={(e) => handleInputChange(e, "phaseIII")} />
+        <input type="number" value={countPhaseIII} onChange={(e) => handleInputChange(e, "phaseIII")} />
 
-      <div>
-        <button onClick={() => setCountPhaseIII((count) => count + 1)}> {/* Button to add 1 to the Live counter */}
-          +
-        </button>
-        <button onClick={() => setCountPhaseIII((count) => count - 1)}> {/* Button to substract 1 to the Live counter */}
-          -
-        </button>
-      </div>
+        <div>
+          <button onClick={() => setCountPhaseIII((count) => count + 1)}> {/* Button to add 1 to the Live counter */}
+            +
+          </button>
+          <button onClick={() => setCountPhaseIII((count) => count - 1)}> {/* Button to substract 1 to the Live counter */}
+            -
+          </button>
+        </div>
 
-    </div> : phase.includes("immortus") ? <div className="lifeCounter">
+      </article> : phase.includes("immortus") ? <article className="lifeCounter">
 
-      <p>HP:</p>
+        <p>HP:</p>
 
-      <input type="number" value={countImmortus} onChange={(e) => handleInputChange(e, "immortus")} />
+        <input type="number" value={countImmortus} onChange={(e) => handleInputChange(e, "immortus")} />
 
-      <div>
-        <button onClick={() => setCountImmortus((count) => count + 1)}> {/* Button to add 1 to the Live counter */}
-          +
-        </button>
-        <button onClick={() => setCountImmortus((count) => count - 1)}> {/* Button to substract 1 to the Live counter */}
-          -
-        </button>
-      </div>
+        <div>
+          <button onClick={() => setCountImmortus((count) => count + 1)}> {/* Button to add 1 to the Live counter */}
+            +
+          </button>
+          <button onClick={() => setCountImmortus((count) => count - 1)}> {/* Button to substract 1 to the Live counter */}
+            -
+          </button>
+        </div>
 
-    </div> : phase.includes("ironlad") ? <div className="lifeCounter">
+      </article> : phase.includes("ironlad") ? <article className="lifeCounter">
 
-      <p>HP:</p>
+        <p>HP:</p>
 
-      <input type="number" value={countIronlad} onChange={(e) => handleInputChange(e, "ironlad")} />
+        <input type="number" value={countIronlad} onChange={(e) => handleInputChange(e, "ironlad")} />
 
-      <div>
-        <button onClick={() => setCountIronlad((count) => count + 1)}> {/* Button to add 1 to the Live counter */}
-          +
-        </button>
-        <button onClick={() => setCountIronlad((count) => count - 1)}> {/* Button to substract 1 to the Live counter */}
-          -
-        </button>
-      </div>
+        <div>
+          <button onClick={() => setCountIronlad((count) => count + 1)}> {/* Button to add 1 to the Live counter */}
+            +
+          </button>
+          <button onClick={() => setCountIronlad((count) => count - 1)}> {/* Button to substract 1 to the Live counter */}
+            -
+          </button>
+        </div>
 
-    </div> : phase.includes("ramatut") ? <div className="lifeCounter">
-      <p>HP:</p>
+      </article> : phase.includes("ramatut") ? <article className="lifeCounter">
+        <p>HP:</p>
 
-      <input type="number" value={countRamatut} onChange={(e) => handleInputChange(e, "ramatut")} />
+        <input type="number" value={countRamatut} onChange={(e) => handleInputChange(e, "ramatut")} />
 
-      <div>
-        <button onClick={() => setCountRamatut((count) => count + 1)}> {/* Button to add 1 to the Live counter */}
-          +
-        </button>
-        <button onClick={() => setCountRamatut((count) => count - 1)}> {/* Button to substract 1 to the Live counter */}
-          -
-        </button>
-      </div>
+        <div>
+          <button onClick={() => setCountRamatut((count) => count + 1)}> {/* Button to add 1 to the Live counter */}
+            +
+          </button>
+          <button onClick={() => setCountRamatut((count) => count - 1)}> {/* Button to substract 1 to the Live counter */}
+            -
+          </button>
+        </div>
 
-    </div> : phase.includes("scarletcenturion") ? <div className="lifeCounter">
-      <p>HP:</p>
+      </article> : phase.includes("scarletcenturion") ? <article className="lifeCounter">
+        <p>HP:</p>
 
-      <input type="number" value={countScarletcenturion} onChange={(e) => handleInputChange(e, "scarletcenturion")} />
+        <input type="number" value={countScarletcenturion} onChange={(e) => handleInputChange(e, "scarletcenturion")} />
 
-      <div>
-        <button onClick={() => setCountScarletcenturion((count) => count + 1)}> {/* Button to add 1 to the Live counter */}
-          +
-        </button>
-        <button onClick={() => setCountScarletcenturion((count) => count - 1)}> {/* Button to substract 1 to the Live counter */}
-          -
-        </button>
-      </div>
-    </div> : <div className="lifeCounter">
-      <p>HP:</p>
+        <div>
+          <button onClick={() => setCountScarletcenturion((count) => count + 1)}> {/* Button to add 1 to the Live counter */}
+            +
+          </button>
+          <button onClick={() => setCountScarletcenturion((count) => count - 1)}> {/* Button to substract 1 to the Live counter */}
+            -
+          </button>
+        </div>
+      </article> : <article className="lifeCounter">
+        <p>HP:</p>
 
-      <input type="number" value={countPhaseI} onChange={(e) => handleInputChange(e, "")} />
+        <input type="number" value={countPhaseI} onChange={(e) => handleInputChange(e, "")} />
 
-      <div>
-        <button onClick={() => setCountPhaseI((count) => count + 1)}> {/* Button to add 1 to the Live counter */}
-          +
-        </button>
-        <button onClick={() => setCountPhaseI((count) => count - 1)}> {/* Button to substract 1 to the Live counter */}
-          -
-        </button>
-      </div>
-    </div>}
-  </>);
-}
+        <div>
+          <button onClick={() => setCountPhaseI((count) => count + 1)}> {/* Button to add 1 to the Live counter */}
+            +
+          </button>
+          <button onClick={() => setCountPhaseI((count) => count - 1)}> {/* Button to substract 1 to the Live counter */}
+            -
+          </button>
+        </div>
+      </article>}
+    </>;
+
+};
 
 export default KangLifeCounter;

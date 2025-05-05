@@ -25,6 +25,6 @@ function LifeCounter() {
 
   return (<section id="lifeCounterContainer">{buttonComponents[villainId.villainId] || <GeneralLifeCounter />}</section>); {/* Render the counter component based on the villainId. If no specific are found, render the GeneralLifeCounter component. */}
 
-}
+};
 
 export default LifeCounter;

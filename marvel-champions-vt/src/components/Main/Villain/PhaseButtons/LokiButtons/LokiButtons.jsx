@@ -18,15 +18,15 @@ function LokiButtons() {
   const [version4Clicked, setVersion4Clicked] = useState(false);
   const [version5Clicked, setVersion5Clicked] = useState(false); 
   /* To save the version we want to change */
-  const [actualVersion, setActualVersion] = useState()
+  const [actualVersion, setActualVersion] = useState();
 
   const {setPhase} = useContext(PhaseButtonsContext);
 
   /* Function to show a random version of Loki */
   const chooseRandomVillain = () => {
     if (remainingLokis.length === 0) {
-      return; /* Exit if there aren't forms left */
-    }
+      return /* Exit if there aren't forms left */
+    };
 
     const randomIndex = Math.floor(Math.random() * remainingLokis.length); /* Get a random index from the Loki's array */
     const randomLoki = remainingLokis[randomIndex];
@@ -41,39 +41,39 @@ function LokiButtons() {
       if(actualVersion == 1) {
         if(version1Clicked) {
           /* Remove "loki1" from the array */
-          setRemainingLokis(remainingLokis.filter(villain => villain !== lokiVersion))
+          setRemainingLokis(remainingLokis.filter(villain => villain !== lokiVersion));
         } else if (!version1Clicked) {
           /* Add "loki1" from the array */
-          setRemainingLokis([...remainingLokis, lokiVersion])
+          setRemainingLokis([...remainingLokis, lokiVersion]);
         }
       } else if(actualVersion == 2) {
         if(version2Clicked) {
-          setRemainingLokis(remainingLokis.filter(villain => villain !== lokiVersion))
+          setRemainingLokis(remainingLokis.filter(villain => villain !== lokiVersion));
         } else if (!version2Clicked) {
-          setRemainingLokis([...remainingLokis, lokiVersion])
+          setRemainingLokis([...remainingLokis, lokiVersion]);
         }
       } else if(actualVersion == 3) {
         if(version3Clicked) {
-          setRemainingLokis(remainingLokis.filter(villain => villain !== lokiVersion))
+          setRemainingLokis(remainingLokis.filter(villain => villain !== lokiVersion));
         } else if (!version3Clicked) {
-          setRemainingLokis([...remainingLokis, lokiVersion])
+          setRemainingLokis([...remainingLokis, lokiVersion]);
         }
       } else if(actualVersion == 4) {
         if(version4Clicked) {
-          setRemainingLokis(remainingLokis.filter(villain => villain !== lokiVersion))
+          setRemainingLokis(remainingLokis.filter(villain => villain !== lokiVersion));
         } else if (!version4Clicked) {
-          setRemainingLokis([...remainingLokis, lokiVersion])
+          setRemainingLokis([...remainingLokis, lokiVersion]);
         }
       } else if(actualVersion == 5) {
         if(version5Clicked) {
-          setRemainingLokis(remainingLokis.filter(villain => villain !== lokiVersion))
+          setRemainingLokis(remainingLokis.filter(villain => villain !== lokiVersion));
         } else if (!version5Clicked) {
-          setRemainingLokis([...remainingLokis, lokiVersion])
+          setRemainingLokis([...remainingLokis, lokiVersion]);
         }
       }
-    }
+    };
 
-    putAsideVersion()
+    putAsideVersion();
   }, [version1Clicked, version2Clicked, version3Clicked, version4Clicked, version5Clicked]); /* So it changes every time that states also change */
 
 
@@ -131,8 +131,8 @@ function LokiButtons() {
 
       <button onClick={chooseRandomVillain}>Random Loki</button>
 
-    </div>
+    </div>;
 
-}
+};
 
 export default LokiButtons;

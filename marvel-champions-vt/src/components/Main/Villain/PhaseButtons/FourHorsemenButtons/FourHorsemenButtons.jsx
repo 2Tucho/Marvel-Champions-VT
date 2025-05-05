@@ -26,11 +26,11 @@ function FourHorsemenButtons() {
     setFourHorsemen(shuffledHorsemen); // Update the state with the shuffled array
 
     if (difficulty === "normal") {
-      setShowNormalButtons(!showNormalButtons)
+      setShowNormalButtons(!showNormalButtons);
     } else if (difficulty === "expert") {
-      setShowExpertButtons(!showExpertButtons)
+      setShowExpertButtons(!showExpertButtons);
     }
-  }
+  };
 
   return <div id="fourHorsemenButtons">
 
@@ -52,8 +52,8 @@ function FourHorsemenButtons() {
         ))}
       </article>
 
-    </div>
+    </div>;
 
-}
+};
 
 export default FourHorsemenButtons;

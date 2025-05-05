@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 
 function GeneralLifeCounter() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   const handleInputChange = (e) => {
     const value = e.target.value;
@@ -16,21 +16,21 @@ function GeneralLifeCounter() {
 
   return <article className="lifeCounter">
 
-    <p>HP:</p>
+      <p>HP:</p>
 
-    <input type="number" value={count} onChange={handleInputChange} />
+      <input type="number" value={count} onChange={handleInputChange} />
 
-    <div id="plusAndMinusButtons">
-      <button onClick={() => setCount((count) => count + 1)}> {/* Button to add 1 to the Live counter */}
-        +
-      </button>
-      <button onClick={() => setCount((count) => count - 1)}> {/* Button to substract 1 to the Live counter */}
-        -
-      </button>
-    </div>
-      
-  </article>;
+      <div id="plusAndMinusButtons">
+        <button onClick={() => setCount((count) => count + 1)}> {/* Button to add 1 to the Live counter */}
+          +
+        </button>
+        <button onClick={() => setCount((count) => count - 1)}> {/* Button to substract 1 to the Live counter */}
+          -
+        </button>
+      </div>
+        
+    </article>;
 
-}
+};
 
 export default GeneralLifeCounter;

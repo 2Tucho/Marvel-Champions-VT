@@ -60,6 +60,6 @@ function Villain () {
 
   </>;
 
-}
+};
 
 export default Villain;

@@ -26,7 +26,7 @@ function OnTheRunButtons() {
     setMarauder(randomMarauder); /* Set the selected villain to the state */
 
     setPhase(`${randomMarauder}A`); /* Set the phase to the selected villain so the img isn't empty. With randomVillain it does the setPhase at the moment, with the marauder state it wouldn's show */
-  }
+  };
 
   return <div id="morlockSiegeButtons">
 
@@ -38,8 +38,8 @@ function OnTheRunButtons() {
         </div>
       )}
 
-    </div>
+    </div>;
 
-}
+};
 
 export default OnTheRunButtons;

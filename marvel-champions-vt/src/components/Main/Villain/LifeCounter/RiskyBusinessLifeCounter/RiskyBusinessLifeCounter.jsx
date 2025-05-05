@@ -17,23 +17,23 @@ function RiskyBusinessLifeCounter() {
     }
   };
 
-  return (phase.includes("B") ? <div className="lifeCounter">
+  return phase.includes("B") ? <article className="lifeCounter">
 
-      <p>HP:</p>
+        <p>HP:</p>
 
-      <input type="number" value={count} onChange={handleInputChange} />
+        <input type="number" value={count} onChange={handleInputChange} />
 
-      <div>
-        <button onClick={() => setCount((count) => count + 1)}> {/* Button to add 1 to the Live counter */}
-          +
-        </button>
-        <button onClick={() => setCount((count) => count - 1)}> {/* Button to substract 1 to the Live counter */}
-          -
-        </button>
-      </div>
-      
-  </div> : null
-  );
-}
+        <div>
+          <button onClick={() => setCount((count) => count + 1)}> {/* Button to add 1 to the Live counter */}
+            +
+          </button>
+          <button onClick={() => setCount((count) => count - 1)}> {/* Button to substract 1 to the Live counter */}
+            -
+          </button>
+        </div>
+        
+    </article> : null;
+
+};
 
 export default RiskyBusinessLifeCounter;

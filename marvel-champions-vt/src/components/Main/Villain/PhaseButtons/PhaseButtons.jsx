@@ -51,6 +51,6 @@ function PhaseButtons() {
 
   return <section id="phaseButtonsContainer">{buttonComponents[villainId.villainId] || <GeneralButtons />}</section>; {/* Render the buttons based on the villainId. If no specific buttons are found, render the GeneralButtons component. */}
 
-}
+};
 
 export default PhaseButtons;

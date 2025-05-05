@@ -1,7 +1,6 @@
 import React from "react";
 import { useState, useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
-
 import { PhaseButtonsContext } from "../../../../context/PhaseButtonsContext";
 import JuggernautMomentumCounters from "./JuggernautMomentumCounters/JuggernautMomentumCounters";
 import SpiralTeleportCounters from "./SpiralTeleportCounters/SpiralTeleportCounters";
@@ -29,18 +28,18 @@ function CardImage() {
 
   return <section id="imagesContainer">
 
-    {showVillainImage && (
-      <img id="villainImage" src={`/VillainImages/${villainId.villainId}/${phase}.jpg`} alt={`${villainId.villainId} image`} onError={() => setShowVillainImage(false)} /* The img hides if it fails to load *//>
-    )}
+      {showVillainImage && (
+        <img id="villainImage" src={`/VillainImages/${villainId.villainId}/${phase}.jpg`} alt={`${villainId.villainId} image`} onError={() => setShowVillainImage(false)} /* The img hides if it fails to load *//>
+      )}
 
-    <StatusTokens />
+      <StatusTokens />
 
-    {villainId.villainId === "juggernaut" ? <JuggernautMomentumCounters /> : null} {/* To show the counters only in the Juggernaut's page */}
+      {villainId.villainId === "juggernaut" ? <JuggernautMomentumCounters /> : null} {/* To show the counters only in the Juggernaut's page */}
 
-    {villainId.villainId === "spiral" && phase.includes("B") ? <SpiralTeleportCounters /> : null} {/* To show the counters only in the Spiral's page and obly if she is in the Cornered Phase */}
-  
-  </section>;
+      {villainId.villainId === "spiral" && phase.includes("B") ? <SpiralTeleportCounters /> : null} {/* To show the counters only in the Spiral's page and obly if she is in the Cornered Phase */}
+    
+    </section>;
 
-}
+};
 
 export default CardImage;

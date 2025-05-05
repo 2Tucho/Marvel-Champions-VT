@@ -19,8 +19,8 @@ function TowerDefenseButtons() {
         <button onClick={() => setPhase("proximaIII")}>Proxima Midnight III</button>
       </article>
 
-    </div>
+    </div>;
 
-}
+};
 
 export default TowerDefenseButtons;
