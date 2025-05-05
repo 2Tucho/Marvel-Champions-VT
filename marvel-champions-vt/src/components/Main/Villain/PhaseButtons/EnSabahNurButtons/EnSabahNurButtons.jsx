@@ -1,5 +1,5 @@
 import React from "react";
-import {useContext} from "react";
+import { useContext } from "react";
 import { PhaseButtonsContext } from "../../../../../context/PhaseButtonsContext";
 
 function EnSabahNurButtons() { 
@@ -25,8 +25,8 @@ function EnSabahNurButtons() {
         <button onClick={() => setPhase("phaseIIIC")}>Giant III</button>
       </article>
 
-    </div>
+    </div>;
 
-}
+};
 
 export default EnSabahNurButtons;

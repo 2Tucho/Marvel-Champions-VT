@@ -13,7 +13,7 @@ function StatusCards () {
     spiral: <SpiralStatusCards />
   };
 
-  return <div>{statusCardsComponents[villainId.villainId] || <GeneralStatusCards />}</div>; {/* Render the status cards component based on the villainId. If no specific are found, render the GeneralStatusCards component. */}
+  return <section id="statusCardsContainer">{statusCardsComponents[villainId.villainId] || <GeneralStatusCards />}</section>; {/* Render the status cards component based on the villainId. If no specific are found, render the GeneralStatusCards component. */}
 
 }
 

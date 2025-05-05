@@ -17,53 +17,53 @@ function KangButtons() {
 
   return <div id="kangButtons">
 
-    <article id="kangModeButtons">
-      <button onClick={() => {
-        changeMode("normal");
-        setPhaseIIExpimg(false); /* Reset the Phase II image when changing modes */
-      }}>Normal</button>
-      <button onClick={() => {
-        changeMode("expert");
-        setPhaseIIimg(false); /* Reset the Phase II image when changing modes */
-      }}>Expert</button>
-    </article>
-
-    {mode === "normal" && (
-      <article>
-        <button onClick={() => setPhase("default")}>Phase I</button>
-        <button onClick={() => setPhaseIIimg(true)}>Phase II</button>
-        <button onClick={() => setPhase("phaseIII")}>Phase III</button>
+      <article id="kangModeButtons">
+        <button onClick={() => {
+          changeMode("normal");
+          setPhaseIIExpimg(false); /* Reset the Phase II image when changing modes */
+        }}>Normal</button>
+        <button onClick={() => {
+          changeMode("expert");
+          setPhaseIIimg(false); /* Reset the Phase II image when changing modes */
+        }}>Expert</button>
       </article>
-    )}
 
-    {mode === "expert" && (
-      <article>
-        <button onClick={() => setPhase("phaseIExp")}>Phase I</button>
-        <button onClick={() => setPhaseIIExpimg(true)}>Phase II</button>
-        <button onClick={() => setPhase("phaseIIIExp")}>Phase III</button>
-      </article>
-    )}
+      {mode === "normal" && (
+        <article>
+          <button onClick={() => setPhase("default")}>Phase I</button>
+          <button onClick={() => setPhaseIIimg(true)}>Phase II</button>
+          <button onClick={() => setPhase("phaseIII")}>Phase III</button>
+        </article>
+      )}
 
-    {phaseIIimg && (
-      <article id="phaseIIButtons">
-        <button onClick={() => setPhase("phaseIIimmortus")}>Immortus</button>
-        <button onClick={() => setPhase("phaseIIironlad")}>Iron Lad</button>
-        <button onClick={() => setPhase("phaseIIramatut")}>Rama-Tut</button>
-        <button onClick={() => setPhase("phaseIIscarletcenturion")}>Scarlet Centurion</button>
-      </article>  
-    )}
+      {mode === "expert" && (
+        <article>
+          <button onClick={() => setPhase("phaseIExp")}>Phase I</button>
+          <button onClick={() => setPhaseIIExpimg(true)}>Phase II</button>
+          <button onClick={() => setPhase("phaseIIIExp")}>Phase III</button>
+        </article>
+      )}
 
-    {phaseIIExpimg && (
-      <article id="phaseIIButtons">
-        <button onClick={() => setPhase("phaseIIimmortusExp")}>Immortus</button>
-        <button onClick={() => setPhase("phaseIIironladExp")}>Iron Lad</button>
-        <button onClick={() => setPhase("phaseIIramatutExp")}>Rama-Tut</button>
-        <button onClick={() => setPhase("phaseIIscarletcenturionExp")}>Scarlet Centurion</button>
-      </article>  
-    )}
+      {phaseIIimg && (
+        <article id="phaseIIButtons">
+          <button onClick={() => setPhase("phaseIIimmortus")}>Immortus</button>
+          <button onClick={() => setPhase("phaseIIironlad")}>Iron Lad</button>
+          <button onClick={() => setPhase("phaseIIramatut")}>Rama-Tut</button>
+          <button onClick={() => setPhase("phaseIIscarletcenturion")}>Scarlet Centurion</button>
+        </article>  
+      )}
 
-  </div>;
+      {phaseIIExpimg && (
+        <article id="phaseIIButtons">
+          <button onClick={() => setPhase("phaseIIimmortusExp")}>Immortus</button>
+          <button onClick={() => setPhase("phaseIIironladExp")}>Iron Lad</button>
+          <button onClick={() => setPhase("phaseIIramatutExp")}>Rama-Tut</button>
+          <button onClick={() => setPhase("phaseIIscarletcenturionExp")}>Scarlet Centurion</button>
+        </article>  
+      )}
 
-}
+    </div>;
+
+};
 
 export default KangButtons;

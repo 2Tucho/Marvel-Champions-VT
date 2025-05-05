@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 
 function GeneralLifeCounter() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   const handleInputChange = (e) => {
     const value = e.target.value;
@@ -14,8 +14,7 @@ function GeneralLifeCounter() {
     }
   };
 
-  return (
-    <div className="lifeCounter">
+  return <article className="lifeCounter">
 
       <p>HP:</p>
 
@@ -29,9 +28,9 @@ function GeneralLifeCounter() {
           -
         </button>
       </div>
-      
-  </div>
-  );
-}
+        
+    </article>;
+
+};
 
 export default GeneralLifeCounter;

@@ -4,9 +4,9 @@ header {
     background-color: #333;
     color: #fff;
 
-    div {
+    article {
         display: flex; 
-        justify-content: space-between; 
+        justify-content: flex-start; 
         align-items: center;
 
         button {
@@ -19,6 +19,9 @@ header {
         }
 
         a {
+            position: absolute;
+            left: 23%;
+            font-size: 1.25rem;
             text-decoration: none;
             color: #fff;
             
@@ -58,7 +61,7 @@ header {
                 flex-direction: column;
                 margin: 1.5rem 0;
 
-                div {
+                section {
                     display: flex;
                     flex-direction: column;
                     margin-top: 0.25rem;

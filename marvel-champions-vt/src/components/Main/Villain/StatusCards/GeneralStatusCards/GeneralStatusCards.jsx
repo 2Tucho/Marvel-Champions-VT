@@ -79,7 +79,7 @@ function GeneralStatusCards () {
     setSteadyClicked(!steadyClicked); /* Toggle the visibility of Steady button */
   }
 
-  return <div>
+  return <>
     <article>
       <button onClick={() => hideConfusedAndStunned()} style={{backgroundColor: stelwartClicked ? "#B1B1B1" : "#F2F2F2", /*Darker grey if active, lighter grey if inactive */ }}>Stelwart</button>
       <button onClick={() => divideConfusedAndStunnedButtons()} style={{backgroundColor: steadyClicked ? "#B1B1B1" : "#F2F2F2", /*Darker grey if active, lighter grey if inactive */ }}>Steady</button>
@@ -125,7 +125,7 @@ function GeneralStatusCards () {
       </div>
         
     </article>
-  </div>
+  </>;
 }
 
 export default GeneralStatusCards;

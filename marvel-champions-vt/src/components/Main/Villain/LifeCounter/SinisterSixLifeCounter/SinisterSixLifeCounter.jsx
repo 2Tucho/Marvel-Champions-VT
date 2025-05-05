@@ -53,101 +53,102 @@ function SinisterSixLifeCounter() {
       } else {
         setCountVulture(Number(value)); /* Convert the value to a number, because the input is a string */
       }
-    }
-    
+    } 
   };
 
-  return (<>
-    {phase.includes("doctorOctopus") ? <div className="lifeCounter">
+  return <>
 
-      <p>HP:</p>
+      {phase.includes("doctorOctopus") ? <article className="lifeCounter">
 
-      <input type="number" value={countDoctorOctopus} onChange={(e) => handleInputChange(e, "doctorOctopus")} />
+        <p>HP:</p>
 
-      <div>
-        <button onClick={() => setCountDoctorOctopus((count) => count + 1)}> {/* Button to add 1 to the Live counter */}
-          +
-        </button>
-        <button onClick={() => setCountDoctorOctopus((count) => count - 1)}> {/* Button to substract 1 to the Live counter */}
-          -
-        </button>
-      </div>
+        <input type="number" value={countDoctorOctopus} onChange={(e) => handleInputChange(e, "doctorOctopus")} />
 
-    </div> : phase.includes("electro") ? <div className="lifeCounter">
+        <div>
+          <button onClick={() => setCountDoctorOctopus((count) => count + 1)}> {/* Button to add 1 to the Live counter */}
+            +
+          </button>
+          <button onClick={() => setCountDoctorOctopus((count) => count - 1)}> {/* Button to substract 1 to the Live counter */}
+            -
+          </button>
+        </div>
 
-      <p>HP:</p>
+      </article> : phase.includes("electro") ? <article className="lifeCounter">
 
-      <input type="number" value={countElectro} onChange={(e) => handleInputChange(e, "electro")} />
+        <p>HP:</p>
 
-      <div>
-        <button onClick={() => setCountElectro((count) => count + 1)}> {/* Button to add 1 to the Live counter */}
-          +
-        </button>
-        <button onClick={() => setCountElectro((count) => count - 1)}> {/* Button to substract 1 to the Live counter */}
-          -
-        </button>
-      </div>
+        <input type="number" value={countElectro} onChange={(e) => handleInputChange(e, "electro")} />
 
-    </div> : phase.includes("hobgoblin") ? <div className="lifeCounter">
+        <div>
+          <button onClick={() => setCountElectro((count) => count + 1)}> {/* Button to add 1 to the Live counter */}
+            +
+          </button>
+          <button onClick={() => setCountElectro((count) => count - 1)}> {/* Button to substract 1 to the Live counter */}
+            -
+          </button>
+        </div>
 
-      <p>HP:</p>
+      </article> : phase.includes("hobgoblin") ? <article className="lifeCounter">
 
-      <input type="number" value={countHobgoblin} onChange={(e) => handleInputChange(e, "hobgoblin")} />
+        <p>HP:</p>
 
-      <div>
-        <button onClick={() => setCountHobgoblin((count) => count + 1)}> {/* Button to add 1 to the Live counter */}
-          +
-        </button>
-        <button onClick={() => setCountHobgoblin((count) => count - 1)}> {/* Button to substract 1 to the Live counter */}
-          -
-        </button>
-      </div>
+        <input type="number" value={countHobgoblin} onChange={(e) => handleInputChange(e, "hobgoblin")} />
 
-</div> : phase.includes("kravenTheHunter") ? <div className="lifeCounter">
+        <div>
+          <button onClick={() => setCountHobgoblin((count) => count + 1)}> {/* Button to add 1 to the Live counter */}
+            +
+          </button>
+          <button onClick={() => setCountHobgoblin((count) => count - 1)}> {/* Button to substract 1 to the Live counter */}
+            -
+          </button>
+        </div>
 
-      <p>HP:</p>
+  </article> : phase.includes("kravenTheHunter") ? <article className="lifeCounter">
 
-      <input type="number" value={countKravenTheHunter} onChange={(e) => handleInputChange(e, "kravenTheHunter")} />
+        <p>HP:</p>
 
-      <div>
-        <button onClick={() => setCountKravenTheHunter((count) => count + 1)}> {/* Button to add 1 to the Live counter */}
-          +
-        </button>
-        <button onClick={() => setCountKravenTheHunter((count) => count - 1)}> {/* Button to substract 1 to the Live counter */}
-          -
-        </button>
-      </div>
+        <input type="number" value={countKravenTheHunter} onChange={(e) => handleInputChange(e, "kravenTheHunter")} />
 
-</div> : phase.includes("scorpion") ? <div className="lifeCounter">
+        <div>
+          <button onClick={() => setCountKravenTheHunter((count) => count + 1)}> {/* Button to add 1 to the Live counter */}
+            +
+          </button>
+          <button onClick={() => setCountKravenTheHunter((count) => count - 1)}> {/* Button to substract 1 to the Live counter */}
+            -
+          </button>
+        </div>
 
-      <p>HP:</p>
+  </article> : phase.includes("scorpion") ? <article className="lifeCounter">
 
-      <input type="number" value={countScorpion} onChange={(e) => handleInputChange(e, "scorpion")} />
+        <p>HP:</p>
 
-      <div>
-        <button onClick={() => setCountScorpion((count) => count + 1)}> {/* Button to add 1 to the Live counter */}
-          +
-        </button>
-        <button onClick={() => setCountScorpion((count) => count - 1)}> {/* Button to substract 1 to the Live counter */}
-          -
-        </button>
-      </div>
+        <input type="number" value={countScorpion} onChange={(e) => handleInputChange(e, "scorpion")} />
 
-    </div> : <div className="lifeCounter">
-      <p>HP:</p>
+        <div>
+          <button onClick={() => setCountScorpion((count) => count + 1)}> {/* Button to add 1 to the Live counter */}
+            +
+          </button>
+          <button onClick={() => setCountScorpion((count) => count - 1)}> {/* Button to substract 1 to the Live counter */}
+            -
+          </button>
+        </div>
 
-      <input type="number" value={countVulture} onChange={(e) => handleInputChange(e, "vulture")} />
+      </article> : <article className="lifeCounter">
+        <p>HP:</p>
 
-      <div>
-        <button onClick={() => setCountVulture((count) => count + 1)}> {/* Button to add 1 to the Live counter */}
-          +
-        </button>
-        <button onClick={() => setCountVulture((count) => count - 1)}> {/* Button to substract 1 to the Live counter */}
-          -
-        </button>
-      </div>
-    </div>}
-  </>);
-}
+        <input type="number" value={countVulture} onChange={(e) => handleInputChange(e, "vulture")} />
+
+        <div>
+          <button onClick={() => setCountVulture((count) => count + 1)}> {/* Button to add 1 to the Live counter */}
+            +
+          </button>
+          <button onClick={() => setCountVulture((count) => count - 1)}> {/* Button to substract 1 to the Live counter */}
+            -
+          </button>
+        </div>
+      </article>}
+    </>;
+
+};
 
 export default SinisterSixLifeCounter;

@@ -1,5 +1,5 @@
 import React from "react";
-import {useContext} from "react";
+import { useContext } from "react";
 import { PhaseButtonsContext } from "../../../../../context/PhaseButtonsContext";
 
 function ApocalypseButtons() { 
@@ -12,8 +12,8 @@ function ApocalypseButtons() {
       <button onClick={() => setPhase("phaseIII")}>Phase III</button> 
       <button onClick={() => setPhase("phaseIV")}>Phase IV</button>
 
-    </div>
+    </div>;
 
-}
+};
 
 export default ApocalypseButtons;

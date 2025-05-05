@@ -43,8 +43,8 @@ function FourHorsemenLifeCounter() {
     
   };
 
-  return (<>
-    {phase.includes("death") ? <div className="lifeCounter">
+  return <>
+    {phase.includes("death") ? <article className="lifeCounter">
 
       <p>HP:</p>
 
@@ -59,7 +59,7 @@ function FourHorsemenLifeCounter() {
         </button>
       </div>
 
-    </div> : phase.includes("famine") ? <div className="lifeCounter">
+    </article> : phase.includes("famine") ? <article className="lifeCounter">
 
       <p>HP:</p>
 
@@ -74,7 +74,7 @@ function FourHorsemenLifeCounter() {
         </button>
       </div>
 
-    </div> : phase.includes("pestilence") ? <div className="lifeCounter">
+    </article> : phase.includes("pestilence") ? <article className="lifeCounter">
       <p>HP:</p>
 
       <input type="number" value={countPestilence} onChange={(e) => handleInputChange(e, "pestilence")} />
@@ -88,7 +88,7 @@ function FourHorsemenLifeCounter() {
         </button>
       </div>
 
-    </div> : <div className="lifeCounter">
+    </article> : <article className="lifeCounter">
       <p>HP:</p>
 
       <input type="number" value={countWar} onChange={(e) => handleInputChange(e, "war")} />
@@ -101,8 +101,9 @@ function FourHorsemenLifeCounter() {
           -
         </button>
       </div>
-    </div>}
-  </>);
-}
+    </article>}
+  </>;
+
+};
 
 export default FourHorsemenLifeCounter;

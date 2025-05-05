@@ -38,8 +38,8 @@ function WreckingCrewButtons() {
         )}
       </article>
 
-    </div>
+    </div>;
 
-}
+};
 
 export default WreckingCrewButtons;
