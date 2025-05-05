@@ -68,16 +68,16 @@ function Header() {
           setMenuOpen(false); /* Close the modal */
         }
       };
-  
+      
       document.addEventListener("mousedown", handleClickOutside);
       return () => {
         document.removeEventListener("mousedown", handleClickOutside);
       };
     }, []);
 
-  return (<header id="header">
+  return (<header id="header" ref={modalRef}> {/* The ref must be here to fix the problem with the button updating the menuOpen state 2 times (the button and clicking outside the nav) */}
       <article id="menuModal">
-        <button onClick={() => toggleMenu()}>
+        <button onClick={toggleMenu}>
           ☰ {/* Burger icon */}
         </button>
         <Link to={`/`} onClick={() => {
@@ -87,7 +87,7 @@ function Header() {
         }}><h1>Marvel Champions</h1></Link>
       </article>
       {menuOpen && (
-        <nav ref={modalRef}>
+        <nav>
           <ul>
             <li className="setName">
               <button className="setButton" onClick={() => toggleSet("coreSet")}>Core Set</button>
