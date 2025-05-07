@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import GeneralStatusTokens from "./GeneralStatusTokens/GeneralStatusTokens";
 import RiskyBusinessStatusTokens from "./RiskyBusinessStatusTokens/RiskyBusinessStatusTokens";
 import WreckingCrewStatusTokens from "./WreckingCrewStatusTokens/WreckingCrewStatusTokens";
+import KangStatusTokens from "./KangStatusTokens/KangStatusTokens";
 
 
 function StatusTokens() { 
@@ -10,6 +11,7 @@ function StatusTokens() {
 
   /* Map the villainId to the corresponding button component */
   const statusComponents = {
+    kang: <KangStatusTokens />,
     riskyBusiness: <RiskyBusinessStatusTokens />,
     theWreckingCrew: <WreckingCrewStatusTokens />,
   };
