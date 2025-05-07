@@ -5,6 +5,7 @@ import RiskyBusinessStatusTokens from "./RiskyBusinessStatusTokens/RiskyBusiness
 import WreckingCrewStatusTokens from "./WreckingCrewStatusTokens/WreckingCrewStatusTokens";
 import KangStatusTokens from "./KangStatusTokens/KangStatusTokens";
 import TowerDefenseStatusTokens from "./TowerDefenseStatusTokens/TowerDefenseStatusTokens";
+import LokiStatusTokens from "./LokiStatusTokens";
 
 
 function StatusTokens() { 
@@ -13,6 +14,7 @@ function StatusTokens() {
   /* Map the villainId to the corresponding button component */
   const statusComponents = {
     kang: <KangStatusTokens />,
+    loki: <LokiStatusTokens />,
     riskyBusiness: <RiskyBusinessStatusTokens />,
     towerDefense: <TowerDefenseStatusTokens />,
     theWreckingCrew: <WreckingCrewStatusTokens />,
