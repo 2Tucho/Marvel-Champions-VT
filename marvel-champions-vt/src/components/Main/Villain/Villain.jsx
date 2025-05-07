@@ -41,6 +41,9 @@ function Villain () {
               confusedStatus={confusedStatus}
               stunnedStatus={stunnedStatus}
               momentumCounters={momentumCounters}
+              setToughStatus={setToughStatus}
+              setConfusedStatus={setConfusedStatus}
+              setStunnedStatus={setStunnedStatus}
               setMomentumCounters={setMomentumCounters}
               teleportCounters={teleportCounters}
               setTeleportCounters={setTeleportCounters}
