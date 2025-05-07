@@ -31,6 +31,6 @@ function RiskyBusinessStatusTokens() {
   )}
   </article>);
 
-}
+};
 
 export default RiskyBusinessStatusTokens;
