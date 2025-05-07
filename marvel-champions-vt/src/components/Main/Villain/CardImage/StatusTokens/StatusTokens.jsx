@@ -6,6 +6,7 @@ import WreckingCrewStatusTokens from "./WreckingCrewStatusTokens/WreckingCrewSta
 import KangStatusTokens from "./KangStatusTokens/KangStatusTokens";
 import TowerDefenseStatusTokens from "./TowerDefenseStatusTokens/TowerDefenseStatusTokens";
 import LokiStatusTokens from "./LokiStatusTokens";
+import SinisterSixStatusTokens from "./SinisterSixStatusTokens/SinisterSixStatusTokens";
 
 
 function StatusTokens() { 
@@ -16,6 +17,7 @@ function StatusTokens() {
     kang: <KangStatusTokens />,
     loki: <LokiStatusTokens />,
     riskyBusiness: <RiskyBusinessStatusTokens />,
+    sinisterSix: <SinisterSixStatusTokens />,
     towerDefense: <TowerDefenseStatusTokens />,
     theWreckingCrew: <WreckingCrewStatusTokens />,
   };
