@@ -4,6 +4,7 @@ import GeneralStatusTokens from "./GeneralStatusTokens/GeneralStatusTokens";
 import RiskyBusinessStatusTokens from "./RiskyBusinessStatusTokens/RiskyBusinessStatusTokens";
 import WreckingCrewStatusTokens from "./WreckingCrewStatusTokens/WreckingCrewStatusTokens";
 import KangStatusTokens from "./KangStatusTokens/KangStatusTokens";
+import TowerDefenseStatusTokens from "./TowerDefenseStatusTokens/TowerDefenseStatusTokens";
 
 
 function StatusTokens() { 
@@ -13,6 +14,7 @@ function StatusTokens() {
   const statusComponents = {
     kang: <KangStatusTokens />,
     riskyBusiness: <RiskyBusinessStatusTokens />,
+    towerDefense: <TowerDefenseStatusTokens />,
     theWreckingCrew: <WreckingCrewStatusTokens />,
   };
 
