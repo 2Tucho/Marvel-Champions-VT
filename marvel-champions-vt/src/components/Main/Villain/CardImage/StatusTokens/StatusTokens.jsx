@@ -1,7 +1,8 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import GeneralStatusTokens from "./GeneralStatusTokens/GeneralStatusTokens";
-import RiskyBusinessStatusTokens from "./RiskyBusinessStatusTokens/RiskyBusinessStatusTokens"
+import RiskyBusinessStatusTokens from "./RiskyBusinessStatusTokens/RiskyBusinessStatusTokens";
+import WreckingCrewStatusTokens from "./WreckingCrewStatusTokens/WreckingCrewStatusTokens";
 
 
 function StatusTokens() { 
@@ -10,6 +11,7 @@ function StatusTokens() {
   /* Map the villainId to the corresponding button component */
   const statusComponents = {
     riskyBusiness: <RiskyBusinessStatusTokens />,
+    theWreckingCrew: <WreckingCrewStatusTokens />,
   };
 
   return <section id="statusTokensContainer">{statusComponents[villainId.villainId] || <GeneralStatusTokens />}</section>; {/* Render the buttons based on the villainId. If no specific buttons are found, render the GeneralButtons component. */}
