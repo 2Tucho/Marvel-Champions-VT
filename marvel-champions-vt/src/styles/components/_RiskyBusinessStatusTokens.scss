@@ -1,0 +1,33 @@
+.riskyBusinessTokens {
+    height: 7rem;
+    position: absolute;
+    left: 78%; /* Position from left */
+    transform: translate(-50%, -50%); /* Centers */
+    border-radius: 10px; /* To round the white corners of the jpg images */
+}
+
+/* NORMAN OSBORN*/
+#normanOsbornToughToken {
+    top: 34.5%; /* Position from top */
+}
+
+#normanOsbornConfusedToken {
+    top: 41%;
+}
+
+#normanOsbornStunnedToken {
+    top: 48%;
+}
+
+/* GREEN GOBLIN*/
+#greenGoblinToughToken {
+    top: -73%; /* Position from top */
+}
+
+#greenGoblinConfusedToken {
+    top: -24.5%;
+}
+
+#greenGoblinStunnedToken {
+    top: 26%;
+}
