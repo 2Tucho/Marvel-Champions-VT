@@ -21,10 +21,12 @@ function KangButtons() {
       <button onClick={() => {
         changeMode("normal");
         setPhaseIIExpimg(false); /* Reset the Phase II image when changing modes */
+        setPhase("default"); /* Change the Phase to default so the status tokens don't bacome crazy */
       }}>Normal</button>
       <button onClick={() => {
         changeMode("expert");
         setPhaseIIimg(false); /* Reset the Phase II image when changing modes */
+        setPhase("phaseIExp");
       }}>Expert</button>
     </article>
 
