@@ -7,13 +7,13 @@
 }
 
 /* GENERAL VILLAINS*/
-#toughToken {
+.toughToken {
     top: 37%; /* Position from top */
 }
-#confusedToken {
+.confusedToken {
     top: 43.5%;
 }
-#stunnedToken {
+.stunnedToken {
     top: 50%;
 }
 
@@ -39,6 +39,17 @@
     top: 69.5%;
 }
 
+/* MORLOCK SIEGE */
+#morlockSiegeToughToken {
+    top: 43%; /* Position from top */
+}
+#morlockSiegeConfusedToken {
+    top: 50%;
+}
+#morlockSiegeStunnedToken {
+    top: 57%;
+}
+
 /* SINISTER SIX */
 #sinisterSixToughToken {
     top: 52%; /* Position from top */
@@ -48,6 +59,17 @@
 }
 #sinisterSixStunnedToken {
     top: 66%;
+}
+
+/* SPIRAL */
+#spiralToughToken {
+    top: 39%; /* Position from top */
+}
+#spiralConfusedToken {
+    top: 46%;
+}
+#spiralStunnedToken {
+    top: 53%;
 }
 
 /* TOWER DEFENSE */
