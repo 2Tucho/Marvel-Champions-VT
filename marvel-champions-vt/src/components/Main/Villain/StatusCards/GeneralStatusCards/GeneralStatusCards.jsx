@@ -1,9 +1,12 @@
 import React from "react";
 import { useState, useContext, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { StatusCardsContext } from "../../../../../context/StatusCardsContext";
 
 function GeneralStatusCards () {
   const { setToughStatus, setConfusedStatus, setStunnedStatus } = useContext(StatusCardsContext);
+
+  const villainId = useParams(); 
 
   /* States to keep track of the active Status Cards on the Villain */
   const [tough, setTough] = useState(false); 
@@ -24,6 +27,19 @@ function GeneralStatusCards () {
   const [extraConfused, setExtraConfused] = useState(false);
   const [extraStunned, setExtraStunned] = useState(false);
 
+
+  /* UseEffect to "turn off" the status cards buttons when you change the Villain */
+  useEffect(() => {
+    setTough(false);
+    setConfused(false);
+    setStunned(false);
+    setExtraConfused(false);
+    setExtraStunned(false);
+    setSteadyClicked(false);
+    setStelwartClicked(false);
+    setShowExtraButtons(false)
+    setHideStatus(false);
+  }, [villainId.villainId]);
 
   /* They are set here so the states are initialized as false and change at the moment you click the buttons. Sync the parent states with the local states */
   useEffect(() => {
