@@ -10,13 +10,13 @@ function GeneralStatusTokens() {
   return <article id={`${villainId.villainId}Tokens`}>
     {/* If toughStatus / confusedStatus / stunnedStatus are true, their respective element will show */}
     {toughStatus && (
-      <img id={`${villainId.villainId}ToughToken`} className="statusToken" src={"/StatusTokens/tough.jpg"} alt="Tough Token"/>
+      <img id={`${villainId.villainId}ToughToken`} className="statusToken toughToken" src={"/StatusTokens/tough.jpg"} alt="Tough Token"/>
     )}
     {confusedStatus && (
-      <img id={`${villainId.villainId}ConfusedToken`} className="statusToken" src={"/StatusTokens/confused.jpg"} alt="Confused Token" />
+      <img id={`${villainId.villainId}ConfusedToken`} className="statusToken confusedToken" src={"/StatusTokens/confused.jpg"} alt="Confused Token" />
     )}
     {stunnedStatus && (
-      <img id={`${villainId.villainId}StunnedToken`} className="statusToken" src={"/StatusTokens/stunned.jpg"} alt="Stunned Token" />
+      <img id={`${villainId.villainId}StunnedToken`} className="statusToken stunnedToken" src={"/StatusTokens/stunned.jpg"} alt="Stunned Token" />
     )}
   </article>;
 
