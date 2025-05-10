@@ -4,7 +4,7 @@ import { PhaseButtonsContext } from "../../../../../context/PhaseButtonsContext"
 
 function LokiButtons() { 
   /* State to keep track of the different Loki form */
-  const [remainingLokis, setRemainingLokis] = useState([
+  const [lokiList, setlokiList] = useState([
     "loki1",
     "loki2",
     "loki3",
@@ -20,18 +20,31 @@ function LokiButtons() {
   /* To save the version we want to change */
   const [actualVersion, setActualVersion] = useState();
 
+  const [noRepeatLoki, setNoRepeatLoki] = useState("")
+
   const {setPhase} = useContext(PhaseButtonsContext);
 
   /* Function to show a random version of Loki */
   const chooseRandomVillain = () => {
-    if (remainingLokis.length === 0) {
+    if (lokiList.length === 1) {
       return /* Exit if there aren't forms left */
     };
 
-    const randomIndex = Math.floor(Math.random() * remainingLokis.length); /* Get a random index from the Loki's array */
-    const randomLoki = remainingLokis[randomIndex];
+    const randomIndex = Math.floor(Math.random() * lokiList.length); /* Get a random index from the Loki's array */
+    const randomLoki = lokiList[randomIndex];
 
-    setPhase(randomLoki); /* Set the phase to the selected Loki form */
+    if(randomLoki === noRepeatLoki) { /* Repeat the process without the repeated Loki version */
+      const newLokiList = lokiList.filter(villain => villain !== randomLoki);
+      const newRandomIndex = Math.floor(Math.random() * newLokiList.length);
+      const newRandomLoki = newLokiList[newRandomIndex];
+      setPhase(newRandomLoki);
+      setNoRepeatLoki(newRandomLoki);
+    } else {
+      setPhase(randomLoki); /* Set the phase to the selected Loki form */
+      setNoRepeatLoki(randomLoki); /* Set the state with the new item we don't want to get repeated */
+    }
+
+    
   }
 
   useEffect(() => {
@@ -41,34 +54,34 @@ function LokiButtons() {
       if(actualVersion == 1) {
         if(version1Clicked) {
           /* Remove "loki1" from the array */
-          setRemainingLokis(remainingLokis.filter(villain => villain !== lokiVersion));
+          setlokiList(lokiList.filter(villain => villain !== lokiVersion));
         } else if (!version1Clicked) {
           /* Add "loki1" from the array */
-          setRemainingLokis([...remainingLokis, lokiVersion]);
+          setlokiList([...lokiList, lokiVersion]);
         }
       } else if(actualVersion == 2) {
         if(version2Clicked) {
-          setRemainingLokis(remainingLokis.filter(villain => villain !== lokiVersion));
+          setlokiList(lokiList.filter(villain => villain !== lokiVersion));
         } else if (!version2Clicked) {
-          setRemainingLokis([...remainingLokis, lokiVersion]);
+          setlokiList([...lokiList, lokiVersion]);
         }
       } else if(actualVersion == 3) {
         if(version3Clicked) {
-          setRemainingLokis(remainingLokis.filter(villain => villain !== lokiVersion));
+          setlokiList(lokiList.filter(villain => villain !== lokiVersion));
         } else if (!version3Clicked) {
-          setRemainingLokis([...remainingLokis, lokiVersion]);
+          setlokiList([...lokiList, lokiVersion]);
         }
       } else if(actualVersion == 4) {
         if(version4Clicked) {
-          setRemainingLokis(remainingLokis.filter(villain => villain !== lokiVersion));
+          setlokiList(lokiList.filter(villain => villain !== lokiVersion));
         } else if (!version4Clicked) {
-          setRemainingLokis([...remainingLokis, lokiVersion]);
+          setlokiList([...lokiList, lokiVersion]);
         }
       } else if(actualVersion == 5) {
         if(version5Clicked) {
-          setRemainingLokis(remainingLokis.filter(villain => villain !== lokiVersion));
+          setlokiList(lokiList.filter(villain => villain !== lokiVersion));
         } else if (!version5Clicked) {
-          setRemainingLokis([...remainingLokis, lokiVersion]);
+          setlokiList([...lokiList, lokiVersion]);
         }
       }
     };
@@ -78,7 +91,6 @@ function LokiButtons() {
 
 
   
-
   return <div id="lokiButtons">
 
       <article id="lokiLegend">
@@ -90,7 +102,7 @@ function LokiButtons() {
             <p>Version 1 - LOKI (1/21)</p>
             <button onClick={() => {
               setVersion1Clicked(!version1Clicked); /* Toggle the state */
-              setActualVersion(1); /* Add or remove "loki1" from remainingLokis */
+              setActualVersion(1); /* Add or remove "loki1" from lokiList */
             }} style={{backgroundColor: version1Clicked ? "green" : "red" }}>o</button>
           </div>
 
