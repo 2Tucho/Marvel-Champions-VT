@@ -1,12 +1,18 @@
 import React from "react";
 import { useState, useContext } from "react";
 import { PhaseButtonsContext } from "../../../../../context/PhaseButtonsContext";
+import {DifficultyEnum, DifficultyHelper} from "../../../../../enum/DifficultyEnum";
 
 function WreckingCrewButtons() { 
+  // Cgoob
+  // const [difficulty, setDifficulty] = useState(DifficultyEnum.Normal);
+  // let villains = ['wrecker', 'thunderball', 'piledriver', 'bulldozer'];
+
   const [showNormalButtons, setShowNormalButtons] = useState(false); /* State to hide/display the Normal mode buttons */
   const [showExpertButtons, setShowExpertButtons] = useState(false); /* State to hide/display the Expert mode buttons */
 
   const {setPhase} = useContext(PhaseButtonsContext);
+
 
   return <div id="wreckingCrewButtons">
 
@@ -21,6 +27,13 @@ function WreckingCrewButtons() {
       }}>Expert</button>
 
       <article>
+        {/* Cgoob */}
+        {/* <div>
+          {villains.map((villain) => {
+            return <button id={`${villain}${DifficultyHelper.getImageLetter(difficulty)}`} onClick={() => setPhase(`${villain}${DifficultyHelper.getImageLetter(difficulty)}`)}>${(villain)}</button>
+          })}
+        </div> */}
+
         {showNormalButtons && (<div>
           <button id="wreckerA" onClick={() => setPhase("default")}>Wrecker</button>
           <button id="thunderballA" onClick={() => setPhase("thunderballA")}>Thunderball</button> 

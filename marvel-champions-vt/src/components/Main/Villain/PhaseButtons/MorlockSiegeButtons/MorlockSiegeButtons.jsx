@@ -3,8 +3,7 @@ import { useState, useContext } from "react";
 import { PhaseButtonsContext } from "../../../../../context/PhaseButtonsContext";
 
 function MorlockSiegeButtons() { 
-  const [villainMode, setVillainMode] = useState("normal"); /* State to hide/display the Villain's buttons */
-  const [marauders, setMarauders] = useState([
+  let defaultMarauders = [
     "arclight",
     "blockbuster",
     "chimera",
@@ -12,7 +11,9 @@ function MorlockSiegeButtons() {
     "harpoon",
     "riptide",
     "vertigo"
-  ]);
+  ];
+  const [villainMode, setVillainMode] = useState("normal"); /* State to hide/display the Villain's buttons */
+  const [marauders, setMarauders] = useState(defaultMarauders);
 
   const {setPhase} = useContext(PhaseButtonsContext);
 
@@ -33,27 +34,11 @@ function MorlockSiegeButtons() {
       <article id="MorlockSiegeModeButtons">
         <button onClick={() => {
           setVillainMode("normal");
-          setMarauders([
-            "arclight",
-            "blockbuster",
-            "chimera",
-            "greycrow",
-            "harpoon",
-            "riptide",
-            "vertigo"
-          ]); /* Reset the array to the original state */
+          setMarauders(defaultMarauders); /* Reset the array to the original state */
           }}>Normal</button>
         <button onClick={() => {
           setVillainMode("expert");
-          setMarauders([
-            "arclight",
-            "blockbuster",
-            "chimera",
-            "greycrow",
-            "harpoon",
-            "riptide",
-            "vertigo"
-          ]); /* Reset the array to the original state */
+          setMarauders(defaultMarauders); /* Reset the array to the original state */
           }}>Expert</button>
       </article>
 
