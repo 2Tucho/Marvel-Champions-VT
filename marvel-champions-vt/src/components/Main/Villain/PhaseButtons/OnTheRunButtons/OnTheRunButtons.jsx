@@ -1,10 +1,11 @@
 import React from "react";
-import { useState, useContext } from "react";
+import { useState, useContext, useRef } from "react";
 import { PhaseButtonsContext } from "../../../../../context/PhaseButtonsContext";
 
-function OnTheRunButtons() { 
+function OnTheRunButtons() {
   const [showVillainButtons, setShowVillainButtons] = useState(false); /* State to hide/display the Villain's buttons */
   const [marauder, setMarauder] = useState(""); /* State to keep track of the selected villain */
+  const [marauderMode, setMarauderMode] = useState("A"); /* State to keep track of the game Mode the Villain is */
   const [maraudersList, setMaraudersList] = useState([
     "arclight",
     "blockbuster",
@@ -15,46 +16,104 @@ function OnTheRunButtons() {
     "vertigo"
   ]); /* State to keep track of the selected phase */
   const [maraudersDefeatedList, setMaraudersDefeatedList] = useState(false); /* State to hide/display the list to choose the Marauders defeated */
-  
-  const {setPhase} = useContext(PhaseButtonsContext);
-  
 
+  /* State to keep track of the last Villain showing, so the next random Villain isn't the same */
+  const [noRepeatMarauder, setNoRepeatMarauder] = useState("");
+
+  /* List of refs to access if the checkboxes are checked or not */
+  const arclightCheck = useRef();
+  const blockbusterCheck = useRef();
+  const chimeraCheck = useRef();
+  const greycrowCheck = useRef();
+  const harpoonCheck = useRef();
+  const riptideCheck = useRef();
+  const vertigoCheck = useRef();
+
+  const { setPhase } = useContext(PhaseButtonsContext);
+
+  /* Function to hide and display the Marauders defeated list */
   const toggleMaraudersDefeated = () => {
     setMaraudersDefeatedList(!maraudersDefeatedList);
   }
 
   const chooseRandomVillain = () => {
-    const randomIndex = Math.floor(Math.random() * maraudersList.length); /* Get a random index from the marauders array */
+    if (maraudersList.length === 1) {
+      return /* Exit if there aren't forms left */
+    };
+
+    const randomIndex = Math.floor(Math.random() * maraudersList.length); /* Get a random index from the Marauder's array */
     const randomMarauder = maraudersList[randomIndex];
 
     setShowVillainButtons(true); /* Set the villain state to true to show the buttons */
-    setMarauder(randomMarauder); /* Set the selected villain to the state */
 
-    setPhase(`${randomMarauder}A`); /* Set the phase to the selected villain so the img isn't empty. With randomVillain it does the setPhase at the moment, with the marauder state it wouldn's show */
+    if(randomMarauder === noRepeatMarauder) { /* Repeat the process without the repeated Marauder */
+      const newMarauderList = maraudersList.filter(villain => villain !== randomMarauder);
+      const newRandomIndex = Math.floor(Math.random() * newMarauderList.length);
+      const newRandomMarauder = newMarauderList[newRandomIndex];
+      setPhase(`${newRandomMarauder}${marauderMode}`);
+      setNoRepeatMarauder(newRandomMarauder);
+      setMarauder(newRandomMarauder);
+    } else {
+      setPhase(`${randomMarauder}${marauderMode}`); /* Set the phase to the selected Marauder form */
+      setNoRepeatMarauder(randomMarauder); /* Set the state with the new item we don't want to get repeated */
+      setMarauder(randomMarauder);
+    };
+
   };
 
-  return <div id="morlockSiegeButtons">
+  /* To track the changes in the checkboxes and mantain uploaded the maraudersList */
+  const handleMaraudersChecked = marauder => {
+    const marauderRefs = {
+      arclight: arclightCheck,
+      blockbuster: blockbusterCheck,
+      chimera: chimeraCheck,
+      greycrow: greycrowCheck,
+      harpoon: harpoonCheck,
+      riptide: riptideCheck,
+      vertigo: vertigoCheck,
+    };
 
-      <h4 onClick={toggleMaraudersDefeated}>Defeated Marauders</h4>
-      <p>?</p>
-      {maraudersDefeatedList && <form action="">
-        <label htmlFor="arclight">Arclight</label><input type="checkbox" name="arclight" id="arclightCheckbox" ref={arclightRef} />
-        <label htmlFor="blockbuster">Blockbuster</label><input type="checkbox" name="blockbuster" id="blockbusterCheckbox" />
-        <label htmlFor="chimera">Chimera</label><input type="checkbox" name="chimera" id="chimeraCheckbox" />
-        <label htmlFor="greycrow">Greycrow</label><input type="checkbox" name="greycrow" id="greycrowtCheckbox" />
-        <label htmlFor="riptide">Riptide</label><input type="checkbox" name="riptide" id="riptideCheckbox" />
-        <label htmlFor="vertigo">Vertigo</label><input type="checkbox" name="vertigo" id="vertigoCheckbox" />
-      </form>}
+    const ref = marauderRefs[marauder];
+    if (ref.current.checked) {
+      setMaraudersList(maraudersList.filter(elem => elem !== marauder))
+    } else {
+      /* Add the marauder back when the ref.current.checked is false */
+      if (!maraudersList.includes(marauder)) {
+        setMaraudersList([...maraudersList, marauder]);
+      }
+    }
+  }
 
-      <button onClick={chooseRandomVillain}>One Random Villain</button>
-      
-      {showVillainButtons && ( <div>
-          <button onClick={() => setPhase(`${marauder}A`)}>Normal</button>
-          <button onClick={() => setPhase(`${marauder}B`)}>Expert</button>
-        </div>
-      )}
 
-    </div>;
+  return <div id="onTheRunButtons">
+
+    <h4 onClick={toggleMaraudersDefeated}>Defeated Marauders</h4>
+    <p>?</p>
+    {maraudersDefeatedList && <form action="">
+      <label htmlFor="arclight">Arclight</label><input type="checkbox" name="arclight" id="arclightCheckbox" ref={arclightCheck} checked={!maraudersList.includes("arclight")} /*  */ onChange={() => handleMaraudersChecked("arclight")} />
+      <label htmlFor="blockbuster">Blockbuster</label><input type="checkbox" name="blockbuster" id="blockbusterCheckbox" ref={blockbusterCheck} checked={!maraudersList.includes("blockbuster")} onChange={() => handleMaraudersChecked("blockbuster")} />
+      <label htmlFor="chimera">Chimera</label><input type="checkbox" name="chimera" id="chimeraCheckbox" ref={chimeraCheck} checked={!maraudersList.includes("chimera")} onChange={() => handleMaraudersChecked("chimera")} />
+      <label htmlFor="greycrow">Greycrow</label><input type="checkbox" name="greycrow" id="greycrowtCheckbox" ref={greycrowCheck} checked={!maraudersList.includes("greycrow")} onChange={() => handleMaraudersChecked("greycrow")} />
+      <label htmlFor="harpoon">Harpoon</label><input type="checkbox" name="harpoon" id="harpoonCheckbox" ref={harpoonCheck} checked={!maraudersList.includes("harpoon")} onChange={() => handleMaraudersChecked("harpoon")} />
+      <label htmlFor="riptide">Riptide</label><input type="checkbox" name="riptide" id="riptideCheckbox" ref={riptideCheck} checked={!maraudersList.includes("riptide")} onChange={() => handleMaraudersChecked("riptide")} />
+      <label htmlFor="vertigo">Vertigo</label><input type="checkbox" name="vertigo" id="vertigoCheckbox" ref={vertigoCheck} checked={!maraudersList.includes("vertigo")} onChange={() => handleMaraudersChecked("vertigo")} />
+    </form>}
+
+    <button onClick={chooseRandomVillain}>One Random Villain</button>
+
+    {showVillainButtons && (<div>
+      <button onClick={() => {
+        setPhase(`${marauder}A`);
+        setMarauderMode("A");
+      }}>Normal</button>
+      <button onClick={() => {
+        setPhase(`${marauder}B`);
+        setMarauderMode("B");
+      }}>Expert</button>
+    </div>
+    )}
+
+  </div>;
 
 };
 
