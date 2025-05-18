@@ -160,7 +160,7 @@ function Header() {
               <button className="setButton" onClick={() => toggleSet("galaxyWanted")}>Galaxy's Most Wanted</button>
               {galaxyWanted && (
               <section>
-                <Link className="villainLink" to={`/villain/drang`} onClick={toggleMenu}><p>Brotherhood of Badoon</p></Link>
+                <Link className="villainLink" to={`/villain/brotherhoodOfBadoon`} onClick={toggleMenu}><p>Brotherhood of Badoon</p></Link>
                 <Link className="villainLink" to={`/villain/collector1`} onClick={toggleMenu}><p>Collector 1</p></Link>
                 <Link className="villainLink" to={`/villain/collector2`} onClick={toggleMenu}><p>Collector 2</p></Link>
                 <Link className="villainLink" to={`/villain/nebula`} onClick={toggleMenu}><p>Nebula</p></Link>
