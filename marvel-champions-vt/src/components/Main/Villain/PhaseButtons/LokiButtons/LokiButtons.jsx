@@ -20,7 +20,8 @@ function LokiButtons() {
   /* To save the version we want to change */
   const [actualVersion, setActualVersion] = useState();
 
-  const [noRepeatLoki, setNoRepeatLoki] = useState("")
+  /* State to keep track of the last Villain showing, so the next random Villain isn't the same */
+  const [noRepeatLoki, setNoRepeatLoki] = useState("");
 
   const {setPhase} = useContext(PhaseButtonsContext);
 
@@ -42,10 +43,9 @@ function LokiButtons() {
     } else {
       setPhase(randomLoki); /* Set the phase to the selected Loki form */
       setNoRepeatLoki(randomLoki); /* Set the state with the new item we don't want to get repeated */
-    }
+    };
 
-    
-  }
+  };
 
   useEffect(() => {
     const putAsideVersion = () => {

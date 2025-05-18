@@ -1,10 +1,11 @@
 import React from "react";
-import { useState, useContext, useRef, useEffect } from "react";
+import { useState, useContext, useRef } from "react";
 import { PhaseButtonsContext } from "../../../../../context/PhaseButtonsContext";
 
 function OnTheRunButtons() {
   const [showVillainButtons, setShowVillainButtons] = useState(false); /* State to hide/display the Villain's buttons */
   const [marauder, setMarauder] = useState(""); /* State to keep track of the selected villain */
+  const [marauderMode, setMarauderMode] = useState("A"); /* State to keep track of the game Mode the Villain is */
   const [maraudersList, setMaraudersList] = useState([
     "arclight",
     "blockbuster",
@@ -15,6 +16,9 @@ function OnTheRunButtons() {
     "vertigo"
   ]); /* State to keep track of the selected phase */
   const [maraudersDefeatedList, setMaraudersDefeatedList] = useState(false); /* State to hide/display the list to choose the Marauders defeated */
+
+  /* State to keep track of the last Villain showing, so the next random Villain isn't the same */
+  const [noRepeatMarauder, setNoRepeatMarauder] = useState("");
 
   /* List of refs to access if the checkboxes are checked or not */
   const arclightCheck = useRef();
@@ -33,13 +37,28 @@ function OnTheRunButtons() {
   }
 
   const chooseRandomVillain = () => {
-    const randomIndex = Math.floor(Math.random() * maraudersList.length); /* Get a random index from the marauders array */
+    if (maraudersList.length === 1) {
+      return /* Exit if there aren't forms left */
+    };
+
+    const randomIndex = Math.floor(Math.random() * maraudersList.length); /* Get a random index from the Marauder's array */
     const randomMarauder = maraudersList[randomIndex];
 
     setShowVillainButtons(true); /* Set the villain state to true to show the buttons */
-    setMarauder(randomMarauder); /* Set the selected villain to the state */
 
-    setPhase(`${randomMarauder}A`); /* Set the phase to the selected villain so the img isn't empty. With randomVillain it does the setPhase at the moment, with the marauder state it wouldn's show */
+    if(randomMarauder === noRepeatMarauder) { /* Repeat the process without the repeated Marauder */
+      const newMarauderList = maraudersList.filter(villain => villain !== randomMarauder);
+      const newRandomIndex = Math.floor(Math.random() * newMarauderList.length);
+      const newRandomMarauder = newMarauderList[newRandomIndex];
+      setPhase(`${newRandomMarauder}${marauderMode}`);
+      setNoRepeatMarauder(newRandomMarauder);
+      setMarauder(newRandomMarauder);
+    } else {
+      setPhase(`${randomMarauder}${marauderMode}`); /* Set the phase to the selected Marauder form */
+      setNoRepeatMarauder(randomMarauder); /* Set the state with the new item we don't want to get repeated */
+      setMarauder(randomMarauder);
+    };
+
   };
 
   /* To track the changes in the checkboxes and mantain uploaded the maraudersList */
@@ -65,13 +84,6 @@ function OnTheRunButtons() {
     }
   }
 
-  // useEffect(() => {
-  //   if (arclightCheck.current.checked) {
-  //     setMaraudersList(maraudersList.filter(elem => elem !== "arclight"))
-  //   } else if (!arclightCheck.current.checked) {
-  //     setMaraudersList([...maraudersList], "arclight")
-  //   }
-  // }, [arclightCheck.current.checked])
 
   return <div id="onTheRunButtons">
 
@@ -90,8 +102,14 @@ function OnTheRunButtons() {
     <button onClick={chooseRandomVillain}>One Random Villain</button>
 
     {showVillainButtons && (<div>
-      <button onClick={() => setPhase(`${marauder}A`)}>Normal</button>
-      <button onClick={() => setPhase(`${marauder}B`)}>Expert</button>
+      <button onClick={() => {
+        setPhase(`${marauder}A`);
+        setMarauderMode("A");
+      }}>Normal</button>
+      <button onClick={() => {
+        setPhase(`${marauder}B`);
+        setMarauderMode("B");
+      }}>Expert</button>
     </div>
     )}
 
