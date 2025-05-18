@@ -1,10 +1,13 @@
 import React from "react";
-import { useState, useRef, useEffect } from "react";
+import { useState, useContext, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { VillainPlayedContext } from "../../context/VillainPlayedContext";
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false); /* State to toggle the menu */
   const modalRef = useRef(null); /* Reference to the modal container */
+
+  const { villainPlayed } = useContext(VillainPlayedContext); /* Get the Villain played from the context */
   
   /* States to open and close the nav Villain sets */
   const [coreSet, setCoreSet] = useState(false);
@@ -18,6 +21,17 @@ function Header() {
   const [nextEvo, setNextEvo] = useState(false);
   const [ageApocalypse, setAgeApocalypse] = useState(false);
   const [agentsShield, setAgentsShield] = useState(false);
+
+  const convertParamasIntoProperVillainName = () => {
+    if (!villainPlayed || villainPlayed.length === 0) {
+      return "";
+    } else {
+      let properVillainName = villainPlayed[0].toUpperCase() + villainPlayed.slice(1);
+      return properVillainName;
+    };
+  };
+
+  
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen); /* Toggle the menu state */
@@ -80,11 +94,14 @@ function Header() {
         <button onClick={toggleMenu}>
           ☰ {/* Burger icon */}
         </button>
-        <Link to={`/`} onClick={() => {
-          if (menuOpen) {
-            toggleMenu(); /* Call toggleMenu only if menuOpen is true so it closes when I click here */
-          }
-        }}><h1>Marvel Champions</h1></Link>
+        <div>
+          <Link to={`/`} onClick={() => {
+            if (menuOpen) {
+              toggleMenu(); /* Call toggleMenu only if menuOpen is true so it closes when I click here */
+            }
+          }}><h1>Marvel Champions</h1></Link>
+          <Link className="villainLink" id="villainPlayedLink" to={`/villain/${villainPlayed}`}>Villain played: {convertParamasIntoProperVillainName()}</Link>
+        </div>
       </article>
       {menuOpen && (
         <nav>
@@ -203,7 +220,7 @@ function Header() {
               {nextEvo && (
               <section>
                 <Link className="villainLink" to={`/villain/morlockSiege`} onClick={toggleMenu}><p>Morlock Siege</p></Link>
-                <Link className="villainLink" to={`/villain/ontheRun`} onClick={toggleMenu}><p>On the Run</p></Link>
+                <Link className="villainLink" to={`/villain/onTheRun`} onClick={toggleMenu}><p>On the Run</p></Link>
                 <Link className="villainLink" to={`/villain/juggernaut`} onClick={toggleMenu}><p>Juggernaut</p></Link>
                 <Link className="villainLink" to={`/villain/misterSinister`} onClick={toggleMenu}><p>Mister Sinister</p></Link>
                 <Link className="villainLink" to={`/villain/stryfe`} onClick={toggleMenu}><p>Stryfe</p></Link>

@@ -18,15 +18,24 @@ header {
             margin-right: 1rem;
         }
 
-        a {
+        div {
             position: absolute;
             left: 23%;
-            font-size: 1.25rem;
-            text-decoration: none;
-            color: #fff;
             
-            h1 {
-                margin: 0;
+            a {
+                font-size: 1.25rem;
+                text-decoration: none;
+                color: #fff;
+                
+                h1 {
+                    margin: 0;
+                }
+            }
+
+            #villainPlayedLink {
+                font-size: 1rem;
+                text-decoration: none;
+                color: #fff;
             }
         }
     }
