@@ -22,16 +22,24 @@ function Header() {
   const [ageApocalypse, setAgeApocalypse] = useState(false);
   const [agentsShield, setAgentsShield] = useState(false);
 
+  /* Function to adapt the Villain name in params to a capitalized and full name */
   const convertParamasIntoProperVillainName = () => {
     if (!villainPlayed || villainPlayed.length === 0) {
       return "";
     } else {
-      let properVillainName = villainPlayed[0].toUpperCase() + villainPlayed.slice(1);
+      let properVillainName = villainPlayed[0].toUpperCase(); /* Start with the first character */
+
+      for (let i = 1; i < villainPlayed.length; i++) {
+        if (villainPlayed[i] === villainPlayed[i].toUpperCase()) {
+          properVillainName += " "; /* Add space before uppercase letters */
+        }
+        properVillainName += villainPlayed[i]; /* Add the current character */
+      };
+
       return properVillainName;
     };
   };
 
-  
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen); /* Toggle the menu state */
