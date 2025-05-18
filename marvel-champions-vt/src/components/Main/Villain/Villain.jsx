@@ -1,9 +1,11 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useContext, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { PhaseButtonsContext } from "../../../context/PhaseButtonsContext";
 import { MomentumCountersJuggernautContext } from "../../../context/MomentumCountersJuggernautContext";
 import { StatusCardsContext } from "../../../context/StatusCardsContext";
 import { TeleportCountersSpiralContext } from "../../../context/TeleportCountersSpiralContext";
+import { VillainPlayedContext } from "../../../context/VillainPlayedContext";
 import PhaseButtons from "./PhaseButtons";
 import LifeCounter from "./LifeCounter";
 import CardImage from "./CardImage";
@@ -23,6 +25,14 @@ function Villain () {
 
   /* State to keep track of the number of teleport counters on Cornered Spiral */
   const [teleportCounters, setTeleportCounters] = useState(0);
+
+  const { setVillainPlayed } = useContext(VillainPlayedContext); /* From the context, to set the Villain played */
+
+  const urlParams = useParams();
+
+  useEffect(() => {
+    setVillainPlayed(urlParams.villainId)
+  }, [urlParams.villainId])
 
   return <>
 
