@@ -1,4 +1,3 @@
-import React from "react";
 import { useState } from "react";
 import { BrowserRouter } from "react-router-dom";
 import { VillainPlayedContext } from "./context/VillainPlayedContext";
@@ -7,7 +6,8 @@ import Main from "./components/Main/Main";
 import Footer from "./components/Footer/Footer";
 import "./styles/pages/_App.scss";
 
-function App() {
+
+const App = () => {
   const [villainPlayed, setVillainPlayed] = useState()
 
   return (<>

@@ -1,9 +1,9 @@
-import React from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
 import List from "./List/List.jsx";
 import Villain from "./Villain/Villain.jsx";
 
-function Main() {
+
+const Main = () => {
 
   return <main>
 

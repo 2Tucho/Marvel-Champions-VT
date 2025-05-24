@@ -1,9 +1,9 @@
-import React from "react";
 import { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { StatusCardsContext } from "../../../../../../context/StatusCardsContext";
 
-function GeneralStatusTokens() {
+
+const GeneralStatusTokens = () => {
   const { toughStatus, confusedStatus, stunnedStatus, setToughStatus, setConfusedStatus, setStunnedStatus } = useContext(StatusCardsContext); /* Get the status Cars states from the context */
   const villainId = useParams();
 

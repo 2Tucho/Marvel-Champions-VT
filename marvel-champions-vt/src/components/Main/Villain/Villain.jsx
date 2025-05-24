@@ -1,17 +1,17 @@
-import React from "react";
 import { useState, useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { PhaseButtonsContext } from "../../../context/PhaseButtonsContext";
 import { MomentumCountersJuggernautContext } from "../../../context/MomentumCountersJuggernautContext";
+import { PhaseButtonsContext } from "../../../context/PhaseButtonsContext";
 import { StatusCardsContext } from "../../../context/StatusCardsContext";
 import { TeleportCountersSpiralContext } from "../../../context/TeleportCountersSpiralContext";
 import { VillainPlayedContext } from "../../../context/VillainPlayedContext";
-import PhaseButtons from "./PhaseButtons";
-import LifeCounter from "./LifeCounter";
 import CardImage from "./CardImage";
+import LifeCounter from "./LifeCounter";
+import PhaseButtons from "./PhaseButtons";
 import StatusCards from "./StatusCards";
 
-function Villain () {
+
+const Villain = () => {
   /* State to keep track of the phase of the villain */
   const [phase, setPhase] = useState("default");
   

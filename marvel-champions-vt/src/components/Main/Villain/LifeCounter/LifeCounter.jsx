@@ -1,4 +1,3 @@
-import React from "react";
 import { useParams } from "react-router-dom";
 import FourHorsemenLifeCounter from "./FourHorsemenLifeCounter";
 import GeneralLifeCounter from "./GeneralLifeCounter";
@@ -9,7 +8,8 @@ import SinisterSixLifeCounter from "./SinisterSixLifeCounter";
 import TowerDefenseLifeCounter from  "./TowerDefenseLifeCounter";
 import WreckingCrewLifeCounter from "./WreckingCrewLifeCounter";
 
-function LifeCounter() {
+
+const LifeCounter = () => {
   const villainId = useParams(); /* Get the villainId from the URL parameters */
 
   /* Map the villainId to the corresponding LifeCounter component */

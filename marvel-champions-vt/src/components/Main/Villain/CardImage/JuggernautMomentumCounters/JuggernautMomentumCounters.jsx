@@ -1,11 +1,11 @@
-import React from "react";
 import { useContext } from "react";
 import { MomentumCountersJuggernautContext } from "../../../../../context/MomentumCountersJuggernautContext";
 
-function JuggernautMomentumCounters() {
+
+const JuggernautMomentumCounters = () => {
   const { momentumCounters, setMomentumCounters } = useContext(MomentumCountersJuggernautContext);
 
-  return (<button id="momentumCounter" className="countersButton" onClick={() => setMomentumCounters((count) => count + 1)} style={{fontSize: momentumCounters > 9 ? "3rem" : "4rem"}}>{momentumCounters}</button>);
+  return <button id="momentumCounter" className="countersButton" onClick={() => setMomentumCounters((count) => count + 1)} style={{fontSize: momentumCounters > 9 ? "3rem" : "4rem"}}>{momentumCounters}</button>;
 
 };
 

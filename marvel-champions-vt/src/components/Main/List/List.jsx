@@ -1,20 +1,20 @@
-import React from "react";
-import CoreSet from "./CoreSet";
-import TheGreenGoblin from "./TheGreenGoblin";
-import TheWreckingCrew from "./TheWreckingCrew";
-import TheRiseOfRedSkull from "./TheRiseOfRedSkull";
-import TheOnceAndFutureKang from "./TheOnceAndFutureKang";
-import GalaxysMostWanted from "./GalaxysMostWanted";
-import TheMadTitansShadow from "./TheMadTitansShadow";
-import TheHood from "./TheHood";
-import SinisterMotives from "./SinisterMotives";
-import MutantGenesis from "./MutantGenesis";
-import MojoMania from "./MojoMania";
-import NextEvolution from "./NextEvolution";
-import TheAgeOfApocalypse from "./TheAgeOfApocalypse";
 import AgentsOfShield from "./AgentsOfShield";
+import CoreSet from "./CoreSet";
+import GalaxysMostWanted from "./GalaxysMostWanted";
+import MojoMania from "./MojoMania";
+import MutantGenesis from "./MutantGenesis";
+import NextEvolution from "./NextEvolution";
+import SinisterMotives from "./SinisterMotives";
+import TheAgeOfApocalypse from "./TheAgeOfApocalypse";
+import TheGreenGoblin from "./TheGreenGoblin";
+import TheHood from "./TheHood";
+import TheMadTitansShadow from "./TheMadTitansShadow";
+import TheOnceAndFutureKang from "./TheOnceAndFutureKang";
+import TheRiseOfRedSkull from "./TheRiseOfRedSkull";
+import TheWreckingCrew from "./TheWreckingCrew";
 
-function List()  {
+
+const List = () => {
   
   return <>
 
