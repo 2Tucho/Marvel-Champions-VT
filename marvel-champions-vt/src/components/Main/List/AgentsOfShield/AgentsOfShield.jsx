@@ -7,7 +7,7 @@ function AgentsOfShield() {
 
     <h4 className="villainEncounterName">Agents of S.H.I.E.L.D.</h4>
     
-    <ul className="villainList campaignSet2">
+    <ul className="villainList campaignSet">
       <Link className="villainLink" to={`/villain/blackWidow`}><h5>Black Widow</h5></Link>
       <Link className="villainLink" to={`/villain/batroc`}><h5>Batroc</h5></Link>
       <Link className="villainLink" to={`/villain/modok`}><h5>M.O.D.O.K.</h5></Link>

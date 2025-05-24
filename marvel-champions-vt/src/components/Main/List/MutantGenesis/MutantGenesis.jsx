@@ -7,7 +7,7 @@ function MutantGenesis() {
 
     <h4 className="villainEncounterName">Mutant Genesis</h4>
     
-    <ul className="villainList campaignSet2">
+    <ul className="villainList campaignSet">
       <Link className="villainLink" to={`/villain/sabretooth`}><h5>Sabretooth</h5></Link>
       <Link className="villainLink" to={`/villain/sentinel`}><h5>Project Wideawake</h5></Link>
       <Link className="villainLink" to={`/villain/masterMold`}><h5>Master Mold</h5></Link>
