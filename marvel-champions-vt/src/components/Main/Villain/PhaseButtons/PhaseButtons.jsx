@@ -1,12 +1,11 @@
-import React from "react";
 import { useParams } from "react-router-dom";
-import GeneralButtons from "./GeneralButtons/GeneralButtons";
 import ApocalypseButtons from "./ApocalypseButtons/ApocalypseButtons";
 import BaronZemoButtons from "./BaronZemoButtons/BaronZemoButtons";
 import BatrocButtons from "./BatrocButtons/BatrocButtons";
 import Collector2Buttons from "./Collector2Buttons/Collector2Buttons";
 import EnSabahNurButtons from "./EnSabahNurButtons/EnSabahNurButtons";
 import FourHorsemenButtons from "./FourHorsemenButtons/FourHorsemenButtons";
+import GeneralButtons from "./GeneralButtons/GeneralButtons";
 import HelaButtons from "./HelaButtons/HelaButtons";
 import KangButtons from "./KangButtons/KangButtons";
 import LokiButtons from "./LokiButtons/LokiButtons";
@@ -22,7 +21,8 @@ import ThunderboltsButtons from "./ThunderboltsButtons/ThunderboltsButtons";
 import TowerDefenseButtons from "./TowerDefenseButtons/TowerDefenseButtons";
 import WreckingCrewButtons from "./WreckingCrewButtons/WreckingCrewButtons";
 
-function PhaseButtons() { 
+
+const PhaseButtons = () => { 
   const villainId = useParams(); /* Get the villainId from the URL parameters */
 
   /* Map the villainId to the corresponding button component */

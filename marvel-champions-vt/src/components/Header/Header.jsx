@@ -1,9 +1,9 @@
-import React from "react";
 import { useState, useContext, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { VillainPlayedContext } from "../../context/VillainPlayedContext";
 
-function Header() {
+
+const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false); /* State to toggle the menu */
   const modalRef = useRef(null); /* Reference to the modal container */
 

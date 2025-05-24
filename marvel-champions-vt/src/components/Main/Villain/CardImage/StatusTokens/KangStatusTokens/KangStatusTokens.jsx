@@ -1,9 +1,9 @@
-import React from "react";
 import { useContext } from "react";
 import { StatusCardsContext } from "../../../../../../context/StatusCardsContext";
 import { PhaseButtonsContext } from "../../../../../../context/PhaseButtonsContext";
 
-function KangStatusTokens() {
+
+const KangStatusTokens = () => {
   const { toughStatus, confusedStatus, stunnedStatus } = useContext(StatusCardsContext); /* Get the status Cars states from the context */
   const { phase } = useContext(PhaseButtonsContext);
 
