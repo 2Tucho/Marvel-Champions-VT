@@ -1,10 +1,10 @@
 import React from "react";
 import { shallow } from "enzyme";
-import MutantGenesis from "./MutantGenesis";
+import VillainEncounters from "./VillainEncounters";
 
-describe("MutantGenesis", () => {
+describe("VillainEncounters", () => {
   test("matches snapshot", () => {
-    const wrapper = shallow(<MutantGenesis />);
+    const wrapper = shallow(<VillainEncounters />);
     expect(wrapper).toMatchSnapshot();
   });
 });
