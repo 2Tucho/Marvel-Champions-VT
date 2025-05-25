@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 function VillainEncounters({ name, shortName, villains, setNum }) {
+  /* Function to take the encounters and Villains names and add spaces and capital letter */
   const transformSetName = (name) => {
     let properVillainName = name[0].toUpperCase(); /* Start with the first character */
 
