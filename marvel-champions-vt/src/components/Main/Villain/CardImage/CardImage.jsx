@@ -10,7 +10,6 @@ import VillainEnum from "../../../../enum/VillainEnum";
 
 const CardImage = () => {
   const { phase, setPhase } = useContext(PhaseButtonsContext); /* Get the phase from the context */
-  console.log(phase)
 
   const urlParams = useParams(); /* Get the villainId from the URL parameters */
 
@@ -28,8 +27,6 @@ const CardImage = () => {
     img.onload = () => setShowVillainImage(true); /* Show the image if it loads successfully */
     img.onerror = () => setShowVillainImage(false); /* Hide the image if it fails to load */
   }, [phase, urlParams.villainId]);
-
-  console.log(urlParams.villainId)
 
   return <section id="imagesContainer">
 
