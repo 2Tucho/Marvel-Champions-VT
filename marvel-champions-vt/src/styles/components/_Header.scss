@@ -5,8 +5,8 @@ header {
     color: #fff;
 
     article {
-        display: flex; 
-        justify-content: flex-start; 
+        display: flex;
+        justify-content: flex-start;
         align-items: center;
 
         button {
@@ -21,12 +21,12 @@ header {
         div {
             position: absolute;
             left: 23%;
-            
+
             a {
                 font-size: 1.25rem;
                 text-decoration: none;
                 color: #fff;
-                
+
                 h1 {
                     margin: 0;
                 }
@@ -42,9 +42,11 @@ header {
 
     nav {
         position: absolute;
-        z-index: 2; /* It is higher than the z-index in JuggernautMomentumCounters so it is displayed a layer earlier than the other  */
+        z-index: 2;
+        /* It is higher than the z-index in JuggernautMomentumCounters so it is displayed a layer earlier than the other  */
         top: 50px;
-        left: 10px; /* Align the menu to the left */
+        left: 10px;
+        /* Align the menu to the left */
         background-color: #444;
         padding: 1rem;
         border-radius: 0.5rem;
@@ -60,24 +62,20 @@ header {
             margin-bottom: 0.25rem;
         }
 
-        ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
 
-            li {
+
+        li {
+            display: flex;
+            flex-direction: column;
+            margin: 1.5rem 0;
+
+            section {
                 display: flex;
                 flex-direction: column;
-                margin: 1.5rem 0;
+                margin-top: 0.25rem;
 
-                section {
-                    display: flex;
-                    flex-direction: column;
-                    margin-top: 0.25rem;
-
-                    p {
-                        margin: 0.5rem 0;
-                    }
+                p {
+                    margin: 0.5rem 0;
                 }
             }
         }
